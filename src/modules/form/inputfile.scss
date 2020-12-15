@@ -1,0 +1,41 @@
+/* ==========================================================================
+   #INPUTFILE
+   ========================================================================== */
+
+.inputfile {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+
+  @include on-event {
+    outline: none;
+
+    .inputfile__btn {
+      border-color: $color-border-success;
+      color: $color-secondary;
+    }
+  }
+}
+
+.inputfile__input {
+  display: none;
+}
+
+.inputfile__btn {
+  display: inline-block;
+  margin-right: 20px;
+  padding: 0.7em 1.8em;
+  border: 1px solid $color-grey-100;
+  border-radius: $global-radius;
+  background-color: transparent;
+
+  @include basic-transition((color, border-color));
+}
+
+.inputfile__content {
+  flex-grow: 1;
+  flex-basis: 0;
+  color: $color-body-secondary;
+}

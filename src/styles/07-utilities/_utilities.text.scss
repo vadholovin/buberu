@@ -1,0 +1,130 @@
+/* ==========================================================================
+   #TEXT-UTILITIES
+   ========================================================================== */
+
+.align-l {
+  text-align: left;
+}
+
+.align-c {
+  text-align: center;
+}
+
+.align-r {
+  text-align: right;
+}
+
+.align-j {
+  text-align: justify;
+}
+
+.align-m {
+  vertical-align: middle;
+}
+
+.align-t {
+  vertical-align: top;
+}
+
+.align-b {
+  vertical-align: baseline;
+}
+
+.type--inherit h1,
+.type--inherit h2,
+.type--inherit h3,
+.type--inherit h4,
+.type--inherit h5,
+.type--inherit h6,
+.type--inherit p {
+  font-size: inherit
+}
+
+.type--flatten h1,
+.type--flatten h2,
+.type--flatten h3,
+.type--flatten h4,
+.type--flatten h5,
+.type--flatten h6,
+.type--flatten p {
+  margin: 0
+}
+
+.type--reset {
+  margin: 0;
+  line-height: 1;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.normal {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.mbold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.black {
+  font-weight: 900;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.dotted-underline {
+  border-bottom: 1px dotted #ccc;
+}
+
+.decoration--none {
+  text-decoration: none;
+}
+
+.kern {
+  letter-spacing: .2em;
+}
+
+.kern--w {
+  letter-spacing: .35em;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.link {
+  cursor: pointer
+}
+
+.link--underline {
+  box-shadow: inset 0 0 0 transparent, 0 2px 0 currentColor;
+  transition-property: color, box-shadow;
+  transition-timing-function: ease-in-out;
+}

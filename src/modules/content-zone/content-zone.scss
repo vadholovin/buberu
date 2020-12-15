@@ -1,0 +1,152 @@
+.content-zone {
+  overflow-wrap: break-word;
+
+  h2 {
+    font-size: rem(28px);
+
+    @include mq($from: md) {
+      font-size: rem(39px);
+    }
+  }
+
+  h3 {
+    font-size: rem(24px);
+
+    @include mq($from: md) {
+      font-size: rem(32px);
+    }
+  }
+
+  h4 {
+    font-size: rem(20px);
+
+    @include mq($from: md) {
+      font-size: rem(28px);
+    }
+  }
+
+  h2, h3, h4, h5, h6 {
+
+    &:not(:first-child) {
+      margin-top: rem(50px);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(30px);
+    }
+  }
+
+  p {
+    line-height: 1.8;
+
+    &:not(:last-child) {
+      margin-bottom: 1.75rem;
+    }
+
+    small {
+      display: block;
+      font-size: 0.75em;
+    }
+  }
+
+  blockquote {
+    position: relative;
+    display: block;
+    padding-left: rem(40px);
+    border-left: 3px solid $color-danger;
+    font-weight: 500;
+    font-size: rem(21px);
+    font-style: italic;
+
+
+    &:not(:first-child) {
+      margin-top: rem(60px);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(60px);
+    }
+
+    p {
+      font-size: inherit;
+    }
+
+  }
+
+
+  img {
+    display: block;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  figure {
+
+    &:not(:first-child) {
+      margin-top: rem(64px);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(64px);
+    }
+  }
+
+  >ul:not([class]),
+  >ol:not([class]) {
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  ul:not([class]),
+  ol:not([class]) {
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  ul:not([class]) {
+
+    li {
+
+      &::before {
+        content: '•';
+        padding-right: 12px;
+      }
+    }
+  }
+
+  ol:not([class]) {
+    counter-reset: list1;
+
+    li {
+
+      &::before {
+        counter-increment: list1;
+        content: counter(list1) '.';
+        padding-right: 12px;
+      }
+    }
+  }
+
+  ul:not([class]),
+  ol:not([class]) {
+
+    li+li {
+      margin-top: 1rem;
+    }
+  }
+
+  hr {
+    margin-top: rem(60px);
+    margin-bottom: rem(60px);
+    opacity: 0.5;
+  }
+}

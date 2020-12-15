@@ -1,0 +1,28 @@
+/* ==========================================================================
+   #BODY
+   ========================================================================== */
+
+body {
+  position: relative;
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
+  font-size: $body-font-size;
+  line-height: $body-line-height;
+  color: $color-body;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+
+  &.is-modal-open,
+  &.is-nav-mobile-open {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &.is-nav-mobile-open {
+
+    @include mq($from: lg) {
+      overflow: visible;
+    }
+  }
+}

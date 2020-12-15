@@ -1,0 +1,39 @@
+
+mixin swiper(id, mods, buttons, dots, scrollbar)
+
+  //- Parameters:
+  //-   id        {string} - identificator
+  //-   mods      {string} - list of modificators
+  //-   buttons   {boolean} - if we need navigation buttons
+  //-   dots      {boolean} - if we need pagination
+  //-   scrollbar {boolean} - if we need scrollbar
+  //- Call:
+        +swiper('swiper-demo', 'top-banner', buttons=true)
+          div слайд1
+          div слайд2
+          div слайд3
+
+  -
+    // list of modificators
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' swiper--' + modsList[i].trim();
+      }
+    }
+
+  .swiper-container(id=id, class=allMods)&attributes(attributes)
+    .swiper-wrapper
+      block
+    if (typeof(dots) !== 'undefined' && dots)
+      .swiper-pagination
+    if (typeof(buttons) !== 'undefined' && buttons)
+      .swiper-button-prev
+      .swiper-button-next
+    if (typeof(scrollbar) !== 'undefined' && scrollbar)
+      .swiper-scrollbar
+
+mixin swiper-slide
+  .swiper-slide&attributes(attributes)
+    block

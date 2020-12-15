@@ -1,0 +1,74 @@
+//- Mixin to add a social list
+
+//- Using:
+//-       +social('footer')
+//-         +social-item('Facebook', '//facebook.com/blabla...')
+//-           +icon('facebook-square')
+
+mixin social(mods)
+
+  //- Parameters:
+  //-   mods  {string} - list of modificators
+  //- Call:
+  //-   +social('footer')
+  //-     +social-item('//facebook.com/blabla...')
+  //-       +icon('facebook-square')
+
+  -
+    // list of modificators
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' social--' + modsList[i].trim();
+      }
+    }
+
+  ul.social(class=allMods)&attributes(attributes)
+    block
+
+mixin social-item(link='')
+  li.social__item
+    a.social__link(
+      href= link,
+      rel='noopener',
+      target='_blank'
+    )
+      block
+
+mixin social-text(text)
+  span.social__text.hidden-visually= text
+
+
+
+mixin share(mods)
+
+  //- Parameters:
+  //-   mods  {string} - list of modificators
+  //- Call:
+  //-   +social('footer')
+  //-     +social-item('//facebook.com/blabla...')
+  //-       +icon('facebook-square')
+
+  -
+    // list of modificators
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' share--' + modsList[i].trim();
+      }
+    }
+
+  ul.share(class=allMods)&attributes(attributes)
+    block
+
+mixin share-item(link='')
+  li.share__item
+    a.share__link(
+      href= link,
+      rel='noopener',
+      target='_blank'
+    )&attributes(attributes)
+      block
+

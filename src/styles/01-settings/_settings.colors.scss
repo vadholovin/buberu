@@ -1,0 +1,48 @@
+///* ==========================================================================
+//   #COLOR-VARIABLES
+//   ========================================================================== */
+
+$dark-1: #000 !default;
+$dark-2: #1D1E20 !default;
+$dark-3: #212429 !default;
+
+
+$red-1: #f85050 !default;
+
+$green-1: #36BD78 !default;
+
+$white:   #fff !default;
+$grey-1:  #F8F9FA !default;
+$grey-2:  #DDE2E5 !default;
+$grey-3:  #ACB5BD !default;
+$grey-4:  #A9A9A9 !default;
+$grey-5:  #495057 !default;
+
+$blue-1: #2C3C56 !default;
+
+$orange-1: #FD710F !default;
+$orange-2: #FFCC4D !default;
+$orange-3: #FF8D3E !default;
+
+
+$color-body:          $dark-3 !default;
+$color-primary:       $orange-1 !default;
+$color-success:       $green-1 !default;
+$color-danger:        $red-1 !default;
+$color-placeholder:   rgba($grey-5, 0.5) !default;
+
+
+// $color-bg-warning:  $color-red !default;
+// $color-bg-dark:     $color-blue-dark !default;
+// $color-bg-light:    $color-grey !default;
+// $color-bg-primary:  $color-brown !default;
+
+
+// $color-border-primary:  $color-brown !default;
+
+
+// $color-hover-primary: mix(#000000, $color-primary, 20%) !default;
+
+$color-hr:          rgba(0, 0, 0, 0.1) !default;
+$color-selection:     $color-body !default;
+$color-bg-selection:  $color-primary !default;

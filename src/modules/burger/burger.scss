@@ -1,0 +1,109 @@
+/* ==========================================================================
+   #BURGER
+   ========================================================================== */
+// В этом файле должны быть стили для БЭМ-блока burger, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+$toggler-part-width:              20px !default;
+$toggler-part-height:             2px !default;
+$toggler-part-y-space:            7px !default;
+$toggler-part-bg-color:           currentColor !default;
+$toggler-part-bg-color-hover:     #fff !default;
+$toggler-width:                   32px !default;
+$toggler-height:                  32px !default;
+
+
+.burger {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  width: $toggler-width;
+  height: $toggler-height;
+  user-select: none;
+  cursor: pointer;
+  opacity: 0.8;
+  z-index: 1;
+
+  @include basic-transition((opacity));
+
+  @include on-event {
+    outline: none;
+    opacity: 1;
+  }
+
+  &--close {
+
+    .burger__bar {
+      background-color: transparent !important;
+
+      &:before {
+        transform: rotate3d(0, 0, 1, 45deg);
+      }
+
+      &:after {
+        transform: rotate3d(0, 0, 1, -45deg);
+      }
+    }
+  }
+}
+
+.burger__bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  width: $toggler-part-width;
+  height: $toggler-part-height;
+  font-size: 0;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  background-color: $toggler-part-bg-color;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px rgba(158, 237, 254, 0.8));
+
+  @include basic-transition((background-color, opacity));
+
+
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $toggler-part-height;
+    background-color: $toggler-part-bg-color;
+    transform-origin: center;
+
+    @include basic-transition((transform, background-color, opacity));
+
+    // .is-scrolled &,
+    // .is-nav-mobile-open & {
+    //   background-color: $color-body;
+    // }
+  }
+
+  &:before {
+    transform: translateY(-$toggler-part-y-space);
+  }
+
+  &:after {
+    transform: translateY($toggler-part-y-space);
+  }
+}
+
+// body.is-nav-mobile-open,
+// .site-header.is-scrolled {
+//   .burger__bar{
+//     background-color: $color-bg-primary;
+//     filter: none;
+
+//     &:before,
+//     &:after {
+//       background-color: $color-bg-primary;
+//     }
+//   }
+// }

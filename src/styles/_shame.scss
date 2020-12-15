@@ -1,0 +1,50 @@
+/* ==========================================================================
+   #SHAME STYLES
+   ========================================================================== */
+
+.fancybox-is-open .fancybox-bg {
+  background-color: $color-bg-primary;
+  opacity: 1;
+}
+
+.fancybox-slide--html .fancybox-close-small {
+  margin-top: 6px;
+  margin-right: 6px;
+  padding: 14px;
+  background-color: rgba(#fff, 0.75);
+}
+
+.modal-wrapper--map .fancybox-close-small {
+  position: fixed;
+  margin: 0;
+  z-index: 99999;
+}
+
+.fancybox-close-small svg path {
+  fill: none;
+  stroke-width: unset;
+  stroke: $color-primary;
+}
+
+.tippy-content {
+  max-width: 240px;
+}
+
+// .modal-wrapper .fancybox-button {
+//   top: 16px;
+//   right: 12px;
+
+//   @include mq($from: sm) {
+//     top: 32px;
+//     right: 24px;
+//     padding: 0;
+//   }
+
+//   > svg {
+
+//     @include mq($from: sm) {
+//       width: 50px;
+//       height: auto;
+//     }
+//   }
+// }

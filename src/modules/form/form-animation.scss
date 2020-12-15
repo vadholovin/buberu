@@ -1,0 +1,63 @@
+/* ==========================================================================
+   #FORM-ANIMATION
+   ========================================================================== */
+
+.inputbox--animated {
+
+
+  .inputbox__label {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    margin-bottom: 0;
+    font-size: rem(14px);
+    line-height: 1.25;
+    transform: translate3d(0, 28px, 0);
+    transition: transform 0.25s ease-in-out;
+    pointer-events: none;
+    overflow: hidden;
+    color:#e1baff;
+  }
+
+  .inputbox__label-content {
+    display: block;
+    padding: 0.25em 0;
+    white-space: nowrap;
+    transition: transform 0.25s ease-in-out;
+  }
+
+  .inputbox__label-content::before {
+    content: attr(data-content);
+    position: absolute;
+    bottom: 106%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 0.2em;
+    font-size: 0.85em;
+    color: #BD69FF;
+  }
+}
+
+.inputbox__label--required {
+
+  .inputbox__label-content::after {
+    content: '*';
+    display: inline-block;
+    color: #fff;
+    font-size: inherit;
+  }
+}
+
+
+.inputbox--animated .input:focus + .inputbox__label,
+.inputbox__wrapper--filled .inputbox__label {
+	transform: translate3d(0, 0, 0);
+}
+
+.inputbox--animated .input:focus + .inputbox__label .inputbox__label-content,
+.inputbox__wrapper--filled .inputbox__label-content {
+	transform: translate3d(0, 100%, 0);
+}

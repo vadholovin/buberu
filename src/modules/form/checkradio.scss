@@ -1,0 +1,54 @@
+.checkradio {
+  position: relative;
+  padding-left: 32px;
+  display: inline-block;
+  cursor: pointer;
+
+  &__input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    &:checked {
+
+      & + .checkradio__box {
+        border-color: $color-bg-secondary;
+        background-color: $color-bg-secondary;
+
+        &::before { opacity: 1; }
+      }
+    }
+  }
+
+  &__box {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    border: 1px solid $color-border-primary;
+    left: 0;
+    top: 0;
+
+    @include basic-transition((border-color, background-color));
+
+    &::before {
+      @include center-block;
+
+      content: '';
+      width: 12px;
+      height: 9px;
+      display: block;
+      opacity: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.625 1L4.00781 8L1 4.81818' stroke='%23FFFFFE' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+
+      @include basic-transition((opacity));
+    }
+  }
+
+}

@@ -1,0 +1,85 @@
+/* ==========================================================================
+   #SOCIAL
+   #SHARE
+   ========================================================================== */
+
+.social,
+.share {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 0.75;
+}
+
+.social--center,
+.share--center {
+  justify-content: center;
+}
+
+.social__item {
+  display: flex;
+  line-height: inherit;
+}
+
+.social__item:not(:last-child) {
+  margin-right: 16px;
+}
+
+.social__link {
+  font-size: 18px;
+  line-height: inherit;
+  opacity: 0.5;
+
+  @include on-event {
+    opacity: 1;
+  }
+}
+
+.social:not(.social--text-visible) .social__text {
+  @include hidden-visually;
+}
+
+.share__item:not(:last-child) {
+  margin-right: 6px;
+
+  .share--lg & {
+    margin-right: 12px;
+  }
+}
+
+.share__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  font-size: 18px;
+  border-radius: 3px;
+  color: #fff;
+  background-color: $color-bg-dark;
+
+  @include on-event {
+    color: #fff;
+    background-color: $color-bg-primary;
+  }
+}
+
+.share__link--facebook { background-color: #4267B2; }
+.share__link--vk { background-color: #4A76A8; }
+.share__link--twitter { background-color: #1DA1F2; }
+
+.share--circle {
+
+  .share__link {
+    border-radius: 50%;
+  }
+}
+
+
+.share--lg {
+
+  .share__link {
+    width: 48px;
+    height: 48px;
+    font-size: 28px;
+  }
+}

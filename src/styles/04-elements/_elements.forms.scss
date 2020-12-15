@@ -1,0 +1,37 @@
+/* ==========================================================================
+   #FORMS
+   ========================================================================== */
+
+select,
+input,
+textarea,
+button {
+  font-family: inherit;
+  font-size: 100%;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+[type="search"] {
+  outline-offset: -2px;
+  -webkit-appearance: none;
+}
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}

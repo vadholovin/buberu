@@ -1,0 +1,25 @@
+/* ==========================================================================
+   #FORM
+   ========================================================================== */
+
+.form {
+  display: block;
+}
+
+.form__row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form__row--y-center {
+  align-items: center;
+}
+
+.form-text {
+  margin-bottom: 1rem;
+  font-size: rem(16px);
+}
+
+.form-fieldset {
+  margin-bottom: 28px;
+}

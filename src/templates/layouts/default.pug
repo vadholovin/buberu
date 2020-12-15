@@ -1,0 +1,15 @@
+include _externalIncludes
+include _internalIncludes
+include general-settings
+block variables
+
+doctype html
+html(class="no-js", lang=lang)
+  include head
+  body(class=bodyClass)
+    .page-wrapper
+      block content
+      //- include ../components/modals/modals
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+      script(src="assets/js/libs.min.js")
+      script(src="assets/js/app.js")

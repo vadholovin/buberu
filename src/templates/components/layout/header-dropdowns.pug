@@ -1,0 +1,122 @@
+mixin header-dropdown(option) {
+  .site-header__actions-dropdown
+    .site-header__actions-dropdown-inner
+      .site-header__actions-dropdown-head
+
+        if option === 'notif'
+          .site-header__actions-dropdown-title Уведомления
+            span.site-header__actions-dropdown-counter 3
+          .site-header__actions-dropdown-reset(data-tippy="Скрыть уведомления")
+
+        else if option === 'msg'
+          .site-header__actions-dropdown-title Сообщения
+            span.site-header__actions-dropdown-counter 3
+          .site-header__actions-dropdown-reset(data-tippy="Скрыть уведомления")
+
+        else if option === 'user'
+          .site-header__actions-dropdown-flag.flag
+            .flag__image(href="")
+              .embed
+                .embed__inner
+                  img(src="assets/img/content/avatars/ava-1.jpg", alt="")
+            .flag__body
+              .site-header__actions-dropdown-name Владимир Тихонов
+              .site-header__actions-dropdown-role Заказчик
+
+      .site-header__actions-dropdown-body
+
+        if option === 'notif'
+          ul.notif-list
+            li.notif-list__item.is-active
+              .notif-card.notif-card--notif
+                .notif-card__img
+                  .notif-card__icon
+                    +icon('suitcase-o')
+                .notif-card__body
+                  .notif-card__msg
+                    span.notif-card__msg-name Добрыня Никитич
+                    span.notif-card__msg-text выбрал вас в качестве специалиста в задание
+                    span.notif-card__msg-accent Подобрать iPhone XR
+
+            li.notif-list__item.is-active
+              .notif-card.notif-card--notif
+                .notif-card__img
+                  .notif-card__icon
+                    +icon('comment-o')
+                .notif-card__body
+                  .notif-card__msg
+                    span.notif-card__msg-name Алёша Попович
+                    span.notif-card__msg-text оставил о вас комментарий.
+                    span.notif-card__msg-accent Прочитать комментарий в личном профиле
+
+            li.notif-list__item
+              .notif-card.notif-card--notif
+                .notif-card__img
+                  .notif-card__icon
+                    +icon('suitcase-o')
+                .notif-card__body
+                  .notif-card__msg
+                    span.notif-card__msg-name Добрыня Никитич
+                    span.notif-card__msg-text выбрал вас в качестве специалиста в задание
+                    span.notif-card__msg-accent Подобрать авто Lada
+          a.button.button--primary.button--block(href="") Все уведомления
+
+        else if option === 'msg'
+          ul.notif-list
+            li.notif-list__item
+              .notif-card.notif-card--notif
+                .notif-card__img
+                  .user-avatar
+                    .embed
+                      .embed__inner
+                        img(src="assets/img/content/avatars/ava-1.jpg", alt="")
+                    .user-status.is-active
+
+                .notif-card__body
+                  .notif-card__name Добрыня Никитич
+                  .notif-card__text Lorem Ipsum является текст - заполнитель обычный
+                  .notif-card__date 4 часа назад
+
+            li.notif-list__item
+              .notif-card.notif-card--notif
+                .notif-card__img
+                  .user-avatar.user-avatar--no-photo
+                    .embed
+                      .embed__inner
+                    .user-status
+
+                .notif-card__body
+                  .notif-card__name Алексей Римский-Корсаков
+                  .notif-card__text Lorem Ipsum является текст - заполнитель обычный
+                  .notif-card__date Вчера 12:32
+          a.button.button--primary.button--block(href="") Все сообщения
+
+        else if option === 'user'
+          ul.site-header__actions-menu
+            li.site-header__actions-menu-item
+              a.site-header__actions-menu-link
+                +icon('user-o')
+                | Мой профиль
+            li.site-header__actions-menu-item
+              a.site-header__actions-menu-link
+                +icon('star-o')
+                | Избранное
+            li.site-header__actions-menu-item
+              a.site-header__actions-menu-link
+                +icon('check-rounded-o')
+                | Мои заказы
+            li.site-header__actions-menu-item
+              a.site-header__actions-menu-link
+                +icon('bell-o')
+                | Уведомления
+            li.site-header__actions-menu-item
+              a.site-header__actions-menu-link
+                +icon('list-o')
+                | Список специалистов
+
+          .site-header__actions-menu-item
+            a.site-header__actions-menu-link
+              +icon('sign-out-o')
+              | Выйти
+
+}

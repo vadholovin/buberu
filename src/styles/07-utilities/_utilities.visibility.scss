@@ -1,0 +1,41 @@
+/* ==========================================================================
+   #VISIBILITY
+   ========================================================================== */
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+/**
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.hidden-visually {
+  @include hidden-visually;
+}
+
+/**
+ * Hide visually and from screen readers.
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+// @each $name, $value in $breakpoints {
+//   .hidden–#{$name} {
+//     @include mq($from: $name) {
+//       display: none !important;
+//     }
+//   }
+// }

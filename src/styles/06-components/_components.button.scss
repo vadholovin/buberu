@@ -1,0 +1,63 @@
+/* ==========================================================================
+   #BUTTONS
+   ========================================================================== */
+
+// $btn-min-width: 10ch;
+// $btn-min-height: 50px;
+$btn-padding: 0.25rem 2rem;
+$btn-padding-lg: 0.25rem 2rem;
+$btn-padding-sm: 0.25rem 2rem;
+$btn-border-radius: $global-radius;
+
+.button {
+  display: inline-block;
+  // align-items: center;
+  // justify-content: center;
+  vertical-align: top;
+
+  // min-width: $btn-min-width;
+  // min-height: $btn-min-height;
+  padding: $btn-padding;
+  border: 1px solid transparent;
+  border-radius: $btn-border-radius;
+
+  font-weight: $btn-font-weight;
+  font-size: $btn-font-size;
+  line-height: $btn-line-height;
+  text-align: center;
+  user-select: none;
+
+  @include basic-transition(all);
+
+  // @include mq($from: md) {
+  //   min-height: xxx;
+  //   padding-left: xxx;
+  //   padding-right: xxx;
+  //   font-size: xxx;
+  // }
+}
+
+.button:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.button--center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button-group {
+  margin-left: -rem(6px);
+  margin-right: -rem(6px);
+
+  > * {
+    margin: rem(6px);
+  }
+}
+
+.button-group--center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

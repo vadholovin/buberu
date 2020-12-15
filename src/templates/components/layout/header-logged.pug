@@ -1,0 +1,57 @@
+include header-dropdowns
+
+header.site-header.site-header--logged
+  .site-header__top
+    .container
+      .site-header__inner
+        .site-header__top-left
+          .site-header__logo
+            .logo
+              a(href="")
+                .logo__text Buberu
+
+        .site-header__top-right
+          ul.site-header__roles
+            li.site-header__roles-item
+              a(href="") Клиентам
+            li.site-header__roles-item
+              a(href="") Специалистам
+
+  .site-header__main
+    .container
+      .site-header__inner
+        .site-header__main-left
+          nav.site-header__nav
+            ul.site-header__menu
+              li
+                a(href="") Создать задание
+              li
+                a(href="") Поиск заданий
+              li
+                a(href="") Как это работает?
+              li
+                a(href="") Помощь
+
+        .site-header__main-right
+          ul.site-header__actions
+            li.site-header__actions-item
+              a.site-header__actions-link(href="")
+                span.hidden-visually Уведомления
+                .site-header__actions-status.is-active
+                +icon('bell')
+              +header-dropdown( 'notif' )
+
+            li.site-header__actions-item
+              a.site-header__actions-link(href="")
+                span.hidden-visually Сообщения
+                .site-header__actions-status
+                +icon('envelope')
+              +header-dropdown( 'msg' )
+
+            li.site-header__actions-item
+              a.site-header__user.user-avatar(href="")
+                .embed
+                  .embed__inner
+                    img(src="assets/img/content/avatars/ava-1.jpg", alt="")
+              +header-dropdown( 'user' )
+

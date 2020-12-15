@@ -1,0 +1,29 @@
+mixin card-person(person) {
+  .card-person
+    .card-person__inner
+      .card-person__feat(class=(person.feat) ? 'is-active': '')
+        +icon('star')
+      .card-person__img
+        .embed
+          .embed__inner
+            img(src="assets/img/content/avatars/" + person.img, alt="")
+        .user-status(class=(person.status) ? 'is-active': '')
+
+      .card-person__title= person.title
+      .card-person__subtitle= person.subtitle
+      .card-person__stars
+        .star-rating
+
+      .card-person__info
+        .card-person__info-item
+          span.card-person__info-item-head Всего задач
+          span.card-person__info-item-data 434
+        .card-person__info-item
+          span.card-person__info-item-head Оценки
+          span.card-person__info-item-data 372
+        .card-person__info-item
+          span.card-person__info-item-head На сайте
+          span.card-person__info-item-data 233 дня
+
+      a.card-person__button.button.button--light(href="") Смотреть профиль
+}

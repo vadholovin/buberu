@@ -1,0 +1,113 @@
+/* ==========================================================================
+   #SWIPER
+   ========================================================================== */
+
+.swiper-block {
+  position: relative;
+}
+
+.swiper-slide {
+  box-sizing: border-box;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 45px;
+  height: 45px;
+  margin: 0;
+  opacity: 1;
+  transform: translate(0, -50%);
+  border-radius: $global-radius;
+  font-size: 18px;
+  color: #fff;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+
+  @include basic-transition((background-color, color, opacity));
+
+  .icon {
+    @include center-block;
+  }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: none;
+}
+
+// .swiper-button-disabled {
+//   opacity: unset;
+//   background-color: rgba(196, 196, 196, 0.9) !important;
+// }
+
+.swiper-button-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-container-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  position: static;
+  transform: none;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 0;
+}
+
+// .swiper-pagination-bullet {
+//   width: 10px;
+//   height: 10px;
+//   background: $color-grey-200;
+//   opacity: 1;
+
+//   .swiper-pagination--colored & {
+//     background: #fff;
+//     box-shadow: 0 0 1px rgba(#000, 0.5);
+//   }
+// }
+
+// .swiper-pagination-bullet-active {
+//   background: $color-bg-dark;
+
+//   .swiper-pagination--colored & {
+//     background: $color-bg-primary;
+//   }
+// }
+
+// .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+//   margin: 0 8px;
+// }
+
+.swiper-buttons {
+  display: flex;
+
+  > * {
+    position: relative;
+    top: unset;
+    right: unset;
+    bottom: unset;
+    left: unset;
+    transform: none;
+    flex-shrink: 0;
+  }
+
+  > * + * {
+    margin-left: 14px;
+  }
+}
+
+.swiper-button--circle {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  opacity: 0.8;
+  border: 1.5px solid #FEFEFE;
+
+  @include on-event {
+    opacity: 1;
+  }
+}

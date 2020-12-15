@@ -1,0 +1,153 @@
+/* ==========================================================================
+   #GENERAL UTILITIES
+   ========================================================================== */
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.fit-t,
+.fit-x {
+  top: 0;
+}
+
+.fit-b,
+.fit-x {
+  bottom: 0;
+}
+
+.fit-l,
+.fit-x {
+  left: 0;
+}
+
+.fit-r,
+.fit-x {
+  right: 0;
+}
+
+.fill-v {
+  height: 100%;
+}
+
+.fill-h {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-column-r {
+  flex-direction: column-reverse;
+}
+
+.flex-items-start {
+  align-items: flex-start;
+}
+
+.flex-items-end {
+  align-items: flex-end;
+}
+
+.flex-items-center {
+  align-items: center;
+}
+
+.flex-items-baseline {
+  align-items: baseline;
+}
+
+.flex-items-stretch {
+  align-items: stretch;
+}
+
+.flex-justify-start {
+  justify-content: flex-start;
+}
+
+.flex-justify-center {
+  justify-content: center;
+}
+
+.flex-justify-end {
+  justify-content: flex-end;
+}
+
+.flex-justify-between {
+  justify-content: space-between;
+}
+
+.flex-justify-around {
+  justify-content: space-around;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+}
+
+.float-l {
+  float: left;
+}
+
+.float-r {
+  float: right;
+}
+
+.z0 {
+  z-index: 0;
+}
+
+.z1 {
+  z-index: 100;
+}
+
+.z2 {
+  z-index: 200;
+}
+
+.z3 {
+  z-index: 300;
+}
+
+.z5 {
+  z-index: 500;
+}
+
+.z6 {
+  z-index: 600;
+}
+
+.z7 {
+  z-index: 700;
+}
+
+.z8 {
+  z-index: 800;
+}
+
+.z9 {
+  z-index: 900;
+}
+
+.z10 {
+  z-index: 1000;
+}
