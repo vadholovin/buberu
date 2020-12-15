@@ -1,0 +1,23 @@
+section.section.text-image
+  .container
+    +grid()
+      +col({md: 6})
+        h2.section__title.
+          <span class="text-primary">Не тратьте время.</span>
+          <br>
+          Найдите профессионала!
+        .text-image__text
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Learn more...
+
+        a.button.button--primary(href="") Создать запрос
+
+      +col({md: 6})
+        .text-image__media
+          .embed.video.js-video
+            .embed__inner
+              picture
+                source(srcset='https://i.ytimg.com/vi_webp/uRQEC7DiPtI/maxresdefault.webp', type='image/webp')
+                img.video__media(src='https://i.ytimg.com/vi/uRQEC7DiPtI/maxresdefault.jpg', alt='')
+            a.video__link(href='https://youtu.be/uRQEC7DiPtI')
+            button.video__button(type='button', aria-label='Запустить видео')
+              +icon('play')

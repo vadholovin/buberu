@@ -32,16 +32,16 @@ $color-danger:        $red-1 !default;
 $color-placeholder:   rgba($grey-5, 0.5) !default;
 
 
+$color-bg-primary:  $color-primary !default;
 // $color-bg-warning:  $color-red !default;
 // $color-bg-dark:     $color-blue-dark !default;
 // $color-bg-light:    $color-grey !default;
-// $color-bg-primary:  $color-brown !default;
 
 
-// $color-border-primary:  $color-brown !default;
+$color-border-primary:  $color-primary !default;
 
 
-// $color-hover-primary: mix(#000000, $color-primary, 20%) !default;
+$color-hover-primary: $orange-3 !default;
 
 $color-hr:          rgba(0, 0, 0, 0.1) !default;
 $color-selection:     $color-body !default;

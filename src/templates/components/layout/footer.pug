@@ -1,33 +1,5 @@
 footer.site-footer
-  .site-navline.site-navline--footer
-    .container
-      .site-header__inner
-        .site-navline-left
-          .site-header__logo
-            .logo
-              a(href="")
-                .logo__text Buberu
-
-        .site-navline-right
-          +social()
-            +social-item('')
-              +icon('facebook')
-              +social-text('Facebook')
-            +social-item('')
-              +icon('vk')
-              +social-text('Vkontakte')
-            +social-item('')
-              +icon('twitter')
-              +social-text('Twitter')
-            +social-item('')
-              +icon('linkedin')
-              +social-text('Linkedin')
-
-          ul.site-header__roles
-            li.site-header__roles-item
-              a(href="") Клиентам
-            li.site-header__roles-item
-              a(href="") Специалистам
+  include ../site-navline/site-navline-footer
 
   .site-footer__main
     .container
@@ -43,7 +15,6 @@ footer.site-footer
               a(href="") Требования
             li
               a(href="") Помощь
-      +grid()
         +col({md: 3, sm: 6})
           h3.site-footer__title Для клиентов
           ul.site-footer__menu
@@ -55,7 +26,6 @@ footer.site-footer
               a(href="") Требования
             li
               a(href="") Помощь
-      +grid()
         +col({md: 3, sm: 6})
           h3.site-footer__title Сервис
           ul.site-footer__menu
@@ -67,7 +37,6 @@ footer.site-footer
               a(href="") Требования
             li
               a(href="") Конфиденциальность
-      +grid()
         +col({md: 3, sm: 6})
           a.site-footer__contact(href="mailto:support@buberu.ru")
             +icon('envelope-o')
@@ -92,6 +61,6 @@ footer.site-footer
 
   .site-footer__bottom
     .container
-      .flex.flex-wrap.flex-justify-between
+      .site-footer__bottom-inner
         p.site-footer__copyright © 2019 Buberu. All Rights Reserved.
         a.site-footer__dev(href="") Made by Crazy.studio

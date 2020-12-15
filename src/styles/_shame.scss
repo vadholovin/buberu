@@ -2,29 +2,29 @@
    #SHAME STYLES
    ========================================================================== */
 
-.fancybox-is-open .fancybox-bg {
-  background-color: $color-bg-primary;
-  opacity: 1;
-}
+// .fancybox-is-open .fancybox-bg {
+//   background-color: $color-bg-primary;
+//   opacity: 1;
+// }
 
-.fancybox-slide--html .fancybox-close-small {
-  margin-top: 6px;
-  margin-right: 6px;
-  padding: 14px;
-  background-color: rgba(#fff, 0.75);
-}
+// .fancybox-slide--html .fancybox-close-small {
+//   margin-top: 6px;
+//   margin-right: 6px;
+//   padding: 14px;
+//   background-color: rgba(#fff, 0.75);
+// }
 
-.modal-wrapper--map .fancybox-close-small {
-  position: fixed;
-  margin: 0;
-  z-index: 99999;
-}
+// .modal-wrapper--map .fancybox-close-small {
+//   position: fixed;
+//   margin: 0;
+//   z-index: 99999;
+// }
 
-.fancybox-close-small svg path {
-  fill: none;
-  stroke-width: unset;
-  stroke: $color-primary;
-}
+// .fancybox-close-small svg path {
+//   fill: none;
+//   stroke-width: unset;
+//   stroke: $color-primary;
+// }
 
 .tippy-content {
   max-width: 240px;

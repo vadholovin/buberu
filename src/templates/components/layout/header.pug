@@ -1,19 +1,7 @@
-header.site-header
-  .site-navline.site-navline--header
-    .container
-      .site-header__inner
-        .site-navline-left
-          .site-header__logo
-            .logo
-              a(href="")
-                .logo__text Buberu
+include menus.data.pug
 
-        .site-navline-right
-          ul.site-header__roles
-            li.site-header__roles-item
-              a(href="") Клиентам
-            li.site-header__roles-item
-              a(href="") Специалистам
+header.site-header(class=(bodyClass === 'home-page') ? 'site-header--transparent' : '')
+  include ../site-navline/site-navline-header
 
   .site-header__main
     .container
@@ -21,18 +9,13 @@ header.site-header
         .site-header__main-left
           nav.site-header__nav
             ul.site-header__menu
-              li
-                a(href="") Создать задание
-              li
-                a(href="") Поиск заданий
-              li
-                a(href="") Как это работает?
-              li
-                a(href="") Помощь
+              each item in mainMenu
+                li.site-header__menu-item
+                  a.site-header__menu-link(href="")= item
 
         .site-header__main-right
           ul.site-header__signin
             li.site-header__signin-item
-              button.site-header__signin-trigger Войти
+              a.site-header__signin-link(href='' role="button") Войти
             li.site-header__signin-item
-              button.site-header__signin-trigger Зарегистрироваться
+              a.site-header__signin-link(href='' role="button") Зарегистрироваться

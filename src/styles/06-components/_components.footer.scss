@@ -2,3 +2,83 @@
    #FOOTER
    ========================================================================== */
 
+.site-footer__main,
+.site-footer__bottom {
+  color: #fff;
+  background-color: #303030;
+
+  a {
+    @include basic-transition((color));
+    @include on-event {
+      color: $color-primary;
+    }
+  }
+}
+
+.site-footer__main {
+  padding-top: 60px;
+  padding-bottom: 70px;
+}
+
+.site-footer__title {
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: rem(18px);
+  line-height: 1.15;
+}
+
+.site-footer__menu {
+  font-weight: 500;
+  line-height: 1.3;
+  opacity: 0.8;
+
+  > * + * {
+    margin-top: 1rem;
+  }
+}
+
+.site-footer__contact {
+  display: block;
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: rem(18px);
+  line-height: 1.15;
+
+  .icon {
+    margin-right: 12px;
+  }
+}
+
+.site-footer__form {
+
+
+  .form__desc {
+    margin-bottom: 36px;
+    font-weight: 500;
+    opacity: 0.5;
+  }
+}
+
+.site-footer__bottom {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.site-footer__bottom-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-footer__copyright {
+  font-weight: 500;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.site-footer__dev {
+  font-weight: 600;
+  font-size: 14px;
+  opacity: 0.8;
+}

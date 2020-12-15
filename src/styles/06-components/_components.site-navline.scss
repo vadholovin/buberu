@@ -1,0 +1,78 @@
+/* ==========================================================================
+   #SITE-NAVLINE
+   ========================================================================== */
+
+.site-navline {
+  color: #fff;
+  background-color: $color-bg-primary;
+
+  // &--header {
+
+  // }
+
+  // &--footer {
+
+  // }
+}
+
+.site-navline__inner {
+  display: flex;
+  justify-content: space-between;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.site-navline__left,
+.site-navline__right {
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.site-navline__logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+
+  .site-navline--footer & {
+    font-size: 24px;
+  }
+}
+
+.site-navline__social {
+  padding-left: 30px;
+  padding-right: 30px;
+  border-left: 0.5px solid #FF9A53;
+  border-right: 0.5px solid #FF9A53;
+}
+
+.site-navline__roles {
+  display: flex;
+}
+
+// .site-navline__roles-item {
+
+// }
+
+.site-navline__roles-link {
+  display: block;
+  font-weight: 500;
+  line-height: 1.15;
+  border-right: 0.5px solid #FF9A53;
+  background-color: $color-bg-primary;
+
+  @include basic-transition((background-color));
+  @include on-event {
+    background-color: $color-hover-primary;
+  }
+
+  .site-navline--header & {
+    padding: 12px 30px 12px 20px;
+    font-size: 14px;
+  }
+  .site-navline--footer & {
+    padding: 20px 30px;
+  }
+}
+

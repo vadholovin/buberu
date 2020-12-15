@@ -2,6 +2,31 @@
    #TEXT-UTILITIES
    ========================================================================== */
 
+.text-primary {
+  color: $color-primary;
+}
+
+.text-secondary {
+
+}
+
+.text-success {
+
+}
+
+.text-danger {
+
+}
+
+.text-warning {
+
+}
+
+.text-info {
+
+}
+
+
 .align-l {
   text-align: left;
 }
@@ -100,7 +125,7 @@
 }
 
 .dotted-underline {
-  border-bottom: 1px dotted #ccc;
+  border-bottom: 1px dotted currentColor;
 }
 
 .decoration--none {

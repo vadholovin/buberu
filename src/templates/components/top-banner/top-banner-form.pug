@@ -1,40 +1,44 @@
-.top-banner.overlay.overlay--primary(style="background-image: url(assets/img/bg/);")
+.top-banner.overlay.overlay--primary(style="background-image: url(assets/img/bg/bg-top-banner.jpg);")
   .container
     .top-banner__inner
-      .top-banner__head
-        h1.top-banner__title Buberu — онлайн-помощник на рынке подержаных товаров
-        p.top-banner__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      .top-banner__content
+        .top-banner__heading
+          h1.top-banner__title.
+            Buberu — онлайн-помощник
+            <br>
+            на рынке подержаных товаров
+          p.top-banner__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 
-      +form().top-banner__form
-        +fom-row()
-          +inputbox()
-            +input-wrapper
-              +input()(
-                type="text"
-                name="filter-subject"
-                aria-label="Что требуется найти?"
-                placeholder="Что требуется найти?"
-              )
-          +inputbox()
-            +input-wrapper
-              +input()(
-                type="text"
-                name="filter-service"
-                aria-label="Тип услуги"
-                placeholder="Тип услуги"
-              )
-          +inputbox()
-            +input-wrapper
-              +input()(
-                type="text"
-                name="filter-area"
-                aria-label="Где искать?"
-                placeholder="Где искать?"
-              )
-          button.button.button-icon.button--primary(type="submit") Продолжить
-        p.form__desc Фильтр поможет сформировать задание
+        +form().top-banner__form
+          +form-row()
+            +inputbox()
+              +input-wrapper
+                +input()(
+                  type="text"
+                  name="filter-subject"
+                  aria-label="Что требуется найти?"
+                  placeholder="Что требуется найти?"
+                )
+            +inputbox()
+              +input-wrapper
+                +input()(
+                  type="text"
+                  name="filter-service"
+                  aria-label="Тип услуги"
+                  placeholder="Тип услуги"
+                )
+            +inputbox()
+              +input-wrapper
+                +input()(
+                  type="text"
+                  name="filter-area"
+                  aria-label="Где искать?"
+                  placeholder="Где искать?"
+                )
+            button.button.button-icon.button--primary(type="submit") Продолжить
+          p.form__desc Фильтр поможет сформировать задание
 
-      .top-banner__foot
+      .top-banner__footer
         .top-banner__table
           .top-banner__table-cell
             span.top-banner__table-value 1,533
@@ -47,5 +51,5 @@
             span.top-banner__table-unit Решенных задач
 
         a.top-banner__help(href="")
-          +icon('question')
+          +icon('question-circle-o')
           | Поддержка

@@ -1,0 +1,28 @@
+.site-navline.site-navline--footer
+  .container
+    .site-navline__inner
+      .site-navline__left
+        .site-navline__logo
+          a.logo(href="")
+            .logo__text Buberu
+
+      .site-navline__right
+        +social().site-navline__social
+          +social-item('')
+            +icon('facebook')
+            +social-text('Facebook')
+          +social-item('')
+            +icon('vk')
+            +social-text('Vkontakte')
+          +social-item('')
+            +icon('twitter')
+            +social-text('Twitter')
+          +social-item('')
+            +icon('linkedin')
+            +social-text('Linkedin')
+
+        ul.site-navline__roles
+          li.site-navline__roles-item
+            a.site-navline__roles-link(href="") Клиентам
+          li.site-navline__roles-item
+            a.site-navline__roles-link(href="") Специалистам
