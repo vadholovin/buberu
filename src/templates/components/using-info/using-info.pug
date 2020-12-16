@@ -1,19 +1,22 @@
-section.section.section-using-info
+section.section.using-info
   .container
-    h2.section__title Как начать использовать сервис <span class="text-primary">Buberu</span>?
-    ul.using-info
-      li.using-info__item
-        span.using-info__item-count 1
-        p.using-info__item-title Создайте уникальное задание
-        p.using-info__item-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        a.link.link--underline(href="") Создать задание
-      li.using-info__item
-        span.using-info__item-count 2
-        p.using-info__item-title Пройдите быструю регистрацию
-        p.using-info__item-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        a.link.link--underline(href="") Зарегистрироваться
-      li.using-info__item
-        span.using-info__item-count 3
-        p.using-info__item-title Выберите исполнителя
-        p.using-info__item-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        a.link.link--underline(href="") Выбрать исполнителя
+    h2.section__title Как начать использовать <br> сервис <span class="text-primary">Buberu</span>?
+    +grid().using-info__list
+      +col({md: 4})
+        .using-info__item
+          span.using-info__item-count 1
+          p.using-info__item-title Создайте уникальное <br> задание
+          p.using-info__item-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          a.link.link--underline.using-info__item-link(href="") Создать задание
+      +col({md: 4})
+        .using-info__item
+          span.using-info__item-count 2
+          p.using-info__item-title Пройдите быструю <br> регистрацию
+          p.using-info__item-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          a.link.link--underline.using-info__item-link(href="") Зарегистрироваться
+      +col({md: 4})
+        .using-info__item
+          span.using-info__item-count 3
+          p.using-info__item-title Выберите <br> исполнителя
+          p.using-info__item-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          a.link.link--underline.using-info__item-link(href="") Выбрать исполнителя
