@@ -4,35 +4,36 @@
 
 .embed {
   position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    display: block;
+  }
 
   &--std {
     &::after {
-      content: '';
-      display: block;
+
       padding-top: percentage(9 / 16);
     }
   }
 
   &--square {
     &::after {
-      content: '';
-      display: block;
+
       padding-top: 100%;
     }
   }
 
   &--4-3 {
     &::after {
-      content: '';
-      display: block;
+
       padding-top: percentage(3 / 4);
     }
   }
 
   &--2-1 {
     &::after {
-      content: '';
-      display: block;
       padding-top: percentage(1 / 2);
     }
   }
@@ -79,13 +80,17 @@
     border: 0;
   }
 
+  iframe {
+    background-color: #000;
+  }
+
   img {
     object-fit: cover;
     object-position: center;
   }
 }
 
-/*
+
 .video {
   background-color: #000;
 }
@@ -118,33 +123,44 @@
 }
 
 .video__button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 2;
   display: none;
-  font-size: 60px;
+  position: absolute;
+  // top: 50%;
+  // left: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 90px;
+  color: #fff;
   line-height: 0;
-  transform: translate(-50%, -50%);
-  filter: drop-shadow(0px 4px 4px #BE09FF);
+  background-image: linear-gradient(75deg, rgba(33, 36, 41, 0.9), rgba(33, 36, 41, 0.6));
   cursor: pointer;
+  z-index: 2;
+
+  .icon {
+    @include center-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid $color-border-primary;
+    @include basic-transition(color);
+
+    svg {
+      margin-right: -5px;
+      width: 24px;
+    }
+  }
 }
 
 .video__button:focus {
   outline: none;
 }
 
-.play-button-bg {
-  @include basic-transition ((fill, fill-opacity));
-}
-
 .video:hover .video__button,
 .video__button:focus .video__button {
-
-  .play-button-bg {
-    fill: $color-bg-warning;
-    fill-opacity: 1;
-  }
+  color: $color-primary;
 }
 
 .video--enabled {
@@ -154,4 +170,3 @@
 .video--enabled .video__button {
   display: block;
 }
-*/

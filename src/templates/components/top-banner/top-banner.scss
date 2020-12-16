@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .top-banner {
+  position: relative;
   color: #fff;
   background-repeat: no-repeat;
   background-position: 50%;
@@ -10,15 +11,18 @@
 }
 
 .top-banner__inner {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 740px;
   padding-top: 200px;
   padding-bottom: 60px;
+  z-index: 1;
 }
 
 .top-banner__content {
+  width: 100%;
   margin-bottom: auto;
 }
 
@@ -50,6 +54,25 @@
 
 .top-banner__form {
 
+
+  .form__row {
+    margin-left: -7px;
+    margin-right: -7px;
+    margin-bottom: 25px;
+
+    > * {
+      margin: 7px;
+    }
+  }
+
+  .inputbox {
+    width: 100%;
+    max-width: 310px;
+  }
+
+  .form__desc {
+    opacity: 0.5;
+  }
 }
 
 .top-banner__footer {

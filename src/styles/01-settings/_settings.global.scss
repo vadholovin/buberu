@@ -9,6 +9,8 @@
 // Standardise some UI treatments.
 
 $global-radius: 5px !default;
+$global-radius-sm: 3px !default;
+$global-radius-lg: 10px !default;
 $global-container-width: 1170px !default;
 $global-container-max-width: ($global-container-width + 64px) !default;
 

@@ -1,0 +1,41 @@
+/* ==========================================================================
+   #TEXT-IMAGE
+   ========================================================================== */
+
+.text-image__grid {
+  @include mq($from: lg) {
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+
+  > * {
+
+    @include mq($from: lg) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+}
+
+.text-image__text {
+  margin-bottom: 50px;
+
+  a {
+    color: $color-primary;
+  }
+}
+
+.text-image__media {
+
+
+  .embed {
+    border-radius: 10px;
+
+    &::after {
+      content: '';
+      display: block;
+      padding-top: percentage(340 / 584);
+    }
+  }
+}
+

@@ -7,13 +7,14 @@
   background-color: #fff;
 
   &--transparent {
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // width: 100%;
-    // border-bottom-color: transparent;
-    // color: #fff;
-    // background-color: rgba(24, 24, 24, 0.45);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom-color: transparent;
+    color: #fff;
+    background-color: rgba(24, 24, 24, 0.45);
+    z-index: 100;
   }
 }
 

@@ -4,10 +4,9 @@
 
 $default-breakpoint-name: xl;
 $grid-cols: 12;
-// $grid-gap-bigger: 36px;
-$grid-gap-big: 20px;
+$grid-gap-big: 32px;
 $grid-gap-mid: 16px;
-$grid-gap-small: 12px;
+$grid-gap-small: 16px;
 $grid-container-width: 100%;
 $default-breakpoint-value: map_has_key($breakpoints, $default-breakpoint-name);
 $new-breakpoints: map_remove($breakpoints, $default-breakpoint-name);
@@ -23,10 +22,10 @@ $grid-col-width: $grid-container-width/$grid-cols;
     margin-left: (-$grid-gap-big/2);
     margin-right: (-$grid-gap-big/2);
   }
-  @include mq($from: sm) {
-    margin-left: (-$grid-gap-big/2);
-    margin-right: (-$grid-gap-big/2);
-  }
+  // @include mq($from: sm) {
+  //   margin-left: (-$grid-gap-big/2);
+  //   margin-right: (-$grid-gap-big/2);
+  // }
   // @include mq($from: lg) {
   //   margin-left: (-$grid-gap-bigger/2);
   //   margin-right: (-$grid-gap-bigger/2);
@@ -41,10 +40,10 @@ $grid-col-width: $grid-container-width/$grid-cols;
     padding-left: ($grid-gap-big/2);
     padding-right: ($grid-gap-big/2);
   }
-  @include mq($from: sm) {
-    padding-left: ($grid-gap-big/2);
-    padding-right: ($grid-gap-big/2);
-  }
+  // @include mq($from: sm) {
+  //   padding-left: ($grid-gap-big/2);
+  //   padding-right: ($grid-gap-big/2);
+  // }
   // @include mq($from: lg) {
   //   padding-left: ($grid-gap-bigger/2);
   //   padding-right: ($grid-gap-bigger/2);

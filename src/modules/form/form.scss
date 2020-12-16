@@ -9,6 +9,7 @@
 .form__row {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .form__row--y-center {
@@ -21,5 +22,5 @@
 }
 
 .form-fieldset {
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
