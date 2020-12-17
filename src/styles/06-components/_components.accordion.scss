@@ -2,6 +2,112 @@
    #ACCORDION
    ========================================================================== */
 
-.accordion {
+.accordion__content {
+  display: none;
 
+  &.is-active {
+    display: block;
+  }
+}
+
+.accordion__item {
+  border-bottom: 0.5px solid $color-border-light;
+
+  &:first-child {
+    border-top: 0.5px solid $color-border-light;
+  }
+}
+
+.accordion__item-title {
+  position: relative;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 100%;
+}
+
+.accordion__button {
+  position: relative;
+  width: 100%;
+  padding: 35px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-accordion .accordion__button {
+  padding-left: 27%;
+}
+
+.accordion__button-count {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+
+.accordion__item-icon {
+  position: absolute;
+  top: 50%;
+  left: 14%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: $grey-3;
+
+  @include basic-transition((opacity));
+
+  .accordion__button.is-active & {
+    opacity: 0;
+  }
+}
+
+.accordion__button-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) rotate(-45deg);
+  font-size: 16px;
+  color: $grey-2;
+  @include basic-transition((color, transform));
+
+  .accordion__button.is-active & {
+    color: $color-primary;
+    transform: translateY(-50%);
+  }
+}
+
+.accordion__button-text {
+
+  .accordion__button.is-active & {
+    color: $color-primary;
+  }
+}
+
+.accordion__content-inner {
+  display: flex;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.accordion__content-left {
+  width: 27%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .icon {
+    font-size: 80px;
+    color: $color-primary;
+  }
+}
+
+.accordion__content-right {
+  width: 73%;
+}
+
+.accordion__body {
+  font-weight: 500;
+
+  .faq-accordion & {
+    max-width: 670px;
+  }
 }

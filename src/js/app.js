@@ -82,3 +82,74 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
+/**
+ *
+ */
+$(function () {
+const $ = window.$;
+const duration = 300;
+
+// Открытие аккордеона
+$.fn.accordionShow = function () {
+  const
+    block = this,
+    parent = block.parents('.js-accordion'),
+    selector = block.data('target'),
+    content = $(selector);
+
+  if (block.hasClass('is-disabled')) return;
+
+  parent
+    .find('.js-accordion-button')
+    .removeClass('is-active')
+    .attr('aria-expanded', false);
+
+  parent
+    .find('.js-accordion-content')
+    .removeClass('is-active')
+    .slideUp(duration);
+
+  block
+    .addClass('is-active')
+    .attr('aria-expanded', true);
+
+  content
+    .slideDown(duration)
+    .addClass('is-active');
+};
+
+// Закрытие аккордеона
+$.fn.accordionHide = function () {
+  const
+    block = this,
+    selector = block.data('target'),
+    content = $(selector);
+
+  content
+    .slideUp(duration)
+    .removeClass('is-active');
+
+  block
+    .removeClass('is-active')
+    .attr('aria-expanded', false);
+};
+
+// Работа кнопки аккордеона
+function accordion () {
+  $(document).on('click', '.js-accordion-button', function (e) {
+    if (e.target.tagName === 'a') {
+      e.preventDefault();
+    }
+
+    const
+      block = $(this),
+      isActive = block.hasClass('is-active');
+
+    isActive ? block.accordionHide() : block.accordionShow();
+  });
+}
+
+accordion ();
+
+});

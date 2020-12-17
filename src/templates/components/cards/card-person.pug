@@ -11,8 +11,10 @@ mixin card-person(person) {
 
       .card-person__title= person.title
       .card-person__subtitle= person.subtitle
-      .card-person__stars
-        .star-rating
+      .rating-stars.card-person__stars
+        <svg class="rating-stars__body" fill="none" viewBox="0 0 121 19" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" fill="#fff" d="m9.99 0-3.09 6.25-6.9 1.01 4.99 4.87-1.18 6.87 6.17-3.25 6.17 3.25-1.18-6.87 4.99-4.87-6.9-1.01-3.09-6.25zm25 0-3.09 6.25-6.9 1.01 4.99 4.87-1.18 6.87 6.17-3.25 6.17 3.25-1.18-6.87 4.99-4.87-6.9-1.01-3.09-6.25zm25 0-3.09 6.25-6.9 1.01 5 4.87-1.18 6.87 6.17-3.25 6.17 3.25-1.18-6.87 4.99-4.87-6.9-1.01-3.09-6.25zm25 0-3.09 6.25-6.9 1.01 4.99 4.87-1.18 6.87 6.17-3.25 6.17 3.25-1.18-6.87 4.99-4.87-6.9-1.01-3.09-6.25zm25 0-3.09 6.25-6.9 1.01 5 4.87-1.18 6.87 6.17-3.25 6.17 3.25-1.18-6.87 4.99-4.87-6.9-1.01-3.09-6.25z"/></svg>
+        .rating-stars__back
+        .rating-stars__progress(style="width: 95%;")
 
       .card-person__info
         .card-person__info-item
