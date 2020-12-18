@@ -2,8 +2,12 @@
    #NEEDS
    ========================================================================== */
 
-.needs {
+.needs__grid {
+  margin-top: -2rem;
 
+  > * {
+    margin-top: 2rem;
+  }
 }
 
 .needs-card {
@@ -21,21 +25,36 @@
 .needs-card__inner {
   display: flex;
   flex-wrap: wrap;
-  padding: 46px 46px 40px 46px;
+  padding: 32px 24px;
   background-repeat: no-repeat;
-  background-position: bottom 0 right 30px;
-  background-size: auto 235px;
-}
+  background-position: bottom 0 right 15px;
+  background-size: 40% auto;
 
-.needs-card__body {
+  @include mq($from: xs) {
+    background-position: bottom 0 right 30px;
+    background-size: auto 200px;
+  }
 
+  @include mq($from: sm) {
+    padding: 46px 46px 40px 46px;
+    background-size: auto 235px;
+  }
 }
 
 .needs-card__title {
-  margin-bottom: 40px;
+  margin-bottom: 2rem;
   font-weight: 500;
-  font-size: rem(28px);
+  font-size: rem(20px);
   line-height: 130%;
+
+  @include mq($from: xs) {
+    margin-bottom: 40px;
+    font-size: rem(24px);
+  }
+
+  @include mq($from: sm) {
+    font-size: rem(28px);
+  }
 }
 
 // .needs-card__img {

@@ -6,27 +6,27 @@
   color: #fff;
   background-color: $color-bg-primary;
 
-  // &--header {
+  &--header {
+    height: 40px;
+  }
 
-  // }
-
-  // &--footer {
-
-  // }
+  &--footer {
+    height: 60px;
+  }
 }
 
 .site-navline__inner {
   display: flex;
   justify-content: space-between;
-  margin-left: -1rem;
-  margin-right: -1rem;
+  height: inherit;
+
+  > * {
+    display: flex;
+  }
 }
 
-.site-navline__left,
-.site-navline__right {
-  display: flex;
-  padding-left: 1rem;
-  padding-right: 1rem;
+.site-navline__left {
+  margin-right: 1.5rem;
 }
 
 .site-navline__logo {
@@ -36,19 +36,45 @@
   color: #fff;
 
   .site-navline--footer & {
+    padding: 16px 0;
     font-size: 24px;
   }
 }
 
 .site-navline__social {
-  padding-left: 30px;
-  padding-right: 30px;
-  border-left: 0.5px solid #FF9A53;
-  border-right: 0.5px solid #FF9A53;
+
+
+  @include mq($from: sm) {
+    padding-left: 30px;
+    padding-right: 30px;
+    border-left: 0.5px solid #FF9A53;
+    border-right: 0.5px solid #FF9A53;
+  }
+
+  .social__item:not(:last-child) {
+    @include mq($until: sm) {
+      margin-right: 24px;
+    }
+  }
+
+  .social__link {
+
+    @include mq($until: sm) {
+      font-size: 20px;
+    }
+  }
+
 }
 
 .site-navline__roles {
   display: flex;
+
+  .site-navline--footer & {
+
+    @include mq($until: sm) {
+      display: none;
+    }
+  }
 }
 
 // .site-navline__roles-item {

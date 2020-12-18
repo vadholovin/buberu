@@ -3,8 +3,8 @@ footer.site-footer
 
   .site-footer__main
     .container
-      +grid()
-        +col({md: 3, sm: 6})
+      +grid().site-footer__main-inner
+        +col({md: 3, sm: 4, xs: 6})
           h3.site-footer__title Для специалистов
           ul.site-footer__menu
             li
@@ -15,7 +15,7 @@ footer.site-footer
               a(href="") Требования
             li
               a(href="") Помощь
-        +col({md: 3, sm: 6})
+        +col({md: 3, sm: 4, xs: 6})
           h3.site-footer__title Для клиентов
           ul.site-footer__menu
             li
@@ -26,7 +26,7 @@ footer.site-footer
               a(href="") Требования
             li
               a(href="") Помощь
-        +col({md: 3, sm: 6})
+        +col({md: 3, sm: 4, xs: 6})
           h3.site-footer__title Сервис
           ul.site-footer__menu
             li
@@ -37,7 +37,7 @@ footer.site-footer
               a(href="") Требования
             li
               a(href="") Конфиденциальность
-        +col({md: 3, sm: 6})
+        +col({md: 3, xs: 6})
           a.site-footer__contact(href="mailto:support@buberu.ru")
             +icon('envelope-o')
             | support@buberu.ru

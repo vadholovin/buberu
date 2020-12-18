@@ -5,9 +5,12 @@ header.site-header(class=(bodyClass === 'home-page') ? 'site-header--transparent
 
   .site-header__main
     .container
-      .site-header__inner
+      .site-header__main-inner
         .site-header__main-left
           nav.site-header__nav
+            button.burger.site-header__burger#burger(aria-label='Меню')
+              span.burger__bar
+
             ul.site-header__menu
               each item in mainMenu
                 li.site-header__menu-item
@@ -19,3 +22,5 @@ header.site-header(class=(bodyClass === 'home-page') ? 'site-header--transparent
               a.site-header__signin-link(href='' role="button") Войти
             li.site-header__signin-item
               a.site-header__signin-link(href='' role="button") Зарегистрироваться
+
+  include mobile-nav

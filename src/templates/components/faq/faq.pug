@@ -7,7 +7,7 @@ section.section.section--bottom.faq
     ul.accordion.accordion--with-icons.faq-accordion.js-accordion
       each item, index in faq
         li.accordion__item
-          h5.accordion__item-title
+          h5.accordion__title.faq-accordion__title
             button.accordion__button.js-accordion-button(
               class=(index === 0) ? "is-active" : ""
               data-target="#faq-" + (index + 1)
@@ -15,7 +15,7 @@ section.section.section--bottom.faq
               aria-controls="faq-" + (index + 1)
             )
               span.accordion__button-count= '0' + (index + 1)
-              +icon( item.icon ).accordion__item-icon
+              +icon( item.icon ).faq-accordion__title-icon
               span.accordion__button-text=item.title
               +icon('close-o').accordion__button-icon
 
@@ -23,11 +23,11 @@ section.section.section--bottom.faq
             class=(index === 0) ? "is-active" : ""
             id="faq-" + (index + 1)
           )
-            .accordion__content-inner
-              .accordion__content-left
+            .faq-accordion__inner
+              .faq-accordion__left
                 +icon( item.icon )
 
-              .accordion__content-right
+              .faq-accordion__right
                 .accordion__body
                   p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                   p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

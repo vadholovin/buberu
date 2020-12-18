@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .accordion__content {
+  padding-bottom: 50px;
   display: none;
 
   &.is-active {
@@ -18,7 +19,7 @@
   }
 }
 
-.accordion__item-title {
+.accordion__title {
   position: relative;
   font-weight: 500;
   font-size: 22px;
@@ -33,31 +34,12 @@
   cursor: pointer;
 }
 
-.faq-accordion .accordion__button {
-  padding-left: 27%;
-}
-
 .accordion__button-count {
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
   font-size: 18px;
-}
-
-.accordion__item-icon {
-  position: absolute;
-  top: 50%;
-  left: 14%;
-  transform: translate(-50%, -50%);
-  font-size: 18px;
-  color: $grey-3;
-
-  @include basic-transition((opacity));
-
-  .accordion__button.is-active & {
-    opacity: 0;
-  }
 }
 
 .accordion__button-icon {
@@ -82,32 +64,6 @@
   }
 }
 
-.accordion__content-inner {
-  display: flex;
-  align-items: center;
-  padding-bottom: 50px;
-}
-
-.accordion__content-left {
-  width: 27%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .icon {
-    font-size: 80px;
-    color: $color-primary;
-  }
-}
-
-.accordion__content-right {
-  width: 73%;
-}
-
 .accordion__body {
   font-weight: 500;
-
-  .faq-accordion & {
-    max-width: 670px;
-  }
 }

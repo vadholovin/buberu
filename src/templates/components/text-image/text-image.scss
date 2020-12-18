@@ -3,12 +3,16 @@
    ========================================================================== */
 
 .text-image__grid {
+  margin-top: -3.5rem;
+
   @include mq($from: lg) {
     margin-left: -40px;
     margin-right: -40px;
+
   }
 
   > * {
+    margin-top: 3.5rem;
 
     @include mq($from: lg) {
       padding-left: 40px;
@@ -26,7 +30,9 @@
 }
 
 .text-image__media {
-
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
 
   .embed {
     border-radius: 10px;

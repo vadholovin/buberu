@@ -10,8 +10,10 @@
 }
 
 .using-info__list {
+  margin-top: -2rem;
 
   > * {
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
   }
@@ -27,6 +29,7 @@
   .grid__col:not(:last-child) & {
 
     &::before {
+      display: none;
       content: '';
       position: absolute;
       top: 36px;
@@ -35,6 +38,10 @@
       border-top: 1px dashed $grey-2;
       z-index: -1;
       @include basic-transition((border-color));
+
+      @include mq($from: sm) {
+        display: block;
+      }
     }
   }
 
@@ -62,6 +69,7 @@
   width: 74px;
   height: 74px;
   border: 14px solid #fff;
+  margin-left: -14px;
   border-radius: 50%;
   font-weight: 800;
   font-size: 22px;
@@ -76,8 +84,12 @@
   max-width: 335px;
   margin-bottom: 15px;
   font-weight: 500;
-  font-size: rem(28px);
+  font-size: rem(24px);
   line-height: 120%;
+
+  @include mq($from: sm) {
+    font-size: rem(28px);
+  }
 }
 
 .using-info__item-text {

@@ -3,15 +3,28 @@
    ========================================================================== */
 
 .section {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include mq($from: md) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 
   &--top {
-    padding-top: 120px;
+    padding-top: 60px;
+
+    @include mq($from: md) {
+      padding-top: 120px;
+    }
   }
 
   &--bottom {
-    padding-bottom: 150px;
+    padding-bottom: 100px;
+
+    @include mq($from: md) {
+      padding-top: 150px;
+    }
   }
 }
 

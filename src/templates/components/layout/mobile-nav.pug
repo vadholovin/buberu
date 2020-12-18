@@ -1,0 +1,17 @@
+include menus.data.pug
+
+.mobile-nav.is-closed#mobile-nav
+  .mobile-nav__overlay(data-close-nav)
+  .mobile-nav__content
+    .mobile-nav__inner
+      .mobile-nav__header
+        .mobile-nav__logo
+          a.logo(href="")
+            .logo__text Buberu
+        .button-icon.button-close(data-close-nav)
+          +icon("close-o")
+      .mobile-nav__body
+        ul.mobile-menu
+          each item in mainMenu
+            li
+              a(href="")= item

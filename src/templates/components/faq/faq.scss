@@ -9,5 +9,72 @@
   }
 }
 
+.faq-accordion .accordion__button {
+
+  @include mq($from: sm) {
+    padding-left: 27%;
+  }
+}
+
+.faq-accordion__title-icon {
+  position: absolute;
+  top: 50%;
+  left: 14%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: $grey-3;
+
+  @include basic-transition((opacity));
+
+  @include mq($until: sm) {
+    display: none;
+  }
+
+  .accordion__button.is-active & {
+    opacity: 0;
+  }
+}
+
+.faq-accordion__inner {
+  display: flex;
+  align-items: center;
+}
+
+.faq-accordion__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 27%;
+
+  @include mq($until: sm) {
+    display: none;
+  }
+
+  .icon {
+    font-size: 40px;
+    color: $color-primary;
+
+    @include mq($from: xs) {
+      font-size: 80px;
+    }
+  }
+}
+
+.faq-accordion__right {
+
+
+  @include mq($from: sm) {
+    width: 73%;
+  }
+}
+
+.faq-accordion .accordion__body {
+  max-width: 670px;
+}
+
+
+
+
+
 
 
