@@ -16,6 +16,13 @@
   }
 }
 
+.faq-accordion__title {
+
+  @include mq($until: sm) {
+    font-size: 20px;
+  }
+}
+
 .faq-accordion__title-icon {
   position: absolute;
   top: 50%;

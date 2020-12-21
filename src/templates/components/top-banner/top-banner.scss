@@ -26,6 +26,9 @@
 }
 
 .top-banner__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   margin-bottom: auto;
 }
@@ -57,10 +60,11 @@
 }
 
 .top-banner__form {
+  width: 100%;
 
 
   .form__row {
-    justify-content: center;
+    // justify-content: center;
     margin-left: -7px;
     margin-right: -7px;
     margin-bottom: 25px;

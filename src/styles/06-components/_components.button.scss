@@ -53,6 +53,16 @@ $btn-line-height: 1.15;
   }
 }
 
+.button--light {
+  color: $color-light;
+  background-color: $grey-1;
+
+  @include on-event {
+    color: #fff;
+    background-color: $color-bg-primary;
+  }
+}
+
 .button--outline-secondary {
   border-color: $grey-3;
   color: $grey-5;

@@ -116,16 +116,32 @@
   text-transform: capitalize;
 }
 
-.underline {
-  text-decoration: underline;
-}
+// .underline {
+//   text-decoration: underline;
+// }
 
 .underline {
-  text-decoration: underline;
+  padding-bottom: 1px;
+  border: 0;
+  border-style: solid;
+  border-color: currentColor;
+  border-bottom-width: 1px;
+  @include basic-transition((border-color, color));
+
+  &--dotted {
+    border-style: dotted;
+  }
+
+  &--dashed {
+    border-style: dashed;
+  }
 }
 
-.dotted-underline {
-  border-bottom: 1px dotted currentColor;
+a.underline {
+
+  @include on-event {
+    border-color: transparent;
+  }
 }
 
 .decoration--none {

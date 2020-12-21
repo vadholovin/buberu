@@ -121,6 +121,65 @@
   }
 }
 
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.site-header__action {
+  position: relative;
+  line-height: 0.75;
+}
+
+.site-header__action-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  color: inherit;
+  @include basic-transition((background-color));
+  @include on-event {
+    background-color: rgba($color-bg-light, 0.3);
+  }
+
+  .icon {
+    position: relative;
+    font-size: 16px;
+  }
+
+  &.is-active {
+
+    .icon::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      right: -3px;
+      width: 9px;
+      height: 9px;
+      border: 1px solid #FFFFFF;
+      border-radius: 50%;
+      background-color: $color-bg-primary;
+
+      .site-header--transparent & {
+        border-color: $dark-3;
+      }
+    }
+  }
+}
+
+.site-header__user {
+  display: block;
+  margin-left: 12px;
+}
+
+.site-header__actions-dropdown {
+  display: none;
+}
+
+
+
 /* #MOBILE-NAV
    ========================================================================== */
 

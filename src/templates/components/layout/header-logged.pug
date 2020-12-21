@@ -1,43 +1,40 @@
 include header-dropdowns
+include menus.data.pug
 
-header.site-header.site-header--logged
+header.site-header.site-header--logged(class=(bodyClass === 'home-page') ? 'site-header--transparent' : '')
   include ../site-navline/site-navline-header
 
   .site-header__main
     .container
-      .site-header__inner
+      .site-header__main-inner
         .site-header__main-left
           nav.site-header__nav
+            button.burger.site-header__burger#burger(aria-label='Меню')
+              span.burger__bar
+
             ul.site-header__menu
-              li
-                a(href="") Создать задание
-              li
-                a(href="") Поиск заданий
-              li
-                a(href="") Как это работает?
-              li
-                a(href="") Помощь
+              each item in mainMenu
+                li.site-header__menu-item
+                  a.site-header__menu-link(href="")= item
 
         .site-header__main-right
           ul.site-header__actions
-            li.site-header__actions-item
-              a.site-header__actions-link(href="")
+            li.site-header__action
+              a.site-header__action-link.is-active(href="")
                 span.hidden-visually Уведомления
-                .site-header__actions-status.is-active
                 +icon('bell')
               +header-dropdown( 'notif' )
 
-            li.site-header__actions-item
-              a.site-header__actions-link(href="")
+            li.site-header__action
+              a.site-header__action-link.is-active(href="")
                 span.hidden-visually Сообщения
-                .site-header__actions-status
                 +icon('envelope')
               +header-dropdown( 'msg' )
 
-            li.site-header__actions-item
-              a.site-header__user.user-avatar(href="")
-                .embed
-                  .embed__inner
-                    img(src="assets/img/content/avatars/ava-1.jpg", alt="")
+            li.site-header__action
+              a.site-header__user(href="")
+                .user-photo
+                  .user-photo__inner
+                    img.user-photo__img(src="assets/img/content/avatars/ava-1.jpg", alt="")
               +header-dropdown( 'user' )
 

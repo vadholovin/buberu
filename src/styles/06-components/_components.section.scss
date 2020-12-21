@@ -28,6 +28,28 @@
   }
 }
 
+.section__header {
+  margin-bottom: 12px;
+
+
+  &--row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+
+    > * {
+      margin: 0.75rem 0.5rem;
+    }
+  }
+
+  .link {
+    font-weight: 500;
+  }
+}
+
 .section__title {
   margin-bottom: 25px;
   font-weight: bold;
@@ -36,5 +58,9 @@
 
   @include mq($from: md) {
     font-size: rem(38px);
+  }
+
+  .section__header & {
+    margin-bottom: 0.75rem;
   }
 }
