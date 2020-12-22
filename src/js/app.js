@@ -1,4 +1,5 @@
 /* eslint-disable */
+
 /**
  * #SVG4EVERYBODY
  */
@@ -118,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /**
- *
+ * Accordion
  */
 $(function () {
 const $ = window.$;
@@ -187,3 +188,93 @@ function accordion () {
 accordion ();
 
 });
+
+
+/**
+ * Toggle dropdown
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  const poppers = document.querySelectorAll('.js-popper-wrapper');
+
+  if (poppers !== undefined || poppers !== null) {
+    poppers.forEach(popper => {
+      const trigger = popper.querySelector('.js-popper-trigger');
+      const content = popper.querySelector('.js-popper-content');
+      const mainEvent = trigger.dataset.popperEvent || 'click';
+      let popperInstance = null;
+
+      function create() {
+        popperInstance = Popper.createPopper(trigger, content, {
+          modifiers: [
+            {
+              name: 'offset',
+              options: {
+                offset: [0, 0],
+              },
+            },
+          ],
+        });
+      }
+
+      function destroy() {
+        if (popperInstance) {
+          popperInstance.destroy();
+          popperInstance = null;
+        }
+      }
+
+      function show() {
+        content.setAttribute('data-popper-show', '');
+        create();
+      }
+
+      function hide() {
+        content.removeAttribute('data-popper-show');
+          destroy();
+      }
+
+      let showEvents, hideEvents;
+
+      if (mainEvent === 'hover') {
+        showEvents = ['mouseenter', 'focus'];
+        hideEvents = ['mouseleave', 'blur'];
+      } else {
+        showEvents = ['click', 'focus'];
+        hideEvents = ['click', 'blur'];
+      }
+
+      showEvents.forEach(event => {
+        if (mainEvent === 'hover') {
+          popper.addEventListener(event, function() {
+            this.setAttribute('data-popper-active', '');
+          });
+        }
+
+        trigger.addEventListener(event, show);
+      });
+
+      hideEvents.forEach(event => {
+        if (mainEvent === 'hover') {
+          popper.addEventListener(event, function() {
+            this.removeAttribute('data-popper-active');
+            hide();
+          });
+        } else {
+          trigger.addEventListener(event, hide);
+        }
+
+      });
+    });
+  }
+});
+
+
+/**
+ * Tooltips
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  tippy('.js-tippy', {
+    maxWidth: 200,
+  });
+});
+

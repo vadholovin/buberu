@@ -51,6 +51,7 @@
 @import '05-objects/objects.wrappers';
 @import '05-objects/objects.container';
 @import '../modules/grid/grid';
+@import '05-objects/objects.flag';
 
 // 06. Components
 // @import 'swiper/css/swiper.min.css';
@@ -66,6 +67,7 @@
 
 @import '06-components/components.logo';
 @import '06-components/components.section';
+@import '06-components/components.dropdown';
 
 @import '../modules/icon/icon';
 @import '../modules/form/form';

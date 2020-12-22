@@ -1,0 +1,57 @@
+/* ==========================================================================
+   #DROPDOWN
+   ========================================================================== */
+
+$popper-offset-top: 10px;
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border-radius: $global-radius-sm;
+
+  &--bottom-right {
+    top: 100% !important;
+    right: -5px !important;
+    left: auto !important;
+    transform: translateY($popper-offset-top) !important;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      width: 100%;
+      height: $popper-offset-top;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-bottom: 6px solid $color-border-primary;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+  }
+
+  &--arrow-right {
+
+    &::after {
+      left: auto;
+      right: 20px;
+      transform: none;
+    }
+  }
+
+  &.is-active,
+  &[data-popper-show] {
+    display: block;
+  }
+}

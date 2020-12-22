@@ -127,18 +127,22 @@
   height: 100%;
 }
 
-.site-header__action {
+.site-header__actions-item {
   position: relative;
+  display: flex;
+  align-items: center;
+  height: inherit;
   line-height: 0.75;
 }
 
-.site-header__action-link {
+.site-header__action {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 40px;
   height: 40px;
   color: inherit;
+  cursor: pointer;
   @include basic-transition((background-color));
   @include on-event {
     background-color: rgba($color-bg-light, 0.3);
@@ -149,7 +153,7 @@
     font-size: 16px;
   }
 
-  &.is-active {
+  &.has-messages {
 
     .icon::after {
       content: '';
@@ -172,11 +176,140 @@
 .site-header__user {
   display: block;
   margin-left: 12px;
+  cursor: pointer;
 }
 
-.site-header__actions-dropdown {
-  display: none;
+
+
+.site-header__dropdown {
+  padding: 0 20px;
+  width: 280px;
+  color: $color-body;
+  box-shadow: $global-shadow;
+
+  &--sm {
+    width: 220px;
+  }
 }
+
+.site-header__dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid $color-border-light;
+}
+
+.site-header__dropdown-title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.site-header__dropdown-counter {
+  display: inline-block;
+  margin-left: 6px;
+  color: $color-primary;
+}
+
+.site-header__dropdown-reset {
+  color: $color-light;
+}
+
+.site-header__dropdown-flag {
+
+  .flag__body {
+    font-size: 14px;
+line-height: 100%;
+  }
+}
+
+.site-header__dropdown-flag-name {
+  margin-bottom: 5px;
+  font-weight: 500;
+
+}
+.site-header__dropdown-flag-role {
+  color: $color-light;
+}
+
+// .site-header__dropdown-body {
+
+// }
+
+.site-header__dropdown-footer {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+// .notif-list {
+
+// }
+
+.notif-list__item {
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $color-border-light;
+  }
+}
+
+.notif-card {
+
+  padding-top: 20px 0;
+}
+
+.notif-card__img {
+
+}
+
+.notif-card__icon {
+
+}
+
+.notif-card__body {
+
+}
+
+.notif-card__msg {
+
+}
+
+.notif-card__msg-name {
+
+}
+
+.notif-card__msg-text {
+
+}
+
+.notif-card__msg-accent {
+
+}
+
+.notif-card__name {
+
+}
+
+.notif-card__text {
+
+}
+
+.notif-card__date {
+
+}
+
+.user-menu {
+
+}
+
+.user-menu__item {
+
+}
+
+.user-menu__link {
+
+}
+
 
 
 

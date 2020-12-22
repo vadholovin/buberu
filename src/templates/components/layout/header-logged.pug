@@ -19,20 +19,20 @@ header.site-header.site-header--logged(class=(bodyClass === 'home-page') ? 'site
 
         .site-header__main-right
           ul.site-header__actions
-            li.site-header__action
-              a.site-header__action-link.is-active(href="")
+            li.site-header__actions-item.js-popper-wrapper
+              .site-header__action.has-messages.js-popper-trigger(data-popper-event="hover")
                 span.hidden-visually Уведомления
                 +icon('bell')
               +header-dropdown( 'notif' )
 
-            li.site-header__action
-              a.site-header__action-link.is-active(href="")
+            li.site-header__actions-item.js-popper-wrapper
+              .site-header__action.js-popper-trigger(data-popper-event="hover")
                 span.hidden-visually Сообщения
                 +icon('envelope')
               +header-dropdown( 'msg' )
 
-            li.site-header__action
-              a.site-header__user(href="")
+            li.site-header__actions-item.js-popper-wrapper
+              .site-header__user.js-popper-trigger(data-popper-event="hover")
                 .user-photo
                   .user-photo__inner
                     img.user-photo__img(src="assets/img/content/avatars/ava-1.jpg", alt="")
