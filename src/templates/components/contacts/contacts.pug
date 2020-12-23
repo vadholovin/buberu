@@ -1,0 +1,27 @@
+section.section.section--bottom.contacts
+  .container
+    .section__header
+      if bodyClass === 'questions-page'
+        h2.section__title Не нашли ответ?
+      else
+        h2.section__title Наши контакты
+      p.section__subtitle Вы можете задать вопрос одному из наших специалистов, напрямую через социальные аккаунты или мессенджеры
+
+    +grid().grid--no-gutters.contacts__grid
+      +col({sm: 6})
+        .contacts-card
+          +icon('phone').contacts-card__icon
+          a.contacts-card__contact(href="tel:+70000000000") +7 (000) 000-00-00
+          p.contacts-card__text.
+            Telegram, WhatsApp, Viber
+            <br>
+            с 10:00 до 20:00
+
+      +col({sm: 6})
+        .contacts-card
+          +icon('envelope').contacts-card__icon
+          a.contacts-card__contact(href="mailto:support@bube.ru") support@bube.ru
+          p.contacts-card__text.
+            Если у вас возникли вопросы
+            <br>
+            или сложности при работе с сайтом.

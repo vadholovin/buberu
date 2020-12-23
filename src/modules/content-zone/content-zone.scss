@@ -1,6 +1,13 @@
 .content-zone {
   overflow-wrap: break-word;
 
+  &--narrow {
+    width: 100%;
+    max-width: 890px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   h2 {
     font-size: rem(28px);
 

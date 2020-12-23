@@ -1,0 +1,38 @@
+.section.questions
+  .container
+    h1.page-title Правила сервиса
+
+    +form().search-form
+      +inputbox()
+        +input-wrapper
+          +input()(
+            type="text"
+            name="s"
+            aria-label="Задайте свой вопрос"
+            placeholder="Задайте свой вопрос"
+          )
+        button.button.button--primary.search-form__submit(type="submit") Подробнее
+
+    p.questions__note или выберите категорию вашего вопроса
+
+    .questions-tabs
+      +tabs().questions-tabs__nav
+        +tab-item()
+          +tab-button().questions-tab.is-active(data-tab-target="tab-1")
+            +icon('user').questions-tab__icon
+            span.questions-tab__text Аккаунт/ Безопасность
+        +tab-item()
+          +tab-button().questions-tab(data-tab-target="tab-2")
+            +icon('case').questions-tab__icon
+            span.questions-tab__text Раздел клинтов
+        +tab-item()
+          +tab-button().questions-tab(data-tab-target="tab-3")
+            +icon('tools').questions-tab__icon
+            span.questions-tab__text Раздел специалистов
+        +tab-item()
+          +tab-button().questions-tab(data-tab-target="tab-4")
+            +icon('file').questions-tab__icon
+            span.questions-tab__text Общая информация
+
+      +tabs-content().questions-tabs__content
+        +tab-wrapper().questions-tabs__content-item.is-active(data-tab="tab1" data-tab-group="questions")

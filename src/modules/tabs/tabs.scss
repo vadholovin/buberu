@@ -1,0 +1,52 @@
+/* ==========================================================================
+   #TABS
+   ========================================================================== */
+
+.tabs {
+  display: block;
+}
+
+.tab {
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.is-active:hover {
+    pointer-events: none;
+    cursor: unset;
+  }
+
+  .no-js & {
+    display: none;
+  }
+}
+
+.tabs-content__wrapper {
+
+  .js & {
+    display: none;
+    opacity: 0;
+  }
+
+  &.is-active {
+
+    .js & {
+      display: block;
+      opacity: 1;
+      animation-name: showTab;
+      animation-duration: .6s;
+      animation-timing-function: ease-out;
+    }
+  }
+}
+
+@keyframes showTab {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
+}

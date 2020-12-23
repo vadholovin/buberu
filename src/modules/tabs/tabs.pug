@@ -1,0 +1,46 @@
+mixin tabs()
+  +b.UL.tabs(role="tablist")&attributes(attributes)
+    block
+
+mixin tab-item()
+  +e.LI.item&attributes(attributes)
+    block
+
+mixin tab-button()
+  +b.BUTTON.tab(role='tab')&attributes(attributes)
+    block
+
+mixin tabs-content()
+  .tabs-content&attributes(attributes)
+    block
+
+mixin tab-wrapper()
+  .tabs-content__item(role='tabpanel')&attributes(attributes)
+    block
+
+mixin ui-kit-tabs()
+  +ui-section
+    +ui-section-head
+      +ui-title Табы
+      +ui-path
+        p Блок: blocks/tabs/tabs
+
+    +ui-section-content()
+      +tabs
+        +tab-item()
+          +tab-button()(data-tab-target="tab1").is-active Информация
+        +tab-item()
+          +tab-button()(data-tab-target="tab1").is-active Контент
+        +tab-item()
+          +tab-button()(data-tab-target="tab1").is-active Тексты
+      +tabs-content
+        +tab-wrapper()(data-tab="tab1" data-tab-group="testtabs").is-active
+          p Это таб 1
+        +tab-wrapper()(data-tab="tab2" data-tab-group="testtabs")
+          p Это таб 2
+        +tab-wrapper()(data-tab="tab3" data-tab-group="testtabs")
+          p Это таб 3
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()
