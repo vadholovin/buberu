@@ -96,6 +96,12 @@
   .site-navline--header & {
     padding: 12px 30px 12px 20px;
     font-size: 14px;
+
+    @include mq($until: xs) {
+      padding-left: 12px;
+      padding-right: 12px;
+      font-size: 13px;
+    }
   }
   .site-navline--footer & {
     padding: 20px 30px;

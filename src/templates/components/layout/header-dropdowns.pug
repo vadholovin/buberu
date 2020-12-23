@@ -29,34 +29,34 @@ mixin header-dropdown(option)
 
           if option === 'notif'
             ul.notif-list
-              li.notif-list__item.is-active
-                .notif-card.notif-card--notif
-                  .notif-card__img
+              li.notif-list__item
+                .flag.flag--top.notif-card.notif-card--notif.is-active
+                  .flag__img.notif-card__img
                     .notif-card__icon
                       +icon('suitcase-o')
-                  .notif-card__body
+                  .flag__body.notif-card__body
                     .notif-card__msg
                       span.notif-card__msg-name Добрыня Никитич
                       span.notif-card__msg-text выбрал вас в качестве специалиста в задание
                       span.notif-card__msg-accent Подобрать iPhone XR
 
-              li.notif-list__item.is-active
-                .notif-card.notif-card--notif
-                  .notif-card__img
+              li.notif-list__item
+                .flag.flag--top.notif-card.notif-card--notif.is-active
+                  .flag__img.notif-card__img
                     .notif-card__icon
                       +icon('comment-o')
-                  .notif-card__body
+                  .flag__body.notif-card__body
                     .notif-card__msg
                       span.notif-card__msg-name Алёша Попович
                       span.notif-card__msg-text оставил о вас комментарий.
                       span.notif-card__msg-accent Прочитать комментарий в личном профиле
 
               li.notif-list__item
-                .notif-card.notif-card--notif
-                  .notif-card__img
+                .flag.flag--top.notif-card.notif-card--notif
+                  .flag__img.notif-card__img
                     .notif-card__icon
                       +icon('suitcase-o')
-                  .notif-card__body
+                  .flag__body.notif-card__body
                     .notif-card__msg
                       span.notif-card__msg-name Добрыня Никитич
                       span.notif-card__msg-text выбрал вас в качестве специалиста в задание
@@ -66,24 +66,25 @@ mixin header-dropdown(option)
           else if option === 'msg'
             ul.notif-list
               li.notif-list__item
-                .notif-card.notif-card--notif
-                  .notif-card__img
-                    .user-photo
+                .flag.flag--top.notif-card.notif-card--msg
+                  .flag__img.notif-card__img
+                    .user-photo.online
                       .user-photo__inner
                         img.user-photo__img(src="assets/img/content/avatars/ava-1.jpg", alt="")
 
-                  .notif-card__body
+                  .flag__body.notif-card__body
                     .notif-card__name Добрыня Никитич
                     .notif-card__text Lorem Ipsum является текст - заполнитель обычный
                     .notif-card__date 4 часа назад
 
               li.notif-list__item
-                .notif-card.notif-card--notif
-                  .notif-card__img
-                    .user-photo.user-photo--no-photo
+                .flag.flag--top.notif-card.notif-card--msg
+                  .flag__img.notif-card__img
+                    .user-photo.user-photo--no-photo.offline
                       .user-photo__inner
+                        .user-photo__img
 
-                  .notif-card__body
+                  .flag__body.notif-card__body
                     .notif-card__name Алексей Римский-Корсаков
                     .notif-card__text Lorem Ipsum является текст - заполнитель обычный
                     .notif-card__date Вчера 12:32
@@ -91,30 +92,31 @@ mixin header-dropdown(option)
           else if option === 'user'
             ul.user-menu
               li.user-menu__item
-                a.user-menu__link
+                a.user-menu__link(href="")
                   +icon('user-o')
                   | Мой профиль
               li.user-menu__item
-                a.user-menu__link
+                a.user-menu__link(href="")
                   +icon('star-o')
                   | Избранное
               li.user-menu__item
-                a.user-menu__link
+                a.user-menu__link(href="")
                   +icon('check-rounded-o')
                   | Мои заказы
               li.user-menu__item
-                a.user-menu__link
+                a.user-menu__link(href="")
                   +icon('bell-o')
                   | Уведомления
               li.user-menu__item
-                a.user-menu__link
+                a.user-menu__link(href="")
                   +icon('list-o')
                   | Список специалистов
 
-            .user-menu__item
-              a.user-menu__link
+            .user-menu__item.user-menu__item--single
+              a.user-menu__link(href="")
                 +icon('sign-out-o')
                 | Выйти
+
       .site-header__dropdown-footer
         if option === 'notif'
           a.button.button--primary.button--block(href="") Все уведомления

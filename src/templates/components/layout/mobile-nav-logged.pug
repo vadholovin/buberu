@@ -1,0 +1,58 @@
+include menus.data.pug
+
+.mobile-nav.is-closed#mobile-nav
+  .mobile-nav__overlay(data-close-nav)
+  .mobile-nav__content
+    .mobile-nav__inner
+      .mobile-nav__header
+        .mobile-nav__logo
+          a.logo(href="")
+            .logo__text Buberu
+        .button-icon.button-close(data-close-nav)
+          +icon("close-o")
+      .mobile-nav__body
+        .mobile-user-section
+          .flag.mobile-user
+            .flag__img.mobile-user__img
+              .user-photo
+                .user-photo__inner
+                  img.user-photo__img(src="assets/img/content/avatars/ava-1.jpg", alt="")
+            .flag__body.mobile-user__body
+              .mobile-user__name Владимир Тихонов
+              .mobile-user__role Заказчик
+
+          ul.user-menu.user-menu--mobile
+            li.user-menu__item
+              a.user-menu__link(href="")
+                +icon('user-o')
+                | Мой профиль
+            li.user-menu__item
+              a.user-menu__link(href="")
+                +icon('star-o')
+                | Избранное
+            li.user-menu__item
+              a.user-menu__link(href="")
+                +icon('check-rounded-o')
+                | Мои заказы
+            li.user-menu__item
+              a.user-menu__link(href="")
+                +icon('bell-o')
+                | Уведомления
+                span.user-menu__counter 2
+            li.user-menu__item
+              a.user-menu__link(href="")
+                +icon('envelope-o')
+                | Сообщения
+                span.user-menu__counter 3
+            li.user-menu__item
+              a.user-menu__link(href="")
+                +icon('list-o')
+                | Список специалистов
+            li.user-menu__item
+              a.user-menu__link(href="")
+                +icon('sign-out-o')
+                | Выйти
+        ul.mobile-menu
+          each item in mainMenu
+            li
+              a(href="")= item
