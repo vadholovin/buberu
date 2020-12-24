@@ -6,9 +6,11 @@
   padding-top: 40px;
   padding-bottom: 40px;
 
-  @include mq($from: md) {
-    padding-top: 60px;
-    padding-bottom: 60px;
+  &--lg {
+    @include mq($from: md) {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
   }
 
   &--top {
@@ -23,7 +25,7 @@
     padding-bottom: 100px;
 
     @include mq($from: md) {
-      padding-top: 150px;
+      padding-bottom: 120px;
     }
   }
 }
@@ -66,6 +68,21 @@
 }
 
 .section__subtitle {
+  width: 100%;
+  max-width: 550px;
   font-weight: 500;
   color: $color-light;
+
+  .section__header.align-c & {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.page-title {
+  margin-bottom: 40px;
+  @include fluid-type(320px, 1200px, 36px, 56px);
+  font-weight: bold;
+  line-height: 100%;
+  text-align: center;
 }

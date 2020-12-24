@@ -22,8 +22,12 @@
 .accordion__title {
   position: relative;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 100%;
+
+  @include mq($from: sm) {
+    font-size: 22px;
+  }
 }
 
 .accordion__button {
@@ -32,6 +36,10 @@
   padding: 35px;
   text-align: left;
   cursor: pointer;
+
+  @include mq($from: sm) {
+    padding-left: 125px;
+  }
 }
 
 .accordion__button-count {
@@ -66,4 +74,8 @@
 
 .accordion__body {
   font-weight: 500;
+
+  @include mq($from: sm) {
+    padding-left: 125px;
+  }
 }

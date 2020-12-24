@@ -1,7 +1,7 @@
 include header-dropdowns
 include menus.data.pug
 
-header.site-header.site-header--logged(class=(bodyClass === 'home-page') ? 'site-header--transparent' : '')
+header.site-header.site-header--logged(class=(bodyClass === 'home-page' || bodyClass === 'about-page') ? 'site-header--transparent' : '')
   include ../site-navline/site-navline-header
 
   .site-header__main

@@ -25,5 +25,19 @@
     padding-left: 0;
     padding-right: 0;
   }
+
+  &--narrow {
+    max-width: 954px;
+
+    @include mq($from: lg) {
+      width: 890px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }
 
+.container .container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

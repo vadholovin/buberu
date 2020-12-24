@@ -1,8 +1,37 @@
-.section.questions
-  .container
-    h1.page-title Правила сервиса
+-
+  var tabs = [
+    {
+      title: 'Аккаунт/ Безопасность',
+      icon: 'user'
+    },
+    {
+      title: 'Раздел клинтов',
+      icon: 'case'
+    },
+    {
+      title: 'Раздел специалистов',
+      icon: 'tools'
+    },
+    {
+      title: 'Общая информация',
+      icon: 'file'
+    },
+  ];
 
-    +form().search-form
+  accordion = [
+    'Чем полезен сервис Buberu?',
+    'Как найти честного специалиста?',
+    'Ценообразование ставки специлистов?',
+    'Как стать специалистом на сервисе?'
+  ];
+
+
+
+.section.section--top.questions
+  .container
+    h1.page-title Привет! Чем мы можем помочь?
+
+    +form().search-form.questions-form
       +inputbox()
         +input-wrapper
           +input()(
@@ -17,22 +46,47 @@
 
     .questions-tabs
       +tabs().questions-tabs__nav
-        +tab-item()
-          +tab-button().questions-tab.is-active(data-tab-target="tab-1")
-            +icon('user').questions-tab__icon
-            span.questions-tab__text Аккаунт/ Безопасность
-        +tab-item()
-          +tab-button().questions-tab(data-tab-target="tab-2")
-            +icon('case').questions-tab__icon
-            span.questions-tab__text Раздел клинтов
-        +tab-item()
-          +tab-button().questions-tab(data-tab-target="tab-3")
-            +icon('tools').questions-tab__icon
-            span.questions-tab__text Раздел специалистов
-        +tab-item()
-          +tab-button().questions-tab(data-tab-target="tab-4")
-            +icon('file').questions-tab__icon
-            span.questions-tab__text Общая информация
+        each item, index in tabs
+          +tab-item().questions-tabs__item
+            +tab-button().questions-tab(
+              class=(index === 0) ? "is-active" : ""
+              data-tab-target="tab-" + (index + 1)
+              )
+              .questions-tab__icon
+                +icon(item.icon)
+              span.questions-tab__text= item.title
 
       +tabs-content().questions-tabs__content
-        +tab-wrapper().questions-tabs__content-item.is-active(data-tab="tab1" data-tab-group="questions")
+        .container.container--narrow
+          each item, index in tabs
+            +tab-wrapper().questions-tabs__content-item(
+              class=(index === 0) ? "is-active" : ""
+              data-tab="tab-" + (index + 1)
+              data-tab-group="questions"
+              )
+              .section__header.align-c
+                h2.section__title= item.title
+                p.section__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+              ul.accordion.questions-accordion.js-accordion
+                each item, index in accordion
+                  li.accordion__item
+                    h5.accordion__title
+                      button.accordion__button.js-accordion-button(
+                        class=(index === 0) ? "is-active" : ""
+                        data-target="#questions-" + (index + 1)
+                        aria-expanded=(index === 0) ? "true" : "false"
+                        aria-controls="questions-" + (index + 1)
+                      )
+                        span.accordion__button-count= '0' + (index + 1)
+                        span.accordion__button-text= item
+                        +icon('close-o').accordion__button-icon
+
+                    .accordion__content.js-accordion-content(
+                      class=(index === 0) ? "is-active" : ""
+                      id="questions-" + (index + 1)
+                    )
+                      .accordion__body
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+

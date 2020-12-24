@@ -1,0 +1,34 @@
+-
+  var tabs = [
+    'Определите свою роль',
+    'Пройдите быструю регистрацию',
+    'Начните использовать сервис'
+  ];
+
+.section.info
+  .container.container--narrow
+    .section__header.align-c
+      h2.section__title Как это работает?
+      p.section__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+    ul.accordion.info-accordion.js-accordion
+      each item, index in tabs
+        li.accordion__item
+          h5.accordion__title
+            button.accordion__button.js-accordion-button(
+              class=(index === 0) ? "is-active" : ""
+              data-target="#info-" + (index + 1)
+              aria-expanded=(index === 0) ? "true" : "false"
+              aria-controls="info-" + (index + 1)
+            )
+              span.accordion__button-count= '0' + (index + 1)
+              span.accordion__button-text= item
+              +icon('close-o').accordion__button-icon
+
+          .accordion__content.js-accordion-content(
+            class=(index === 0) ? "is-active" : ""
+            id="info-" + (index + 1)
+          )
+            .accordion__body
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

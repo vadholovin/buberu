@@ -1,0 +1,46 @@
+/* ==========================================================================
+   #NUMBERS-BAR
+   ========================================================================== */
+
+.numbers-bar {
+  padding: 40px 0;
+  background-color: $grey-1;
+}
+
+.numbers-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -2rem;
+
+  > * {
+    width: 100%;
+    margin-top: 2rem;
+
+    @include mq($from: sm) {
+      max-width: calc(100% / 3);
+
+      &:not(:last-child) {
+        border-right: 1px solid rgba($color-border-light, 0.2);
+      }
+    }
+  }
+}
+
+.numbers-item {
+  text-align: center;
+}
+
+.numbers-item__value {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 54px;
+  line-height: 100%;
+  color: $color-light;
+}
+
+.numbers-item__unit {
+  display: block;
+  font-weight: 500;
+  line-height: 100%;
+}

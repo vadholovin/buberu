@@ -2,26 +2,59 @@
    #CONTACTS
    ========================================================================== */
 
-.contacts {
-
-}
-
 .contacts__grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -2.5rem;
 
+  > * {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+
+    @include mq($from: xs) {
+      &:not(:last-child) {
+        border-right: 0.5px solid rgba($color-light, 0.5);
+      }
+    }
+  }
 }
 
 .contacts-card {
+  height: 100%;
+  padding: 0 20px 20px 20px;
+  border-bottom: 0.5px solid rgba($color-light, 0.5);
+  text-align: center;
+  @include basic-transition(all);
 
+
+
+  &:hover {
+    border-bottom-color: $color-border-primary;
+
+    .contacts-card__icon {
+      color: $color-primary;
+    }
+  }
 }
 
 .contacts-card__icon {
-
+  margin-bottom: 25px;
+  font-size: 25px;
+  color: $color-bg-light;
+  @include basic-transition(color);
 }
 
 .contacts-card__contact {
-
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: rem(18px);
+  line-height: 100%;
 }
 
 .contacts-card__text {
-
+  font-weight: 500;
+  font-size: rem(14px);
+  color: $color-light;
 }

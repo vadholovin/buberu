@@ -1,0 +1,113 @@
+/* ==========================================================================
+   #QUESTIONS
+   ========================================================================== */
+
+.questions-form {
+  margin-bottom: 60px;
+}
+
+.questions__note {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto 50px auto;
+  font-weight: 500;
+  color: $color-light;
+  text-align: center;
+}
+
+.questions-tabs__nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1rem -6px 60px -6px;
+
+  @include mq($from: sm) {
+    margin: -1rem -12px 100px -12px;
+  }
+}
+
+.questions-tabs__item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 50%;
+  margin-top: 1rem;
+  padding-left: 6px;
+  padding-right: 6px;
+
+  @include mq($from: xs) {
+    max-width: 25%;
+  }
+
+  @include mq($from: sm) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.questions-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 16px 12px 20px 12px;
+  border: 1px solid transparent;
+  border-radius: $global-radius-lg;
+  background-color: #FFFFFF;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+
+  @include mq($from: xs) {
+    padding-top: 18px;
+    padding-bottom: 24px;
+  }
+
+  @include mq($until: sm) {
+    font-size: 14px;
+  }
+
+  @include on-event {
+    border-color: $color-border-primary;
+
+    .questions-tab__icon {
+      color: $color-primary;
+    }
+  }
+
+  &.is-active {
+    border-color: $color-border-primary;
+
+    .questions-tab__icon {
+      color: $color-primary;
+    }
+  }
+}
+
+.questions-tab__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: $grey-2;
+  background-color: $grey-1;
+
+  @include mq($from: xs) {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 12px;
+    font-size: 30px;
+  }
+
+  .icon {
+    @include basic-transition(color);
+  }
+}
+
+.questions-tab__text {
+  font-weight: 500;
+  line-height: 140%;
+}
+

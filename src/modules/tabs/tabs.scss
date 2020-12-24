@@ -13,7 +13,7 @@
     outline: none;
   }
 
-  &.is-active:hover {
+  &.is-active {
     pointer-events: none;
     cursor: unset;
   }
@@ -23,7 +23,7 @@
   }
 }
 
-.tabs-content__wrapper {
+.tabs-content__item {
 
   .js & {
     display: none;

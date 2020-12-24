@@ -1,0 +1,12 @@
+extends ../layouts/default
+
+block variables
+  - var pageTitle = 'О компании | Правила'
+  - var bodyClass = 'rules-page'
+
+block content
+  include ../components/layout/header-logged
+  main.content-wrapper
+    include ../components/general/general-content
+    include ../components/contacts/contacts
+  include ../components/layout/footer

@@ -20,7 +20,7 @@ $input-background-color: #fff;
   border-radius: $input-border-radius;
   background-color: $input-background-color;
   @include basic-transition((border-color));
-  @include placeholder-color($color-placeholder);
+  @include placeholder-color($color-light);
 
   &:focus {
     outline-width: 0;
