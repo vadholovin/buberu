@@ -1,17 +1,16 @@
 include tasks.data.pug
 
 
-
 section.section.section--lg.section--top.tasks
   .container
     .section__header.section__header--row
       h2.section__title Найти <span class="text-primary">задание</span>
       a.link.underline.underline--dashed.text-primary(href="") Перейти в общий каталог
 
-    ul.tasks-list
+    ul.tasks-list.tasks-list--preview
       each item in tasks
         li.tasks-list__item
-          .task-card
+          .task-card.task-card--full
             .task-card__icon
               +icon( item.icon )
             .task-card__content

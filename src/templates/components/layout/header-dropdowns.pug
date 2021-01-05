@@ -1,3 +1,6 @@
+include menus.data.pug
+
+
 mixin header-dropdown(option)
   .dropdown.dropdown--bottom-right.dropdown--arrow-right.js-popper-content
     .site-header__dropdown(
@@ -91,31 +94,18 @@ mixin header-dropdown(option)
 
           else if option === 'user'
             ul.user-menu
-              li.user-menu__item
-                a.user-menu__link(href="")
-                  +icon('user-o')
-                  | Мой профиль
-              li.user-menu__item
-                a.user-menu__link(href="")
-                  +icon('star-o')
-                  | Избранное
-              li.user-menu__item
-                a.user-menu__link(href="")
-                  +icon('check-rounded-o')
-                  | Мои заказы
-              li.user-menu__item
-                a.user-menu__link(href="")
-                  +icon('bell-o')
-                  | Уведомления
-              li.user-menu__item
-                a.user-menu__link(href="")
-                  +icon('list-o')
-                  | Список специалистов
-
-            .user-menu__item.user-menu__item--single
-              a.user-menu__link(href="")
-                +icon('sign-out-o')
-                | Выйти
+              each item in userMenu
+                if ! item.isLast
+                  li.user-menu__item
+                    a.user-menu__link(href="")
+                      +icon( item.icon )
+                      = item.title
+            each item in userMenu
+              if item.isLast
+                .user-menu__item.user-menu__item--single
+                  a.user-menu__link(href="")
+                    +icon( item.icon )
+                    = item.title
 
       .site-header__dropdown-footer
         if option === 'notif'

@@ -69,22 +69,22 @@
                 p.section__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
               ul.accordion.questions-accordion.js-accordion
-                each item, index in accordion
+                each item, i in accordion
                   li.accordion__item
                     h5.accordion__title
                       button.accordion__button.js-accordion-button(
-                        class=(index === 0) ? "is-active" : ""
-                        data-target="#questions-" + (index + 1)
-                        aria-expanded=(index === 0) ? "true" : "false"
-                        aria-controls="questions-" + (index + 1)
+                        class=(i === 0) ? "is-active" : ""
+                        data-target="#question-" + index + (i + 1)
+                        aria-expanded=(i === 0) ? "true" : "false"
+                        aria-controls="question-" + index + (i + 1)
                       )
-                        span.accordion__button-count= '0' + (index + 1)
+                        span.accordion__button-count= '0' + (i + 1)
                         span.accordion__button-text= item
                         +icon('close-o').accordion__button-icon
 
                     .accordion__content.js-accordion-content(
-                      class=(index === 0) ? "is-active" : ""
-                      id="questions-" + (index + 1)
+                      class=(i === 0) ? "is-active" : ""
+                      id="question-" + index + (i + 1)
                     )
                       .accordion__body
                         p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

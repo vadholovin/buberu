@@ -1,0 +1,54 @@
+.widget.widget--notif
+  .widget-header
+    .widget-header__title
+      +icon( 'bell-o' ).widget-header__title-icon
+      span.widget-header__title-text Уведомления
+      span.widget-header__title-counter 5
+    .widget-header__reset.js-tippy(data-tippy-content="Отметить все прочитанными")
+  .widget-body
+    ul.notif-list
+      li.notif-list__item
+        .flag.flag--top.notif-card.notif-card--notif.is-active
+          .flag__img.notif-card__img
+            .notif-card__icon
+              +icon('suitcase-o')
+          .flag__body.notif-card__body
+            .notif-card__msg
+              span.notif-card__msg-name Добрыня Никитич
+              span.notif-card__msg-text выбрал вас в качестве специалиста в задание
+              span.notif-card__msg-accent Подобрать iPhone XR
+
+      li.notif-list__item
+        .flag.flag--top.notif-card.notif-card--notif.is-active
+          .flag__img.notif-card__img
+            .notif-card__icon
+              +icon('comment-o')
+          .flag__body.notif-card__body
+            .notif-card__msg
+              span.notif-card__msg-name Алёша Попович
+              span.notif-card__msg-text оставил о вас комментарий.
+              span.notif-card__msg-accent Прочитать комментарий в личном профиле
+
+      li.notif-list__item
+        .flag.flag--top.notif-card.notif-card--notif
+          .flag__img.notif-card__img
+            .notif-card__icon
+              +icon('suitcase-o')
+          .flag__body.notif-card__body
+            .notif-card__msg
+              span.notif-card__msg-name Добрыня Никитич
+              span.notif-card__msg-text выбрал вас в качестве специалиста в задание
+              span.notif-card__msg-accent Подобрать авто Lada
+
+      li.notif-list__item
+        .flag.flag--top.notif-card.notif-card--notif
+          .flag__img.notif-card__img
+            .notif-card__icon
+              +icon('suitcase-o')
+          .flag__body.notif-card__body
+            .notif-card__msg
+              span.notif-card__msg-name Добрыня Никитич
+              span.notif-card__msg-text выбрал вас в качестве специалиста в задание
+              span.notif-card__msg-accent Подобрать авто Lada
+
+    a.button.button--light.button--block(href="") Все уведомления

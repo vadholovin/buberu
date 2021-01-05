@@ -15,12 +15,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 540px;
+  min-height: 100vh;
   padding-top: 160px;
   padding-bottom: 60px;
   z-index: 1;
 
   @include mq($from: sm) {
+    min-height: 540px;
     padding-top: 225px;
   }
 
@@ -90,6 +91,10 @@
   .inputbox {
     width: 100%;
     max-width: 310px;
+  }
+
+  .input {
+    color: $color-body;
   }
 
   .form__desc {

@@ -18,7 +18,8 @@
     }
   }
 
-  &--square {
+  &--square,
+  &--rounded {
     &::after {
 
       padding-top: 100%;

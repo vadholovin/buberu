@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 /**
- * #SVG4EVERYBODY
+ * SVG4EVERYBODY
  */
 jQuery(function ($) {
   svg4everybody({});
@@ -31,12 +31,68 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.remove('is-nav-mobile-open');
   };
 
-  burger.addEventListener('click', toggleMenu);
+  let xDown = null;
+  let yDown = null;
 
+  function getTouches(evt) {
+    return evt.touches || evt.originalEvent.touches;
+  }
+
+  function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+  };
+
+  function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) return;
+
+    let xUp = evt.touches[0].clientX;
+    let yUp = evt.touches[0].clientY;
+
+    let xDiff = xDown - xUp;
+    let yDiff = yDown - yUp;
+
+    let toLeft = xDiff > 0;
+
+    if ( menu.classList.contains('is-open') ) {
+      if (Math.abs(xDiff) > Math.abs(yDiff) && toLeft) {
+        closeMenu();
+      }
+    }
+
+    xDown = null;
+    yDown = null;
+  };
+
+  burger.addEventListener('click', toggleMenu);
   closeTriggers.forEach(trigger => {
     trigger.addEventListener('click', closeMenu);
   });
+  menu.addEventListener('touchstart', handleTouchStart);
+  menu.addEventListener('touchmove', handleTouchMove);
 
+});
+
+/**
+ * Header scroll
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('.js-header');
+  const headerTop = header.querySelector('.site-navline');
+  const offset = (headerTop !== null) ? headerTop.offsetHeight : 50;
+
+  function fixHeader() {
+    const posY = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (posY > offset) {
+      header.classList.add('is-scrolled');
+    } else{
+      header.classList.remove('is-scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', fixHeader);
 });
 
 

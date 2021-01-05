@@ -2,21 +2,99 @@
    #TASKS
    ========================================================================== */
 
-// .tasks {
+.tasks__grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -3.5rem;
+  margin-left: -20px;
+  margin-right: -20px;
 
-// }
-
-.tasks-list {
-  padding: 30px 0;
-  border-radius: 3px;
-  background: #FFFFFF;
-  box-shadow: $global-shadow;
-
+  > * {
+    width: 100%;
+    min-width: 0;
+    margin-top: 3.5rem;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
-// .tasks-list__item {
+.tasks__col-main {
+  flex-grow: 1;
+  flex-basis: 0;
+
+  @include mq($from: md) {
+    width: auto;
+  }
+}
+
+.tasks__col-aside {
+
+  @include mq($from: md) {
+    flex-shrink: 0;
+    width: 340px;
+  }
+}
+
+// .tasks-catalog {
 
 // }
+
+.tasks-catalog__footer {
+  text-align: center;
+  margin-top: 3rem;
+
+  @include mq($from: md) {
+    margin-top: 60px;
+  }
+
+  > * + * {
+    margin-top: 20px;
+  }
+}
+
+.tasks-catalog__footer-text {
+  display: block;
+}
+
+.tasks-aside {
+
+  > * + * {
+    margin-top: 20px;
+  }
+
+  .promo {
+
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.tasks-list {
+
+  &--preview {
+    padding: 30px 0;
+    border-radius: 3px;
+    background: #FFFFFF;
+    box-shadow: $global-shadow;
+  }
+
+  &--catalog {
+
+  }
+}
+
+.tasks-list__item {
+
+
+  .tasks-list--catalog & {
+
+  }
+}
 
 .task-card {
   display: flex;
