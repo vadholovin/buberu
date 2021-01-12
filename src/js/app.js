@@ -387,3 +387,18 @@ jQuery(function ($) {
 
   $('.js-filters-select').select2({});
 });
+
+
+/**
+ * Reset notifications
+ */
+jQuery(function ($) {
+  $(document).on('click', '.button-reset', function (e) {
+    e.preventDefault();
+    const $btn = $(this);
+
+    $btn.addClass('is-active');
+  });
+});
+
+

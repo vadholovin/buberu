@@ -86,6 +86,19 @@ $btn-line-height: 1.15;
   }
 }
 
+.button-reset {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 15px;
+  color: $color-light;
+  cursor: pointer;
+
+  &.is-active {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
 .button--block {
   width: 100%;
 }

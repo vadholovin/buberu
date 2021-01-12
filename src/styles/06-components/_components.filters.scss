@@ -4,8 +4,13 @@
 
 .filters {
   margin-bottom: 40px;
-  padding: 30px 20px;
+  padding: 30px 6px;
   background-color: rgba(#FFF1E7, 0.25);
+
+  @include mq($from: xs) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .filters__fieldset {
@@ -38,7 +43,7 @@
   > * {
     width: 100%;
 
-    @include mq($from: md) {
+    @include mq($from: sm) {
       max-width: calc(100%/3 - 14px);
     }
   }
@@ -55,4 +60,8 @@
 
 .filters__submit {
   flex-shrink: 0;
+
+  @include mq($until: xs) {
+    display: none;
+  }
 }

@@ -1,0 +1,57 @@
+/* ==========================================================================
+   #WIDGET
+   ========================================================================== */
+
+.widget {
+  background: #FFFFFF;
+  box-shadow: $global-shadow;
+  border-radius: $global-radius;
+}
+
+.widget-header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #EDF4F9;
+}
+
+.widget-header__title {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.widget-header__title-icon {
+  position: relative;
+  top: 2px;
+  margin-right: 10px;
+  color: $color-primary;
+}
+
+// .widget-header__title-text {
+
+// }
+
+.widget-header__title-counter {
+  margin-left: 4px;
+  color: $color-primary;
+}
+
+.widget-header__reset {
+
+}
+
+.widget-body {
+
+  .notif-list__item {
+    padding-left: 20px;
+    padding-right: 20px;
+    border-color: #EDF4F9;
+  }
+}
+
+.widget-more {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

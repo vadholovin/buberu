@@ -4,7 +4,8 @@
       +icon( 'bell-o' ).widget-header__title-icon
       span.widget-header__title-text Уведомления
       span.widget-header__title-counter 5
-    .widget-header__reset.js-tippy(data-tippy-content="Отметить все прочитанными")
+    button.button-reset.widget-header__reset.js-tippy(data-tippy-content="Отметить все прочитанными")
+      +icon('check-square-o')
   .widget-body
     ul.notif-list
       li.notif-list__item
@@ -51,4 +52,4 @@
               span.notif-card__msg-text выбрал вас в качестве специалиста в задание
               span.notif-card__msg-accent Подобрать авто Lada
 
-    a.button.button--light.button--block(href="") Все уведомления
+    a.button.button--light.button--block.widget-more(href="") Все уведомления
