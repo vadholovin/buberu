@@ -8,9 +8,16 @@ include tasks.data.pug
       .tasks__col-main
         h2.section__title Найдено <span class="text-primary">1 795</span> заданий
 
-        include tasks-filters
+        include ../filters/filters
 
         .tasks-catalog
+          .filters-inline
+            span.filters-inline__label Популярные категории:
+            .filters-inline__row
+              span.filters-inline__item.is-selected(tabindex="0" aria-selected="true" role="button") Единоразовый подбор
+              span.filters-inline__item(tabindex="-1" aria-selected="false" role="button") Подбор под ключ
+              span.filters-inline__item(tabindex="-1" aria-selected="false" role="button") Консультация
+
           ul.tasks-list.tasks-list--catalog
             each item in tasks
               li.tasks-list__item
@@ -37,17 +44,17 @@ include tasks.data.pug
                           +icon('placeholder-o').task-card__meta-icon
                           span.task-card__meta-text= item.address
 
-                  a.button.button--light(href="")
-                    +icon('arrow-rounded-o')
-                    span.hidden-visually Подробнее
+                    a.button-icon.task-card__link.task-card__link--icon(href="")
+                      +icon('arrow-rounded-o')
+                      span.hidden-visually Подробнее
 
-            li.tasks-list__promo
+            li.tasks-list__item
               .promo.promo--lg
                 img(src="assets/img/content/promo/promo-lg.png", alt="")
 
             each item in tasks
               li.tasks-list__item
-                .task-card
+                .task-card.task-card--simple
                   .task-card__icon
                     +icon( item.icon )
                   .task-card__content
@@ -69,6 +76,10 @@ include tasks.data.pug
                         li.task-card__meta-item
                           +icon('placeholder-o').task-card__meta-icon
                           span.task-card__meta-text= item.address
+
+                    a.button-icon.task-card__link.task-card__link--icon(href="")
+                      +icon('arrow-rounded-o')
+                      span.hidden-visually Подробнее
 
           .tasks-catalog__footer
             span.tasks-catalog__footer-text Еще 1 230 непросмотренных заданий

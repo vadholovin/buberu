@@ -1,0 +1,48 @@
+/* ==========================================================================
+   #FILTERS-INLINE
+   ========================================================================== */
+
+.filters-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding-bottom: 1rem;
+  border-bottom: 0.5px solid rgba($color-light, 0.5);
+  font-size: rem(14px);
+  line-height: 100%;
+}
+
+.filters-inline__label {
+  margin-right: 20px;
+}
+
+.filters-inline__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.filters-inline__item {
+  margin-right: 20px;
+  color: $color-light;
+  cursor: pointer;
+
+  @include basic-transition((color));
+  @include on-event {
+    outline-width: 0;
+    color: $color-primary;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.is-selected {
+    @extend .underline;
+    @extend .underline--dashed;
+
+    color: $color-primary;
+    pointer-events: none;
+  }
+}
+

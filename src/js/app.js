@@ -343,21 +343,32 @@ jQuery(function ($) {
     // data-tab-target - вешается на таб
     // data-tab и tab-group  - на содержимое таба
     // tab-group должен быть одинаковый у всех табов одной группы (в одном контейнере, например)
+    const options = {
+      activeClass: 'is-active',
+    };
 
     $(document).on('click', '[data-tab-target]', function (e) {
       e.preventDefault();
-      const activeClass = 'is-active';
+      const $tab = $(this),
+        tabTarget = $tab.data('tab-target'),
+        $content = $(document).find('[data-tab="' + tabTarget + '"]'),
+        tabGroup = $content.data('tab-group');
 
-      $(this).addClass(activeClass).parent().siblings().find('.' + activeClass).removeClass(activeClass);
 
-      var targetTab = $(this).data('tab-target'),
-        tab = $(document).find('[data-tab="' + targetTab + '"]'),
-        tabGroup = tab.data('tab-group');
+      $tab
+        .addClass(options.activeClass)
+        .parent()
+        .siblings()
+        .find('.' + options.activeClass)
+        .removeClass(options.activeClass);
 
-      $(document).find('[data-tab-group="' + tabGroup + '"]').hide().removeClass(activeClass);
+      $(document)
+        .find('[data-tab-group="' + tabGroup + '"]')
+        .hide()
+        .removeClass(options.activeClass);
 
-      tab.show(0, function () {
-        $(this).addClass(activeClass);
+      $content.show(0, function () {
+        $(this).addClass(options.activeClass);
       });
     });
   }
@@ -365,3 +376,14 @@ jQuery(function ($) {
   tabs();
 });
 
+
+/**
+ * Select2
+ */
+jQuery(function ($) {
+  $.fn.select2.defaults.set("minimumResultsForSearch", "-1");
+  $.fn.select2.defaults.set("language", "ru");
+  $.fn.select2.defaults.set("width", "100%");
+
+  $('.js-filters-select').select2({});
+});

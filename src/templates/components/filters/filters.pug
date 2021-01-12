@@ -1,0 +1,42 @@
+
+
++form().filters
+  fieldset.filters__fieldset.filters__fieldset--main
+    +inputbox()
+      +input-wrapper
+        +input.filters__field(
+          type="text"
+          name="s"
+          aria-label="Поиск по ключевым словам"
+          placeholder="Поиск по ключевым словам"
+        )
+
+    button.button.button--primary.filters__submit(type="submit") Найти
+
+  fieldset.filters__fieldset.filters__fieldset--filters
+    .custom-select
+      select.filters__select.js-filters-select(data-placeholder="Категория заданий")
+        option
+        option(value="Какое-то значение") Какое-то значение
+        option(value="Какое-то значение") Какое-то значение
+        option(value="Какое-то значение") Какое-то
+        option(value="Какое-то значение") Какое-то значение
+        option(value="Какое-то значение") Какое-то значение
+    .custom-select
+      select.filters__select.js-filters-select(data-placeholder="Радиус поиска")
+        option
+        option(value="Какое-то значение") Какое-то значение
+        option(value="Какое-то значение") Какое-то значение
+        option(value="Какое-то значение") Какое-то
+        option(value="Какое-то значение") Какое-то значение
+        option(value="Какое-то значение") Какое-то значение
+    .custom-select.custom-select--place
+      select.filters__select.js-filters-select(data-placeholder="Адрес, метро, район")
+        option
+        option(value="Какое-то значение") Какое-то значение
+        option(value="Какое-то значение") Какое-то значение
+        option(value="Какое-то значение") Какое-то
+        option(value="Какое-то значение") Какое-то значение
+        option(value="Какое-то значение") Какое-то значение
+
+

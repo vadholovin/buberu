@@ -35,9 +35,16 @@
   }
 }
 
-// .tasks-catalog {
+.tasks-catalog {
 
-// }
+  @include mq($from: md) {
+    padding-right: 24px;
+  }
+
+  .filters-inline {
+    margin-bottom: 20px;
+  }
+}
 
 .tasks-catalog__footer {
   text-align: center;
@@ -83,16 +90,25 @@
     box-shadow: $global-shadow;
   }
 
-  &--catalog {
+  // &--catalog {
 
-  }
+  // }
 }
 
 .tasks-list__item {
 
 
   .tasks-list--catalog & {
+    border-bottom: 0.5px solid rgba($color-light, 0.5);
+  }
 
+  .promo {
+    margin: 2rem auto;
+
+    @include mq($from: md) {
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
   }
 }
 
@@ -100,30 +116,55 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 24px;
-  border-bottom: 3px solid transparent;
-  @include basic-transition((border-color));
+  padding: 24px 0;
+
 
   @include mq($from: xs) {
     flex-direction: row;
     align-items: flex-start;
-    border-bottom: 0;
-    border-left: 3px solid transparent;
   }
 
   @include mq($from: md) {
-    padding: 30px 45px 30px 30px;
+    padding: 40px 0;
   }
 
   &:hover {
     border-color: $color-border-primary;
 
-    .button {
+    .task-card__link--icon {
+      color: $color-primary;
+    }
+
+    .task-card__link--button {
       color: #fff;
       background-color: $color-bg-primary;
     }
   }
 }
+
+.task-card--simple {
+
+}
+
+.task-card--full {
+  padding: 24px;
+  border-bottom: 3px solid transparent;
+  @include basic-transition((border-color));
+
+  @include mq($from: xs) {
+    border-bottom: 0;
+    border-left: 3px solid transparent;
+  }
+
+  @include mq($from: md) {
+    padding: 30px;
+  }
+
+  @include mq($from: lg) {
+    padding-right: 45px;
+  }
+}
+
 
 .task-card__icon {
   flex-shrink: 0;
@@ -246,4 +287,13 @@
   @include mq($from: xs) {
     font-size: 16px;
   }
+}
+
+.task-card__link {
+  flex-shrink: 0;
+}
+
+.task-card__link--icon {
+  font-size: 22px;
+  color: $color-light;
 }

@@ -56,9 +56,10 @@
 // 06. Components
 // @import 'swiper/css/swiper.min.css';
 // @import 'aos/dist/aos.css';
-// @import '@fancyapps/fancybox/dist/jquery.fancybox.min.css';
-// @import 'tippy.js/dist/tippy.css';
+@import '@fancyapps/fancybox/dist/jquery.fancybox.min.css';
+@import 'tippy.js/dist/tippy.css';
 // @import 'flatpickr/dist/flatpickr.min.css';
+@import 'select2/dist/css/select2.min.css';
 @import '06-components/components.animations';
 @import '06-components/components.lazy';
 @import '06-components/components.button';
@@ -73,6 +74,7 @@
 @import '../modules/form/form';
 @import '../modules/form/inputbox';
 @import '../modules/form/input';
+@import '../modules/form/select';
 @import '../modules/swiper/swiper';
 @import '../modules/burger/burger';
 @import '../modules/social/social';
@@ -82,6 +84,8 @@
 @import '06-components/components.header';
 @import '06-components/components.mobile-nav';
 @import '06-components/components.search-form';
+@import '06-components/components.filters';
+@import '06-components/components.filters-inline';
 @import '../templates/components/**/*.scss';
 @import '06-components/components.footer';
 

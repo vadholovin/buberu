@@ -1,6 +1,6 @@
-// #####
-// Кастомные селекты
-// #####
+/* ==========================================================================
+   #SELECT
+   ========================================================================== */
 
 .select {
   @extend .input;
@@ -24,3 +24,82 @@
   font-weight: normal;
 }
 
+.custom-select {
+
+  .select2-selection--single {
+    height: 50px;
+    border: 1px solid $color-border-light;
+    border-radius: $global-radius;
+
+    &:focus {
+      outline-width: 0;
+      border-color: $color-border-primary;
+    }
+  }
+
+  .select2-selection__rendered {
+    padding-left: 20px !important;
+    padding-right: 50px !important;
+    line-height: 50px !important;
+    color: inherit !important;
+  }
+
+  .select2-selection--single .select2-selection__placeholder {
+    font-size: 15px;
+    color: $color-light;
+  }
+
+  .select2-selection__arrow {
+    top: 0;
+    right: 0;
+    width: 40px !important;
+    height: 100% !important;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-top: 6px solid rgba($color-light, 0.5);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+    }
+
+    b {
+      display: none;
+    }
+  }
+
+  &--place {
+
+    .select2-selection__arrow {
+
+      &::after {
+        width: 20px;
+        height: 20px;
+        border: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 10L20 1L11 20L9 12L1 10Z' stroke='%23DDE2E5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+}
+
+.select2-results__option {
+  padding: 8px 20px !important;
+
+  &--highlighted,
+  &--selected {
+    color: #fff !important;
+    background-color: $color-bg-primary !important;
+  }
+}
+
+.select2-container:not(.select2) {
+  z-index: 99999;
+}

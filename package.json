@@ -17,6 +17,7 @@
     "normalize.css": "^8.0.1",
     "paper": "^0.12.11",
     "rellax": "^1.12.1",
+    "select2": "^4.0.13",
     "svg4everybody": "^2.1.9",
     "swiper": "^5.3.6",
     "tippy.js": "^6.1.0",

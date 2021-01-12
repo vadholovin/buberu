@@ -63,6 +63,8 @@ exports.paths = {
       // 'node_modules/a11y_accordions/assets/js/aria.accordion.min.js',
       // 'node_modules/flatpickr/dist/flatpickr.min.js',
       // 'node_modules/flatpickr/dist/l10n/ru.js',
+      'node_modules/select2/dist/js/select2.full.min.js',
+      'node_modules/select2/dist/js/i18n/ru.js',
       'node_modules/@popperjs/core/dist/umd/popper.min.js',
       'node_modules/tippy.js/dist/tippy-bundle.umd.min.js',
       'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
