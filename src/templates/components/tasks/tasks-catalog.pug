@@ -21,7 +21,7 @@ include tasks.data.pug
           ul.tasks-list.tasks-list--catalog
             each item in tasks
               li.tasks-list__item
-                .task-card.task-card--simple
+                .task-card.task-card--catalog
                   .task-card__icon
                     +icon( item.icon )
                   .task-card__content
@@ -54,7 +54,7 @@ include tasks.data.pug
 
             each item in tasks
               li.tasks-list__item
-                .task-card.task-card--simple
+                .task-card.task-card--catalog
                   .task-card__icon
                     +icon( item.icon )
                   .task-card__content
@@ -87,7 +87,7 @@ include tasks.data.pug
 
       .tasks__col-aside
         .tasks-aside
-          include ../widgets/widget-notif
+          include ../iboxes/ibox-notif
 
           .promo.promo--sm
             img(src="assets/img/content/promo/promo-sm.png", alt="")

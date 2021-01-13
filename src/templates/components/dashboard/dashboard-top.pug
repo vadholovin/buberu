@@ -1,19 +1,67 @@
+-
+  var tabs = [
+    {
+      text: 'Мой профиль',
+      isActive: true,
+      hasMsg: false,
+    },
+    {
+      text: 'Информация',
+      isActive: false,
+      hasMsg: false,
+    },
+    {
+      text: 'Задачи',
+      isActive: false,
+      hasMsg: false,
+    },
+    {
+      text: 'Сообщения',
+      isActive: false,
+      hasMsg: true,
+    },
+    {
+      text: 'Уведомления',
+      isActive: false,
+      hasMsg: true,
+    },
+    {
+      text: 'Достижения',
+      isActive: false,
+      hasMsg: false,
+    },
+  ];
+
 .dashboard-top
-  ul.dashboard-top__info
-    li.dashboard-top__info-item
-      .dashboard-user
-        .dashboard-top__user-photo
+  ul.user-info
+    li.user-info
+      .user-info__card
+        .user-info__card-img
           .user-photo.user-photo--lg
             .user-photo__inner
               img.user-photo__img(src="assets/img/content/avatars/ava-1-lg.jpg", alt="")
 
-        h1.dashboard-top__user-text
-          span.dashboard-top__user-name Ника Андреева
-          span.dashboard-top__user-about Электроника и бытовая техника
+        h1.user-info__card-text
+          span.user-info__card-title Ника Андреева
+          span.user-info__card-subtitle Электроника и бытовая техника
 
-    li.dashboard-top__info-item
+    li.user-info
+      .user-info__balance
+        span.user-info__balance-label Мой баланс:
+        span.user-info__balance-amount 1 500 ₽
 
-    li.dashboard-top__info-item
-    li.dashboard-top__info-item
-    li.dashboard-top__info-item
-  .dashboard-top__nav
+    li.user-info
+
+    li.user-info
+      a.button.button--outline-secondary(href="") Настройки профиля
+
+  nav.dashboard-nav
+    +tabs
+      each item, index in tabs
+        +tab-item()
+          if item.isActive
+            +tab-button()(data-tab-target="tab-" + (index + 1)).is-active
+          else if item.hasMsg
+            +tab-button()(data-tab-target="tab-" + (index + 1)).has-messages
+          else
+            +tab-button()(data-tab-target="tab-" + (index + 1))

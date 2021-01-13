@@ -1,12 +1,12 @@
-.widget.widget--notif
-  .widget-header
-    .widget-header__title
-      +icon( 'bell-o' ).widget-header__title-icon
-      span.widget-header__title-text Уведомления
-      span.widget-header__title-counter 5
-    button.button-reset.widget-header__reset.js-tippy(data-tippy-content="Отметить все прочитанными")
+.ibox.ibox--notif
+  .ibox-header
+    .ibox-header__title
+      +icon( 'bell-o' ).ibox-header__title-icon
+      span.ibox-header__title-text Уведомления
+      span.ibox-header__title-counter 5
+    button.button-reset.ibox-header__reset.js-tippy(data-tippy-content="Отметить все прочитанными")
       +icon('check-square-o')
-  .widget-body
+  .ibox-body
     ul.notif-list
       li.notif-list__item
         .flag.flag--top.notif-card.notif-card--notif.is-active
@@ -52,4 +52,4 @@
               span.notif-card__msg-text выбрал вас в качестве специалиста в задание
               span.notif-card__msg-accent Подобрать авто Lada
 
-    a.button.button--light.button--block.widget-more(href="") Все уведомления
+    a.button.button--light.button--block.ibox-more(href="") Все уведомления
