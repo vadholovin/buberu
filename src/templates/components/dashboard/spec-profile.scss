@@ -1,0 +1,133 @@
+
+
+.profile-stat {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -12px -6px 28px -6px;
+
+  @include mq($from: xs) {
+    margin: -20px -10px 28px -10px;
+  }
+}
+
+.profile-stat__item {
+  margin-top: 12px;
+  width: 100%;
+  max-width: 50%;
+  padding: 0 6px;
+
+  @include mq($from: xs) {
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+
+  @include mq($from: md) {
+    max-width: 25%;
+  }
+}
+
+.profile-stat__card {
+  padding: 16px 12px;
+  border-radius: 10px;
+  line-height: 1.15;
+  background: #FFFFFF;
+  box-shadow: $global-shadow;
+
+  @include mq($from: xs) {
+    padding: 20px;
+  }
+
+  @include mq($from: lg) {
+    padding-left: 30px;
+  }
+}
+
+.profile-stat__card-title {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  white-space: nowrap;
+
+  @include mq($from: xs) {
+    font-size: 18px;
+  }
+}
+
+// .profile-stat__card-row {
+
+// }
+
+.profile-stat__card-amount {
+  font-weight: 300;
+  font-size: 24px;
+
+  @include mq($from: xs) {
+    font-size: 28px;
+  }
+
+  @include mq($from: sm) {
+    font-size: 38px;
+  }
+}
+
+.profile-stat__card-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  &--1 { background-color: #F1FAF5; }
+  &--2 { background-color: #FFF7F1; }
+  &--3 { background-color: #FEF9EE; }
+  &--4 { background-color: #F0F2FD; }
+
+  @include mq($from: xs) {
+    width: 65px;
+    height: 65px;
+  }
+
+  svg {
+
+    @include mq($until: xs) {
+      transform: scale(0.75);
+    }
+  }
+}
+
+.profile__grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    width: 100%;
+  }
+}
+
+.profile__main {
+  margin-bottom: 3.5rem;
+
+  @include mq($from: md) {
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 0;
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  > * + * {
+    margin-top: 40px;
+  }
+}
+
+.profile__aside {
+
+  @include mq($from: md) {
+    width: 378px;
+  }
+
+  > * + * {
+    margin-top: 20px;
+  }
+}

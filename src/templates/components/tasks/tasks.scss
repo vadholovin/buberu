@@ -90,6 +90,10 @@
     box-shadow: $global-shadow;
   }
 
+  &--profile {
+    padding-bottom: 25px;
+  }
+
   // &--catalog {
 
   // }
@@ -99,7 +103,19 @@
 
 
   .tasks-list--catalog & {
-    border-bottom: 0.5px solid rgba($color-light, 0.5);
+
+    &:not(:last-child) {
+      border-bottom: 0.5px solid rgba($color-light, 0.5);
+    }
+  }
+
+  .tasks-list--profile & {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    &:not(:last-child) {
+      border-bottom: 0.5px solid #EDF4F9;
+    }
   }
 
   .promo {
@@ -114,18 +130,25 @@
 
 .task-card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  // flex-direction: column;
+  // align-items: center;
+  align-items: flex-start;
   padding: 24px 0;
 
 
-  @include mq($from: xs) {
-    flex-direction: row;
-    align-items: flex-start;
-  }
+  // @include mq($from: xs) {
+  //   flex-direction: row;
+  //   align-items: flex-start;
+  // }
 
   @include mq($from: md) {
     padding: 40px 0;
+  }
+
+  .tasks-list--profile & {
+    @include mq($from: md) {
+      padding: 24px 0;
+    }
   }
 
   &:hover {
@@ -142,9 +165,9 @@
   }
 }
 
-.task-card--catalog {
+// .task-card--catalog {
 
-}
+// }
 
 .task-card--full {
   padding: 24px;
@@ -189,21 +212,20 @@
 .task-card__content {
   flex-grow: 1;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 
   @include mq($from: sm) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    // flex-direction: row;
+    // justify-content: space-between;
+    // align-items: center;
   }
 }
 
 .task-card__info {
-  margin-bottom: 1.5rem;
 
   @include mq($from: sm) {
-    margin-bottom: 0;
     padding-right: 24px;
   }
 }
@@ -282,7 +304,7 @@
 }
 
 .task-card__meta-text {
-  font-size: 15px;
+  font-size: 14px;
 
   @include mq($from: xs) {
     font-size: 16px;
@@ -291,6 +313,10 @@
 
 .task-card__link {
   flex-shrink: 0;
+
+  @include mq($until: sm) {
+    display: none;
+  }
 }
 
 .task-card__link--icon {

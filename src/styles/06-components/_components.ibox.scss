@@ -18,7 +18,7 @@
 
 .ibox-header__title {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   font-weight: 500;
 }
 
@@ -38,9 +38,23 @@
   color: $color-primary;
 }
 
-.ibox-header__reset {
+.ibox-header__action {
+  font-size: 1rem;
+  line-height: 1.15;
+  color: $color-light;
+  @include basic-transition((color));
+  @include on-event {
+    color: $color-body;
+  }
 
+  &.select {
+    width: auto;
+  }
 }
+
+// .ibox-header__reset {
+
+// }
 
 .ibox-body {
 

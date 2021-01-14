@@ -1,0 +1,145 @@
+/* ==========================================================================
+   #DASHBOARD
+   ========================================================================== */
+
+.dashboard {
+  padding-top: 60px;
+  padding-bottom: 80px;
+
+  @include mq($from: md) {
+    padding-bottom: 150px;
+  }
+}
+
+.dashboard-top {
+  margin-bottom: 2rem;
+  padding-left: 25px;
+  border-bottom: 1px solid $color-border-light;
+
+  @include mq($from: sm) {
+    margin-bottom: 50px;
+  }
+}
+
+.user-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.user-info__item {
+  position: relative;
+
+  &:not(:first-child):not(:last-child) {
+    padding: 0 32px;
+  }
+
+  &:last-child {
+    margin-left: auto;
+  }
+
+  &:nth-child(2),
+  &:nth-child(3) {
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 0;
+      height: 48px;
+      border-right: 1px solid rgba($color-border-light, 0.5);
+    }
+
+  }
+}
+
+.user-info__img {
+  width: 112px;
+  height: 112px;
+}
+
+.user-info__person {
+  font-weight: normal;
+  line-height: 1.15;
+
+  > * + * {
+    margin-top: 6px;
+  }
+}
+
+.user-info__person-title {
+  display: block;
+  font-size: 28px;
+}
+
+.user-info__person-subtitle {
+  display: block;
+  font-size: 16px;
+  color: $color-light;
+}
+
+.user-info__balance {
+  line-height: 1.15;
+}
+
+.user-info__balance-label {
+  display: block;
+  color: #767D83;
+}
+
+.user-info__balance-amount {
+  display: block;
+  font-size: 28px;
+}
+
+.dashboard-nav {
+  overflow-x: auto;
+  margin-bottom: -1px;
+}
+
+.dashboard-tabs {
+  display: flex;
+
+
+  > * + * {
+    margin-left: 50px;
+  }
+
+  .tab {
+    display: block;
+    padding-bottom: 20px;
+    border-bottom: 2px solid transparent;
+    line-height: 1.15;
+    color: $color-light;
+    white-space: nowrap;
+    @include basic-transition((color, border-color));
+    @include on-event {
+      color: $color-body;
+    }
+
+
+    &.is-active {
+      font-weight: 600;
+      color: $color-body;
+      border-color: $color-border-primary;
+    }
+
+    &.has-messages {
+      color: $color-body;
+
+      &::after {
+        content: '';
+        display: inline-block;
+        vertical-align: 20%;
+        width: 5px;
+        height: 5px;
+        margin-left: 5px;
+        border-radius: 50%;
+        background-color: $color-bg-primary;
+      }
+    }
+  }
+}

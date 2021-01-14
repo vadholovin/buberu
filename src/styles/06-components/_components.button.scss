@@ -73,6 +73,16 @@ $btn-line-height: 1.15;
   }
 }
 
+.button--outline-light {
+  border-color: $color-border-light;
+  color: #767D83;
+
+  @include on-event {
+    border-color: currentColor;
+    color: $color-hover-primary;
+  }
+}
+
 .button-icon {
   position: relative;
   width: 46px;

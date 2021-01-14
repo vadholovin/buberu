@@ -33,7 +33,7 @@ mixin header-dropdown(option)
           if option === 'notif'
             ul.notif-list
               li.notif-list__item
-                .flag.flag--top.notif-card.notif-card--notif.is-active
+                .flag.flag--top.notif-card.notif-card--notif.notif-card--sm.is-active
                   .flag__img.notif-card__img
                     .notif-card__icon
                       +icon('suitcase-o')
@@ -44,7 +44,7 @@ mixin header-dropdown(option)
                       span.notif-card__msg-accent Подобрать iPhone XR
 
               li.notif-list__item
-                .flag.flag--top.notif-card.notif-card--notif.is-active
+                .flag.flag--top.notif-card.notif-card--notif.notif-card--sm.is-active
                   .flag__img.notif-card__img
                     .notif-card__icon
                       +icon('comment-o')
@@ -55,7 +55,7 @@ mixin header-dropdown(option)
                       span.notif-card__msg-accent Прочитать комментарий в личном профиле
 
               li.notif-list__item
-                .flag.flag--top.notif-card.notif-card--notif
+                .flag.flag--top.notif-card.notif-card--notif.notif-card--sm
                   .flag__img.notif-card__img
                     .notif-card__icon
                       +icon('suitcase-o')
@@ -69,7 +69,7 @@ mixin header-dropdown(option)
           else if option === 'msg'
             ul.notif-list
               li.notif-list__item
-                .flag.flag--top.notif-card.notif-card--msg
+                .flag.flag--top.notif-card.notif-card--msg.notif-card--sm
                   .flag__img.notif-card__img
                     .user-photo.online
                       .user-photo__inner
@@ -81,7 +81,7 @@ mixin header-dropdown(option)
                     .notif-card__date 4 часа назад
 
               li.notif-list__item
-                .flag.flag--top.notif-card.notif-card--msg
+                .flag.flag--top.notif-card.notif-card--msg.notif-card--sm
                   .flag__img.notif-card__img
                     .user-photo.user-photo--no-photo.offline
                       .user-photo__inner

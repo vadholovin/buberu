@@ -1,0 +1,115 @@
+/* ==========================================================================
+   #NOTIF-LIST
+   ========================================================================== */
+
+.notif-list {
+
+  > *:not(:last-child) {
+    border-bottom: 1px solid $color-border-light;
+  }
+}
+
+// .notif-list__item {
+
+
+// }
+
+.notif-card {
+
+  > * {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+// .notif-card__img {
+
+// }
+
+.notif-card__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  color: #fff;
+  background-color: $color-bg-light;
+
+  @include mq($from: xs) {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .notif-card--sm & {
+
+    @include mq($from: xs) {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+  }
+
+  .notif-card.is-active & {
+    background-color: $color-bg-primary;
+  }
+
+}
+
+.notif-card__body {
+  font-size: 14px;
+  line-height: 1.3;
+
+  .notif-card--sm & {
+    font-size: 12px;
+  }
+}
+
+.notif-card__msg {
+  max-height: calc(14px * 1.3 * 3);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+
+  .notif-card--sm & {
+    max-height: calc(12px * 1.3 * 3);
+  }
+}
+
+.notif-card__msg-name {
+  font-weight: 500;
+}
+
+// .notif-card__msg-text {
+
+// }
+
+.notif-card__msg-accent {
+  color: $color-primary;
+}
+
+.notif-card__name {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.15;
+
+  .notif-card--sm & {
+    font-size: 13px;
+  }
+}
+
+.notif-card__text {
+  margin-bottom: 8px;
+  color: $color-light;
+}
+
+.notif-card__date {
+  font-weight: 500;
+  line-height: 1;
+  // color: $color-primary;
+  color: $color-light;
+}
