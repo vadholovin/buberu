@@ -11,12 +11,12 @@ mixin header-dropdown(option)
         if option === 'notif'
           .site-header__dropdown-title Уведомления
             span.site-header__dropdown-counter 3
-          .site-header__dropdown-reset.js-tippy(data-tippy-content="Скрыть уведомления")
+          .site-header__dropdown-reset.js-tippy(tabindex="0" data-tippy-content="Скрыть уведомления")
 
         else if option === 'msg'
           .site-header__dropdown-title Сообщения
             span.site-header__dropdown-counter 3
-          .site-header__dropdown-reset.js-tippy(data-tippy-content="Скрыть уведомления")
+          .site-header__dropdown-reset.js-tippy(tabindex="0" data-tippy-content="Скрыть уведомления")
 
         else if option === 'user'
           .site-header__dropdown-flag.flag

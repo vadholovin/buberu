@@ -331,6 +331,13 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', function() {
   tippy('.js-tippy', {
     maxWidth: 200,
+    allowHTML: true,
+    a11y: true,
+    aria: {
+      content: 'auto',
+      expanded: 'auto',
+    },
+    role: 'tooltip',
   });
 });
 
@@ -386,6 +393,15 @@ jQuery(function ($) {
   $.fn.select2.defaults.set("width", "100%");
 
   $('.js-filters-select').select2({});
+});
+
+
+/**
+ * Form
+ */
+jQuery(function ($) {
+  $('.js-phone-mask').inputmask({"mask": "+7 (999) 999-99-99"});
+  $('.js-date-mask').inputmask("99.99.9999", { "placeholder": "дд.мм.гггг" });
 });
 
 

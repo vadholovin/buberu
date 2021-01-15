@@ -1,0 +1,209 @@
+
+h2.dashboard-main__title Настройки
+
+form.settings-form
+  .ibox
+    .ibox-header
+      h3.ibox-header__title
+        +icon( 'user-o' ).ibox-header__title-icon
+        span.ibox-header__title-text Общая информация
+    .ibox-body
+      .settings-form__grid
+        .settings-form__main-col
+          .d-flex.flex-wrap.flex-justify-between
+            +inputbox.inputbox--settings
+              +label.inputbox__label--required(for="settings-name") Ваше имя
+              +input-wrapper
+                +input(
+                  type="text"
+                  id="settings-name"
+                  name="settings-name"
+                  placeholder="Ваше имя"
+                )
+
+            +inputbox.inputbox--settings
+              +label.inputbox__label--required(for="settings-surname") Фамилия
+              +input-wrapper
+                +input(
+                  type="text"
+                  id="settings-surname"
+                  name="settings-surname"
+                  placeholder="Фамилия"
+                )
+            +inputbox.inputbox--settings
+              +label.inputbox__label--required(for="settings-city") Ваш город
+                span.tooltipped.js-tippy(
+                  tabindex="0"
+                  data-tippy-content="На данный момент наш сервис предусматривает работу только с <b>гражданами Российской Федерации</b>!"
+                )
+                  +icon('question-circle-o')
+              +input-wrapper
+                +input(
+                  type="text"
+                  id="settings-city"
+                  name="settings-city"
+                  placeholder="Ваш город"
+                )
+
+            +inputbox.inputbox--settings
+              +label.inputbox__label--required(for="settings-phone") Телефон
+              +input-wrapper
+                +input.js-phone-mask(
+                  type="tel"
+                  id="settings-phone"
+                  name="settings-phone"
+                  placeholder="+7 (999) 999-99-99"
+                )
+            +inputbox.inputbox--settings
+              +label.inputbox__label--required(for="settings-birthday") Дата рождения
+              +input-wrapper
+                +input.input--date.js-date-mask(
+                  type="text"
+                  id="settings-birthday"
+                  name="settings-birthday"
+                  placeholder="дд.мм.гггг"
+                )
+
+            +inputbox.inputbox--settings
+              +label.inputbox__label--required(for="settings-email") Ваш e-mail
+              +input-wrapper
+                +input(
+                  type="email"
+                  id="settings-email"
+                  name="settings-email"
+                  placeholder="E-mail"
+                )
+
+          +inputbox.inputbox--settings
+            +label.inputbox__label--required(for="settings-area") Сфера деятельности
+            +input-wrapper
+              +textarea(
+                type="text"
+                id="settings-area"
+                name="settings-area"
+                placeholder="Опишите сферу деятельности"
+              )
+
+        .settings-form__aside-col
+          .settings-avatar
+            .settings-avatar__photo.user-photo
+              .user-photo__inner
+
+            label.settings-avatar__label(for="") Загрузить аватар
+
+  .ibox
+    .ibox-header
+      h3.ibox-header__title
+        +icon( 'info-rounded-o' ).ibox-header__title-icon
+        span.ibox-header__title-text Специализация и опыт
+    .ibox-body
+      .settings-form__grid
+        .settings-form__main-col
+          h4 Сфера деятельности
+          .d-flex.flex-wrap.flex-justify-between
+            +inputbox.inputbox--settings
+              +label.inputbox__label--required(for="settings-name") Выберите сферу деятельности
+              +input-wrapper
+                .custom-select
+                  select.js-filters-select(data-placeholder="Сфера деятельности")
+                    option
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+
+            +inputbox.inputbox--settings
+              +label.inputbox__label--required(for="settings-name") Выберите ваше направление
+              +input-wrapper
+                .custom-select
+                  select.js-filters-select(data-placeholder="Ваше направление")
+                    option
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+                    option(value="Автомеханик") Автомеханик
+
+          p Направление можно выбрать 1 раз при регистрации аккаунта. Если вы хотите сменить текущую сферу деятельности пожалуйста <span class="text-primary">обратитесь к нашим модераторам для проверки ваших данных</span>.
+
+          h4 Опыт работы
+          .d-flex.flex-wrap.flex-justify-between
+            +inputbox.inputbox--settings
+              +label.inputbox__label--required(for="settings-company") Наименование компании
+              +input-wrapper
+                +input(
+                  type="text"
+                  id="settings-company"
+                  name="settings-company"
+                  placeholder="Компания"
+                )
+
+            +inputbox.inputbox--settings
+              +label.inputbox__label--required(for="settings-experience-from") Стаж на месте
+              .d-flex.flex-items-center
+                +input.input--date.js-date-mask(
+                  type="text"
+                  id="settings-experience-from"
+                  name="settings-experience-from"
+                  placeholder="дд.мм.гггг"
+                )
+
+                span по
+
+                +input.input--date.js-date-mask(
+                  type="text"
+                  id="settings-experience-until"
+                  name="settings-experience-until"
+                  placeholder="дд.мм.гггг"
+                )
+              +input-wrapper
+                +input(
+                  type="text"
+                  id="settings-experience"
+                  name="settings-experience"
+                  placeholder="Стаж"
+                )
+
+          +inputbox.inputbox--settings
+            +label.inputbox__label--required(for="settings-area") Стаж работы
+            +input-wrapper
+              +textarea(
+                type="text"
+                id="settings-area"
+                name="settings-area"
+                placeholder="Опишите более подробно, на какой позиции вы работали, какой промежуток времени и другая информация о себе и месте работы"
+              )
+
+          button.text-button.text-button--primary(type="button") + Добавить опыт работы
+
+
+  .ibox
+    .ibox-header
+      h3.ibox-header__title
+        +icon( 'info-rounded-o' ).ibox-header__title-icon
+        span.ibox-header__title-text График и стоимость услуг
+    .ibox-body
+      .settings-form__grid
+        .settings-form__main-col
+
+
+  .ibox
+    .ibox-header
+      h3.ibox-header__title
+        +icon( 'info-rounded-o' ).ibox-header__title-icon
+        span.ibox-header__title-text Пароль / Безопасность
+    .ibox-body
+
+
+  button.button.button--primary(type="submit") Сохранить изменения

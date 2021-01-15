@@ -6,23 +6,17 @@
 // Used by Utility _spacing.scss
 $space-auto:  auto !default;
 $space-0:     0 !default;
-$space-025:   .25rem !default;
-$space-050:   .5rem !default;
-$space-075:   .75rem !default;
-$space-1:     1rem !default;
-$space-2:     2rem !default;
-$space-3:     3rem !default;
-$space-4:     4rem !default;
-$space-5:     5rem !default;
-$space-6:     6rem !default;
+$space-1:     4px !default;
+$space-2:     8px !default;
+$space-3:     16px !default;
+$space-4:     24px !default;
+$space-5:     32px !default;
+$space-6:     40px !default;
 
 // Margin and padding values array
 $space-values : (
   auto  : $space-auto,
   0     : $space-0,
-  '025' : $space-025,
-  '050' : $space-050,
-  '075' : $space-075,
   1     : $space-1,
   2     : $space-2,
   3     : $space-3,

@@ -13,11 +13,11 @@
 
 .dashboard-top {
   margin-bottom: 2rem;
-  padding-left: 25px;
   border-bottom: 1px solid $color-border-light;
 
   @include mq($from: sm) {
     margin-bottom: 50px;
+    padding-left: 25px;
   }
 }
 
@@ -25,24 +25,40 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 36px;
+  margin-bottom: 30px;
+
+  @include mq($until: sm) {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 .user-info__item {
   position: relative;
+  padding-top: 8px;
+  padding-bottom: 8px;
 
   &:not(:first-child):not(:last-child) {
-    padding: 0 32px;
+
+    @include mq($from: sm) {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
   }
 
   &:last-child {
-    margin-left: auto;
+
+
+    @include mq($from: lg) {
+      margin-left: auto;
+    }
   }
 
   &:nth-child(2),
   &:nth-child(3) {
 
     &::after {
+      display: none;
       content: '';
       position: absolute;
       top: 50%;
@@ -51,6 +67,10 @@
       width: 0;
       height: 48px;
       border-right: 1px solid rgba($color-border-light, 0.5);
+
+      @include mq($from: sm) {
+        display: block;
+      }
     }
 
   }
@@ -72,7 +92,11 @@
 
 .user-info__person-title {
   display: block;
-  font-size: 28px;
+  font-size: 24px;
+
+  @include mq($from: sm) {
+    font-size: 28px;
+  }
 }
 
 .user-info__person-subtitle {
@@ -94,6 +118,28 @@
   display: block;
   font-size: 28px;
 }
+
+.user-info__awards {
+  display: flex;
+}
+
+.user-info__awards-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+  border-radius: 50%;
+  color: $grey-2;
+  background-color: #F8F9FA;
+
+  &.is-active {
+    color: $color-primary;
+    background-color: #FFF1E7;
+  }
+}
+
 
 .dashboard-nav {
   overflow-x: auto;

@@ -75,7 +75,7 @@ exports.paths = {
       // 'node_modules/counterup2/dist/index.js',
       // 'node_modules/waypoints/lib/noframework.waypoints.min.js',
       // 'node_modules/slick-carousel/slick/slick.min.js',
-      // 'node_modules/inputmask/dist/jquery.inputmask.min.js',
+      'node_modules/inputmask/dist/jquery.inputmask.min.js',
       // 'node_modules/inputmask/dist/inputmask.min.js',
       // 'node_modules/ismobilejs/dist/isMobile.min.js',
       // 'app/libs/micromodal/micromodal.polyfill.min.js',

@@ -1,0 +1,32 @@
+
+.settings-form {
+
+}
+
+.settings-form__grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    width: 100%;
+  }
+}
+
+.settings-form__main-col {
+
+
+  @include mq($from: md) {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 800px;
+    min-width: 0;
+  }
+}
+
+.settings-form__aside-col {
+
+  @include mq($from: md) {
+    flex-shrink: 0;
+    width: 210px;
+  }
+}

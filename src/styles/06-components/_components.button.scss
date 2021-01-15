@@ -16,7 +16,7 @@ $btn-line-height: 1.15;
   display: inline-block;
   // align-items: center;
   // justify-content: center;
-  vertical-align: top;
+  vertical-align: baseline;
 
   // min-width: $btn-min-width;
   // min-height: $btn-min-height;
@@ -29,6 +29,8 @@ $btn-line-height: 1.15;
   line-height: $btn-line-height;
   text-align: center;
   user-select: none;
+  text-decoration: none;
+  cursor: pointer;
 
   @include basic-transition(all);
 
@@ -40,8 +42,9 @@ $btn-line-height: 1.15;
   // }
 }
 
-.button:not(:disabled):not(.disabled) {
-  cursor: pointer;
+.button:disabled,
+.button.disabled {
+  cursor: not-allowed;
 }
 
 .button--primary {
@@ -93,6 +96,26 @@ $btn-line-height: 1.15;
 
   .icon {
     @include center-block;
+  }
+}
+
+.text-button {
+  font-weight: 500;
+  font-size: rem(16px);
+  line-height: 1;
+  cursor: pointer;
+  @include basic-transition((color));
+
+  &--primary {
+    color: $color-primary;
+
+    @include on-event {
+      color: $color-body;
+    }
+  }
+
+  @include mq($from: sm) {
+    font-size: rem(18px);
   }
 }
 

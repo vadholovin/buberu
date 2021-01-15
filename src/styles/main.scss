@@ -54,11 +54,11 @@
 @import '05-objects/objects.flag';
 
 // 06. Components
-// @import 'swiper/css/swiper.min.css';
+@import 'swiper/css/swiper.min.css';
 // @import 'aos/dist/aos.css';
 @import '@fancyapps/fancybox/dist/jquery.fancybox.min.css';
 @import 'tippy.js/dist/tippy.css';
-// @import 'flatpickr/dist/flatpickr.min.css';
+@import 'flatpickr/dist/flatpickr.min.css';
 @import 'select2/dist/css/select2.min.css';
 @import '06-components/components.animations';
 @import '06-components/components.lazy';
