@@ -26,6 +26,18 @@ $input-background-color: #fff;
     outline-width: 0;
     border-color: $color-border-primary;
   }
+
+  &--date {
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1700 1867' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m512 0.00977a90.3 90.3 0 0 0-88.9 91.6v78.3h-163c-142 1e-5 -259 117-259 259v323a90.3 90.3 0 0 0 0 28.9v828c0 142 117 259 259 259h1180c142 0 259-117 259-259v-828a90.3 90.3 0 0 0 0-28.9v-323c0-142-117-259-259-259h-163v-78.3a90.3 90.3 0 0 0-91.6-91.6 90.3 90.3 0 0 0-88.9 91.6v78.3h-494v-78.3a90.3 90.3 0 0 0-91.6-91.6zm-251 350h163v78.2a90.3 90.3 0 1 0 181 0v-78.2h494v78.2a90.3 90.3 0 1 0 181 0v-78.2h163c44.3 0 78.2 34 78.2 78.2v247h-1336v-247c0-44.3 34-78.2 78.2-78.2zm-78.2 506h1336v752c0 44.3-34 78.2-78.2 78.2h-1180c-44.3 0-78.2-34-78.2-78.2v-752z' fill='%23DDE2E5'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: right 16px top 50%;
+    background-size: auto 18px;
+  }
+
+  [type*="password"] {
+    padding-right: 40px;
+  }
 }
 
 .textarea {
@@ -34,6 +46,36 @@ $input-background-color: #fff;
   padding-top: 10px;
   padding-bottom: 10px;
   min-height: 150px;
+  line-height: 1.4;
   resize: vertical;
+}
+
+.show-pass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  color: $color-light;
+  cursor: pointer;
+  z-index: 5;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &:focus {
+    outline-width: 0;
+    color: $color-body;
+  }
+
+  &.is-active {
+    color: $color-primary;
+  }
 }
 

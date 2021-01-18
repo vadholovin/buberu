@@ -10,3 +10,15 @@
 .inputbox__wrapper {
   position: relative;
 }
+
+.inputbox__label {
+  display: block;
+
+  &--required {
+    &::after {
+      content: '*';
+      vertical-align: top;
+      color: $color-primary;
+    }
+  }
+}

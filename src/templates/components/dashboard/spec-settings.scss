@@ -1,11 +1,19 @@
 
 .settings-form {
 
+  > * + * {
+    margin-top: 40px;
+  }
+
+  > *:last-child {
+    margin-top: 50px;
+  }
 }
 
 .settings-form__grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 
   > * {
     width: 100%;
@@ -19,14 +27,341 @@
     flex-grow: 1;
     flex-basis: 0;
     max-width: 800px;
-    min-width: 0;
+    margin-right: 40px;
+  }
+
+  > *:not(:last-child) {
+    margin-bottom: 24px;
+
+    @include mq($from: xs) {
+      margin-bottom: 30px;
+    }
   }
 }
 
 .settings-form__aside-col {
+  order: -1;
+  margin-bottom: 40px;
 
   @include mq($from: md) {
+    order: 0;
     flex-shrink: 0;
-    width: 210px;
+    width: auto;
+    margin-bottom: 0;
   }
 }
+
+.settings-form .ibox {
+
+  p:not([class]) {
+    color: $color-light;
+  }
+
+  .ibox-header {
+
+
+    @include mq($from: xs) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  .ibox-body {
+    padding: 24px 16px;
+
+    @include mq($from: xs) {
+      padding: 40px 40px 50px 40px;
+    }
+  }
+}
+
+.settings-form {
+
+  .d-flex--2-cols {
+    margin-top: -24px;
+
+    @include mq($from: xs) {
+      margin-top: -30px;
+    }
+
+    > * {
+      width: 100%;
+      max-width: 350px;
+      margin-top: 24px;
+
+      @include mq($from: xs) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .inputbox-group__row {
+    display: flex;
+    align-items: center;
+
+    > * + * {
+      justify-content: space-between;
+    }
+
+    .inputbox__wrapper {
+      width: 100%;
+      max-width: 150px;
+    }
+
+    > span {
+      margin: 8px;
+    }
+  }
+
+  .inputbox__label {
+    margin-bottom: 10px;
+    color: $color-light;
+
+    @include mq($from: xs) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .input {
+    padding-left: 20px;
+  }
+
+  .input--date,
+  .input--time {
+    max-width: 150px;
+  }
+}
+
+.settings-form__title {
+  margin-bottom: 30px;
+  font-weight: normal;
+  font-size: rem(22px);
+  line-height: 1.15;
+
+  &:not(:first-child) {
+    margin-top: 40px;
+  }
+}
+
+.settings-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.settings-avatar__photo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  @include mq($from: xs) {
+    width: 170px;
+    height: 170px;
+  }
+
+  &.user-photo--no-photo {
+
+    .user-photo__img {
+      background-color: $grey-1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 15C19.1437 15 22.5 11.6438 22.5 7.5C22.5 3.35625 19.1437 0 15 0C10.8562 0 7.5 3.35625 7.5 7.5C7.5 11.6438 10.8562 15 15 15ZM15 18.75C9.99375 18.75 0 21.2625 0 26.25V30H30V26.25C30 21.2625 20.0063 18.75 15 18.75Z' fill='%23DDE2E5'/%3E%3C/svg%3E%0A");
+      background-position: left 50% bottom 0;
+      background-size: 70.5% auto;
+    }
+  }
+}
+
+.settings-avatar__label {
+  color: $color-primary;
+  text-decoration: underline;
+  cursor: pointer;
+
+  @include on-event {
+    text-decoration: none;
+  }
+}
+
+.experience-list {
+
+  > * + * {
+    margin-top: 6px;
+  }
+}
+
+.experience-card {
+  display: flex;
+  border: 1px solid $color-border-light;
+  border-radius: $global-radius;
+}
+
+.experience-card__hand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 15px;
+  border-right: 1px solid $color-border-light;
+  font-size: 10px;
+  cursor: move;
+
+  @include basic-transition((color));
+  @include on-event {
+    outline-width: 0;
+    color: $color-primary;
+  }
+}
+
+.experience-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 20px 15px;
+
+  @include mq($from: xs) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  @include mq($from: sm) {
+    flex-direction: row;
+  }
+}
+
+.experience-card__content {
+  flex-grow: 1;
+  flex-basis: 0;
+  margin-bottom: 20px;
+
+  @include mq($from: sm) {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+}
+
+.experience-card__title {
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.experience-card__subtitle {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.experience-card__text {
+  max-width: 520px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $color-light;
+
+  p + p {
+    margin-top: 8px;
+  }
+}
+
+.experience-card__actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  @include mq($until: sm) {
+    align-self: flex-end;
+  }
+
+  > * + * {
+    margin-left: 10px;
+
+  }
+}
+
+.days-list {
+  display: flex;
+
+  @include mq($until: xs) {
+    flex-wrap: wrap;
+  }
+
+  > * {
+    margin: 2px;
+  }
+}
+
+.days-list__item-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: $global-radius;
+  line-height: 1;
+  color: $color-light;
+  background-color: $grey-1;
+  cursor: pointer;
+
+  @include basic-transition((background-color, color));
+  @include on-event {
+    background-color: #FFF7F1;
+  }
+
+  @include mq($from: xs) {
+
+  }
+}
+
+.days-list__item :checked ~ .days-list__item-text {
+  color: $color-body;
+  background-color: #FFF7F1;
+}
+
+.cost-settings {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -20px;
+
+  @include mq($from: md) {
+    margin-right: -32px;
+  }
+}
+
+.cost-settings__item {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+
+  @include mq($from: md) {
+    max-width: calc(50% - 32px);
+    margin-right: 32px;
+  }
+
+  > * + * {
+    margin-left: 15px;
+  }
+
+  .inputbox:first-child {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+  .inputbox:last-child {
+    flex-shrink: 0;
+    width: 100px;
+  }
+
+  .button {
+    max-width: 350px;
+  }
+}
+
+.pass-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 20px;
+  row-gap: 30px;
+  margin-bottom: 30px;
+}
+
+

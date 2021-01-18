@@ -91,11 +91,26 @@ $btn-line-height: 1.15;
   width: 46px;
   height: 46px;
   padding: 0;
-  border-radius: 3px;
+  border: 1px solid transparent;
+  border-radius: $global-radius-sm;
   cursor: pointer;
 
   .icon {
     @include center-block;
+  }
+}
+
+.button-edit,
+.button-delete {
+  width: 30px;
+  height: 30px;
+  border-color: $color-border-light;
+  font-size: 13px;
+  color: $color-primary;
+  @include basic-transition((color, background-color));
+  @include on-event {
+    color: #fff;
+    background-color: $color-bg-primary;
   }
 }
 
