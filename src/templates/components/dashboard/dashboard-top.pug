@@ -74,8 +74,8 @@
       each item, index in tabs
         +tab-item()
           if item.isActive
-            +tab-button()(class="is-active" data-tab-target="tab-" + (index + 1))= item.text
+            +tab-button()(class="is-active" data-tab-target="dashboard-tab-" + (index + 1))= item.text
           else if item.hasMsg
-            +tab-button()(class="has-messages" data-tab-target="tab-" + (index + 1))= item.text
+            +tab-button()(class="has-messages" data-tab-target="dashboard-tab-" + (index + 1))= item.text
           else
-            +tab-button()(data-tab-target="tab-" + (index + 1))= item.text
+            +tab-button()(data-tab-target="dashboard-tab-" + (index + 1))= item.text

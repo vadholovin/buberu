@@ -1,0 +1,160 @@
+
+.profile__grid
+  .profile__main
+    .info-module
+      h2.dashboard-main__title Обо мне
+      .info-module__text
+        p Работаю с электроникой на протяжении 20 лет. Имею большой опыт в данной области. Выполняю свои обязанности в срок и по доступным ценам. Имею профессиональное оборудование.
+
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    .info-module
+      h3.dashboard-main__title Образование
+      ul.list-styled.list-styled--check
+        li Подольский колледж, бухгалтер, экономика и бухгалтерский учет <span class="text-light">2009–2012 гг.</span>
+        li Восточная экономико-юридическая гуманитарная академия, менеджмент, бакалавр <span class="text-light">2012–2015 гг.</span>
+
+    .info-module
+      h3.dashboard-main__title Опыт работы
+      ul.list-styled.list-styled--check
+        li Работа в Web-Студии 2015–2017 гг.
+        li На сервисе с декабря 2018 г. (2 года)
+
+    .info-module
+      h3.dashboard-main__title Стоимость услуг
+      +tabs.info-module__tabs
+        +tab-item()
+          +tab-button()(data-tab-target="price-tab-1").is-active Единоразовый осмотр
+        +tab-item()
+          +tab-button()(data-tab-target="price-tab-2") Консультации онлайн
+      +tabs-content
+        +tab-wrapper()(data-tab="price-tab-1" data-tab-group="price").is-active
+          ul.list-styled.list-styled--bullet.info-pricelist
+            li
+              span.info-pricelist__label Телефоны
+              span.info-pricelist__price 500
+            li
+              span.info-pricelist__label Планшеты
+              span.info-pricelist__price 500
+            li
+              span.info-pricelist__label Ноутбуки
+              span.info-pricelist__price 800
+            li
+              span.info-pricelist__label Телевизоры
+              span.info-pricelist__price 800
+
+        +tab-wrapper()(data-tab="price-tab-2" data-tab-group="price")
+          ul.list-styled.list-styled--bullet.info-pricelist
+            li
+              span.info-pricelist__label Ноутбуки
+              span.info-pricelist__price 800
+            li
+              span.info-pricelist__label Телевизоры
+              span.info-pricelist__price 800
+            li
+              span.info-pricelist__label Телефоны
+              span.info-pricelist__price 500
+            li
+              span.info-pricelist__label Планшеты
+              span.info-pricelist__price 500
+
+
+    .info-module
+      .widget-rating
+        .widget-rating__header
+          h3.widget-rating__title Отзывы <span class="text-primary">21</span>
+          .widget-rating__total
+            +icon('star')
+            | 4,75
+        .widget-rating__body
+          ul.ratings-list
+            li.ratings-item
+              span.ratings-item__label 5
+              span.ratings-item__bar
+                span.ratings-item__bar-inner(style="width:50%;")
+              span.ratings-item__count 4
+            li.ratings-item
+              span.ratings-item__label 4
+              span.ratings-item__bar
+                span.ratings-item__bar-inner(style="width:75%;")
+              span.ratings-item__count 6
+            li.ratings-item
+              span.ratings-item__label 3
+              span.ratings-item__bar
+                span.ratings-item__bar-inner(style="width:30%;")
+              span.ratings-item__count 4
+            li.ratings-item
+              span.ratings-item__label 2
+              span.ratings-item__bar
+                span.ratings-item__bar-inner(style="width:10%;")
+              span.ratings-item__count 1
+            li.ratings-item
+              span.ratings-item__label 1
+              span.ratings-item__bar
+                span.ratings-item__bar-inner(style="width:15%;")
+              span.ratings-item__count 2
+
+    .info-module
+      .reviews-list
+        .reviews-list__item
+          .reviews-card
+            .reviews-card__header
+              .flag
+                .flag__img
+                .flag__body
+
+            .reviews-card__body
+              .reviews-card__heading
+                h5.reviews-card__title
+                .reviews-card__stars.stars
+                  <svg class="stars__svg" viewBox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H2H118H120V20H118H2H0V0ZM111.09 6.81775L118 7.82776L113 12.6978L114.18 19.5778L108 16.3278L101.82 19.5778L103 12.6978L98 7.82776L104.91 6.81775L108 0.557739L111.09 6.81775ZM7 12.6978L2 7.82776L8.91016 6.81775L12 0.557739L15.0898 6.81775L22 7.82776L17 12.6978L18.1797 19.5778L12 16.3278L5.82031 19.5778L7 12.6978ZM60 0.557739L63.0898 6.81775L70 7.82776L65 12.6978L66.1797 19.5778L60 16.3278L53.8203 19.5778L55 12.6978L50 7.82776L56.9102 6.81775L60 0.557739ZM39.0898 6.81775L36 0.557739L32.9102 6.81775L26 7.82776L31 12.6978L29.8203 19.5778L36 16.3278L42.1797 19.5778L41 12.6978L46 7.82776L39.0898 6.81775ZM84 0.557739L87.0898 6.81775L94 7.82776L89 12.6978L90.1797 19.5778L84 16.3278L77.8203 19.5778L79 12.6978L74 7.82776L80.9102 6.81775L84 0.557739Z" fill="white"></path></svg>
+                  .stars__back
+                  .stars__progress(style="width: 92%")
+
+
+  .profile__aside
+    .ibox
+      .ibox-header
+        .ibox-header__title
+          +icon( 'envelope-o' ).ibox-header__title-icon
+          span.ibox-header__title-text Информация
+      .ibox-body
+        .info-widget
+          a.button.button--primary.button--block(href="") Редактировать информацию
+          a.button.button--light.button--block(href="") Подтвердить документы
+
+          ul.accounts-list.accounts-list--active
+            li.accounts-item.flag
+              .accounts-item__img.flag__img
+                .accounts-item__icon
+                  +icon('envelope-o')
+              .accounts-item__body.flag__body
+                span.accounts-item__title Email
+                span.accounts-item__info nika.and@mail.ru
+            li.accounts-item.flag
+              .accounts-item__img.flag__img
+                .accounts-item__icon
+                  +icon('vk')
+              .accounts-item__body.flag__body
+                span.accounts-item__title Вконтакте
+                span.accounts-item__info 150 друзей
+
+          hr
+
+          p.info-widget__text Повысьте доверие пользователей к себе — привяжите ваши аккаунты социальных сетей к профилю.
+
+          ul.accounts-list
+            li.accounts-item.flag
+              .accounts-item__img.flag__img
+                .accounts-item__icon
+                  +icon('facebook')
+              .accounts-item__body.flag__body
+                span.accounts-item__title Facebook
+                a.accounts-item__link(href="") Привязать
+            li.accounts-item.flag
+              .accounts-item__img.flag__img
+                .accounts-item__icon
+                  +icon('odnoklassniki')
+              .accounts-item__body.flag__body
+                span.accounts-item__title Одноклассники
+                a.accounts-item__link(href="") Привязать
