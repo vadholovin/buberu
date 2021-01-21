@@ -1,0 +1,13 @@
+
++tabs.tasks-nav
+  +tab-item()
+    +tab-button()(data-tab-target="tasks-tab-1").button.button--light.is-active Запланированные заказы
+  +tab-item()
+    +tab-button()(data-tab-target="tasks-tab-2").button.button--light Выполненные заказы
+
++tabs-content.tasks-content
+  +tab-wrapper()(data-tab="tasks-tab-1" data-tab-group="tasks").is-active
+    include tasks-planned
+
+  +tab-wrapper()(data-tab="tasks-tab-2" data-tab-group="tasks")
+    include tasks-completed

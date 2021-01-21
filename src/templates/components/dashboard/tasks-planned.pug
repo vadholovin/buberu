@@ -1,0 +1,33 @@
+
+.order-module
+  h3.order-module__title Ожидание
+
+  .order-module__list
+    .order-module__item
+      .order-card
+        .order-card__header
+          .order-card__user.flag
+            .order-card__user-img.flag__img
+              .user-photo.online
+                .user-photo__inner
+                  img.user-photo__img(src="assets/img/content/avatars/ava-1-lg.jpg", alt="")
+            .order-card__user-text.flag__body
+              span.order-card__user-name Аня Фролова
+              span.order-card__user-role Клиент
+
+          .order-card__timing
+            span.order-card__timing-label До конца:
+            span.order-card__timing-amount.js-tippy-with-tpl(data-template="tippy-tpl-1") осталось 2 дня
+            template#tippy-tpl-1
+              .tooltips-template.tooltips-template--timing
+                ul.timing-list
+                  li.timing-item
+                    span.timing-item__date 18 Октября, 2020
+                    span.timing-item__text Публикация задания
+                  li.timing-item
+                    span.timing-item__date 20 Октября, 2020
+                    span.timing-item__text Срок исполнения
+
+
+        .order-card__body
+

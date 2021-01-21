@@ -1,0 +1,33 @@
+/* ==========================================================================
+   #TIMING-LIST
+   ========================================================================== */
+
+.timing-list {
+
+  > * + * {
+    margin-top: 15px;
+  }
+}
+
+.timing-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: #F8F9FA;
+  line-height: 1;
+
+  > *+* {
+    margin-top: 5px;
+  }
+}
+
+.timing-item__date {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.timing-item__text {
+  font-weight: 500;
+  font-size: 10px;
+  opacity: 0.5;
+}

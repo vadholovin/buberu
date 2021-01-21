@@ -329,15 +329,26 @@ document.addEventListener('DOMContentLoaded', () => {
  * Tooltips
  */
 document.addEventListener('DOMContentLoaded', function() {
+  // Default options
+  // tippy.setDefaults({
+  //   allowHTML: true,
+  // });
+
+
+
   tippy('.js-tippy', {
     maxWidth: 200,
-    allowHTML: true,
-    a11y: true,
-    aria: {
-      content: 'auto',
-      expanded: 'auto',
+  });
+
+  tippy('.js-tippy-with-tpl', {
+    content(reference) {
+      const id = reference.getAttribute('data-template');
+      const container = document.createElement('div');
+      const linkedTemplate = document.getElementById(id);
+      const node = document.importNode(linkedTemplate.content, true);
+      container.appendChild(node);
+      return container;
     },
-    role: 'tooltip',
   });
 });
 

@@ -1,0 +1,33 @@
+
+.tasks-nav {
+  display: flex;
+  margin-bottom: 40px;
+  overflow-y: auto;
+
+  @include mq($from: sm) {
+    margin-bottom: 50px;
+  }
+
+  > *+* {
+    margin-left: 15px;
+  }
+
+  .tab {
+
+    &.is-active {
+      color: #fff;
+      background-color: $color-bg-primary;
+    }
+  }
+}
+
+.tasks-content {
+
+  > *+* {
+    margin-top: 40px;
+
+    @include mq($from: sm) {
+      margin-top: 50px;
+    }
+  }
+}
