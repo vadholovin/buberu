@@ -1,0 +1,138 @@
+
+.order-module
+  ul.order-module__list
+    li.order-module__item
+      .order-card
+        .order-card__header
+          .order-card__user.flag
+            .order-card__user-img.flag__img
+              .user-photo.online
+                .user-photo__inner
+                  img.user-photo__img(src="assets/img/content/avatars/ava-1-lg.jpg", alt="")
+            .order-card__user-text.flag__body
+              span.order-card__user-name Аня Фролова
+              span.order-card__user-role Клиент
+
+          .order-card__timing
+            span.order-card__timing-label До конца:
+            span.order-card__timing-amount.underline.underline--dashed.js-tippy-with-tpl(data-template="tippy-tpl-101") осталось 0 дней
+          template#tippy-tpl-101
+            .tooltips-template.tooltips-template--timing
+              ul.timing-list
+                li.timing-item
+                  span.timing-item__date 18 Октября, 2020
+                  span.timing-item__text Публикация задания
+                li.timing-item
+                  span.timing-item__date 20 Октября, 2020
+                  span.timing-item__text Срок исполнения
+
+          .order-card__status Выполнено
+
+        .order-card__body
+          h5.order-card__title <span class="text-light">#1412</span> Подбор iPhone XS Max Space gray 512 GB
+          ul.order-card__details
+            li.order-card__details-item
+              span.order-card__details-label Модель
+              span.order-card__details-text Iphone XS max Space gray 512 GB
+            li.order-card__details-item
+              span.order-card__details-label Услуга
+              span.order-card__details-text Подбор под ключ
+            li.order-card__details-item
+              span.order-card__details-label Место
+              span.order-card__details-text 10 Авеню, дом 7
+
+          .order-card__actions
+            button.button.button--light(type="button") Написать сообщение
+            button.button.button--light(type="button") Пожаловаться
+
+    li.order-module__item
+      .order-card
+        .order-card__header
+          .order-card__user.flag
+            .order-card__user-img.flag__img
+              .user-photo.online
+                .user-photo__inner
+                  img.user-photo__img(src="assets/img/content/avatars/ava-1-lg.jpg", alt="")
+            .order-card__user-text.flag__body
+              span.order-card__user-name Аня Фролова
+              span.order-card__user-role Клиент
+
+          .order-card__timing
+            span.order-card__timing-label До конца:
+            span.order-card__timing-amount.underline.underline--dashed.js-tippy-with-tpl(data-template="tippy-tpl-208") осталось 0 дней
+          template#tippy-tpl-208
+            .tooltips-template.tooltips-template--timing
+              ul.timing-list
+                li.timing-item
+                  span.timing-item__date 18 Октября, 2020
+                  span.timing-item__text Публикация задания
+                li.timing-item
+                  span.timing-item__date 20 Октября, 2020
+                  span.timing-item__text Срок исполнения
+
+          .order-card__status Выполнено
+
+        .order-card__body
+          h5.order-card__title <span class="text-light">#1412</span> Подбор iPhone XS Max Space gray 512 GB
+          ul.order-card__details
+            li.order-card__details-item
+              span.order-card__details-label Модель
+              span.order-card__details-text Iphone XS max Space gray 512 GB
+            li.order-card__details-item
+              span.order-card__details-label Услуга
+              span.order-card__details-text Подбор под ключ
+            li.order-card__details-item
+              span.order-card__details-label Место
+              span.order-card__details-text 10 Авеню, дом 7
+
+          .order-card__actions
+            button.button.button--light(type="button") Написать сообщение
+            button.button.button--light(type="button") Пожаловаться
+
+
+.order-module
+  h3.order-module__title Отклоненные
+
+  .order-module__list
+    .order-module__item
+      .order-card
+        .order-card__header
+          .order-card__user.flag
+            .order-card__user-img.flag__img
+              .user-photo.online
+                .user-photo__inner
+                  img.user-photo__img(src="assets/img/content/avatars/ava-1-lg.jpg", alt="")
+            .order-card__user-text.flag__body
+              span.order-card__user-name Аня Фролова
+              span.order-card__user-role Клиент
+
+          .order-card__timing
+            span.order-card__timing-label До конца:
+            span.order-card__timing-amount.underline.underline--dashed.js-tippy-with-tpl(data-template="tippy-tpl-4") осталось 2 дня
+          template#tippy-tpl-4
+            .tooltips-template.tooltips-template--timing
+              ul.timing-list
+                li.timing-item
+                  span.timing-item__date 18 Октября, 2020
+                  span.timing-item__text Публикация задания
+                li.timing-item
+                  span.timing-item__date 20 Октября, 2020
+                  span.timing-item__text Срок исполнения
+
+          .order-card__status.denied Отклонено
+
+        .order-card__body
+          h5.order-card__title <span class="text-light">#1412</span> Подбор iPhone XS Max Space gray 512 GB
+          ul.order-card__details
+            li.order-card__details-item
+              span.order-card__details-label Модель
+              span.order-card__details-text Iphone XS max Space gray 512 GB
+            li.order-card__details-item
+              span.order-card__details-label Причина отказа
+              span.order-card__details-text Истекло время ожидания
+            li.order-card__details-item
+              span.order-card__details-label Модератор
+              span.order-card__details-text.text-primary Артур Карманов
+
+          .order-card__actions
+            button.button.button--light(type="button") Пожаловаться

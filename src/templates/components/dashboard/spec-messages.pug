@@ -1,0 +1,67 @@
+
+.messages__wrapper
+  .messages__grid
+    .messages__aside
+      +form().search-form.search-form--simple
+        +inputbox()
+          +input-wrapper
+            +input()(
+              type="text"
+              name="s"
+              aria-label="Поиск"
+              placeholder="Поиск"
+            )
+      ul.notif-list
+        li.notif-list__item
+          .flag.flag--top.notif-card.notif-card--msg
+            .flag__img.notif-card__img
+              .user-photo.online
+                .user-photo__inner
+                  img.user-photo__img(src="assets/img/content/avatars/ava-1.jpg", alt="")
+
+            .flag__body.notif-card__body
+              .notif-card__name Добрыня Никитич
+              .notif-card__text Lorem Ipsum является текст - заполнитель обычный
+              .notif-card__date 4 часа назад
+
+        li.notif-list__item
+          .flag.flag--top.notif-card.notif-card--msg
+            .flag__img.notif-card__img
+              .user-photo.user-photo--no-photo.offline
+                .user-photo__inner
+                  .user-photo__img
+
+            .flag__body.notif-card__body
+              .notif-card__name Алексей Римский-Корсаков
+              .notif-card__text Lorem Ipsum является текст - заполнитель обычный
+              .notif-card__date Вчера 12:32
+
+        li.notif-list__item
+          .flag.flag--top.notif-card.notif-card--msg
+            .flag__img.notif-card__img
+              .user-photo.online
+                .user-photo__inner
+                  img.user-photo__img(src="assets/img/content/avatars/ava-1.jpg", alt="")
+
+            .flag__body.notif-card__body
+              .notif-card__name Добрыня Никитич
+              .notif-card__text Lorem Ipsum является текст - заполнитель обычный
+              .notif-card__date 4 часа назад
+
+        li.notif-list__item
+          .flag.flag--top.notif-card.notif-card--msg
+            .flag__img.notif-card__img
+              .user-photo.user-photo--no-photo.offline
+                .user-photo__inner
+                  .user-photo__img
+
+            .flag__body.notif-card__body
+              .notif-card__name Алексей Римский-Корсаков
+              .notif-card__text Lorem Ipsum является текст - заполнитель обычный
+              .notif-card__date Вчера 12:32
+
+
+
+
+
+    .messages__main

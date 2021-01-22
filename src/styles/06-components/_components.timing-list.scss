@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .timing-list {
+  padding: 15px 25px 15px 10px;
 
   > * + * {
     margin-top: 15px;
@@ -13,8 +14,45 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  padding-left: 18px;
   color: #F8F9FA;
   line-height: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0.45em;
+    left: 0;
+    transform: translateY(-50%);
+    width: 7px;
+    height: 7px;
+  }
+
+  &:not(:last-child)::before {
+    border-radius: 50%;
+    background: #A4A7AB;
+  }
+
+  &:last-child::before {
+    left: -3px;
+    width: 12px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 9 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.27273 1L3.27273 6L1 3.72727' stroke='%23A4A7AB' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: contain;
+  }
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 1.3em;
+    left: 3px;
+    transform: translate(-50%, 0);
+    width: 0;
+    height: calc(65% + 5px); // 5px is next element's top-margin
+    border-left: 1px solid #A4A7AB;
+  }
 
   > *+* {
     margin-top: 5px;
