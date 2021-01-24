@@ -1,0 +1,81 @@
+
+.messages__wrapper {
+  padding: 30px 0;
+  border-radius: $global-radius;
+  background: #FFFFFF;
+  box-shadow: $global-shadow-sm;
+}
+
+.messages__grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.messages__aside {
+  width: 100%;
+
+  @include mq($from: md) {
+    width: 400px;
+    border-right: 1px solid $grey-1;
+  }
+
+  > *+* {
+    margin-top: 10px;
+  }
+}
+
+.messages__main {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.search-form {
+
+
+  .messages__aside & {
+    padding: 0 25px 25px 30px;
+    border-bottom: 1px solid $grey-1;
+  }
+}
+
+.notif-list__item {
+
+  .messages__aside & {
+    border: none;
+  }
+}
+
+.notif-card {
+
+  .messages__aside & {
+    padding-left: 25px;
+    padding-right: 25px;
+    border-bottom: 0;
+    border-left: 3px solid transparent;
+
+    &.is-active {
+      border-color: $color-border-primary;
+    }
+  }
+}
+
+.users-accordion__title {
+  border-bottom: 1px solid $grey-1;
+}
+
+.users-accordion__button {
+  padding: 16px 40px 16px 30px;
+  color: $color-light;
+}
+
+.accordion__button-icon {
+  right: 25px;
+  width: 10px;
+  height: 10px;
+  font-size: 10px;
+  color: $color-primary;
+}
+
+.users-accordion__content {
+  padding-top: 10px;
+}

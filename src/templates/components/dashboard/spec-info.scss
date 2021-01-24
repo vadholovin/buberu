@@ -193,11 +193,18 @@
   }
 }
 
-// .reviews-card__user {
-
-// }
+.reviews-card__user {
+  display: flex;
+  align-items: center;
+}
 
 .reviews-card__user-img {
+  flex-shrink: 0;
+  padding-right: 15px;
+
+  > img {
+    max-width: none;
+  }
 
   @include mq($from: xs) {
     padding-right: 24px;
@@ -216,6 +223,9 @@
 }
 
 .reviews-card__user-text {
+  width: auto;
+  flex-grow: 1;
+  flex-basis: 0;
   font-weight: 500;
   line-height: 1.3;
 
@@ -346,8 +356,19 @@
   }
 }
 
+.accounts-item {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
 .accounts-item__img {
+  flex-shrink: 0;
   padding-right: 20px;
+
+  > img {
+    max-width: none;
+  }
 }
 
 .accounts-item__icon {
@@ -367,6 +388,9 @@
 }
 
 .accounts-item__body {
+  width: auto;
+  flex-grow: 1;
+  flex-basis: 0;
   line-height: 1.15;
 
   > * + * {

@@ -3,15 +3,13 @@
    ========================================================================== */
 
 .search-form {
-  box-shadow: $global-shadow;
 
   .input {
-    height: 66px;
-    padding-left: 66px;
-    border-radius: $global-radius-lg;
+    padding-left: 20px;
+    padding-right: 50px;
     background-image: url("data:image/svg+xml,%3Csvg fill='none' viewBox='0 0 1700 1700' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m765 0c-422 0-765 344-765 765 0 422 344 765 765 765 177 0 340-61 469-162l303 302a94.4 94.4 0 1 0 133-133l-302-303c101-130 162-293 162-469 0-422-344-765-765-765zm0 189c320 0 577 257 577 577 0 153-59.4 291-156 394a94.4 94.4 0 0 0-26.9 27.1c-103 96.3-241 156-394 156-320 0-577-257-577-577 0-320 257-577 577-577z' fill='%23dde2e5'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: 30px 50%;
+    background-position: right 25px top 50%;
     background-size: 18px auto;
   }
 }
@@ -28,3 +26,4 @@
     @include hidden-visually;
   }
 }
+

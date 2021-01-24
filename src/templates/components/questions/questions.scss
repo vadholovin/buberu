@@ -4,6 +4,19 @@
 
 .questions-form {
   margin-bottom: 60px;
+  box-shadow: $global-shadow;
+
+  .input {
+    height: 66px;
+    padding-left: 66px;
+    padding-right: 16px;
+    border-radius: $global-radius-lg;
+    background-position: 30px 50%;
+
+    @include mq($from: sm) {
+      padding-right: 170px;
+    }
+  }
 }
 
 .questions__note {

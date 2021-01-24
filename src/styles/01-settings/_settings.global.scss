@@ -22,6 +22,13 @@ $global-shadow:
   0px 1px 5px rgba(0, 0, 0, 0.012),
   0px 0px 2px rgba(0, 0, 0, 0.008) !default;
 
+$global-shadow-sm:
+  0px 14px 24px rgba(172, 181, 189, 0.05),
+  0px 5px 8px rgba(172, 181, 189, 0.034),
+  0px 2px 4px rgba(172, 181, 189, 0.027),
+  0px 1px 2px rgba(172, 181, 189, 0.022),
+  0px 1px 1px rgba(172, 181, 189, 0.015) !default;
+
 
 // Utilities
 $use-aspect-ratio: false !default;

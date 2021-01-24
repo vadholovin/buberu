@@ -3,7 +3,6 @@
    ========================================================================== */
 
 .accordion__content {
-  padding-bottom: 50px;
   display: none;
 
   &.is-active {
@@ -11,71 +10,89 @@
   }
 }
 
-.accordion__item {
-  border-bottom: 0.5px solid $color-border-light;
-
-  &:first-child {
-    border-top: 0.5px solid $color-border-light;
-  }
-}
-
 .accordion__title {
   position: relative;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 100%;
-
-  @include mq($from: sm) {
-    font-size: 22px;
-  }
 }
 
 .accordion__button {
   position: relative;
   width: 100%;
-  padding: 35px;
   text-align: left;
   cursor: pointer;
-
-  @include mq($from: sm) {
-    padding-left: 125px;
-  }
-}
-
-.accordion__button-count {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  font-size: 18px;
 }
 
 .accordion__button-icon {
   position: absolute;
   top: 50%;
   right: 0;
-  transform: translateY(-50%) rotate(-45deg);
-  font-size: 16px;
-  color: $grey-2;
+  transform: translateY(-50%);
   @include basic-transition((color, transform));
 
   .accordion__button.is-active & {
-    color: $color-primary;
+    transform: translateY(-50%) rotate(-180deg);
+  }
+}
+
+.accordion--general {
+  padding-bottom: 50px;
+
+  .accordion__item {
+    border-bottom: 0.5px solid $color-border-light;
+
+    &:first-child {
+      border-top: 0.5px solid $color-border-light;
+    }
+  }
+
+  .accordion__title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+
+    @include mq($from: sm) {
+      font-size: 22px;
+    }
+  }
+
+  .accordion__button {
+    padding: 35px;
+
+    @include mq($from: sm) {
+      padding-left: 125px;
+    }
+  }
+
+  .accordion__button-count {
+    position: absolute;
+    top: 50%;
+    left: 0;
     transform: translateY(-50%);
+    font-size: 18px;
   }
-}
 
-.accordion__button-text {
-
-  .accordion__button.is-active & {
-    color: $color-primary;
+  .accordion__button-icon {
+    transform: translateY(-50%) rotate(-45deg);
+    font-size: 16px;
+    color: $grey-2;
   }
-}
 
-.accordion__body {
-  font-weight: 500;
+  .accordion__button.is-active {
 
-  @include mq($from: sm) {
-    padding-left: 125px;
+    .accordion__button-icon {
+      color: $color-primary;
+      transform: translateY(-50%);
+    }
+
+    .accordion__button-text {
+      color: $color-primary;
+    }
+  }
+
+  .accordion__body {
+    font-weight: 500;
+
+    @include mq($from: sm) {
+      padding-left: 125px;
+    }
   }
 }
