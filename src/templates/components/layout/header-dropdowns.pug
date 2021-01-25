@@ -19,14 +19,14 @@ mixin header-dropdown(option)
           .site-header__dropdown-reset.js-tippy(tabindex="0" data-tippy-content="Скрыть уведомления")
 
         else if option === 'user'
-          .site-header__dropdown-flag.flag
-            .flag__img(href="")
+          .user-flag.site-header__user-flag
+            a.user-flag__img(href="")
               .user-photo
                 .user-photo__inner
                   img.user-photo__img(src="assets/img/content/avatars/ava-1.jpg", alt="")
-            .flag__body
-              .site-header__dropdown-flag-name Владимир Тихонов
-              .site-header__dropdown-flag-role Заказчик
+            .user-flag__body
+              span.user-flag__title Владимир Тихонов
+              span.user-flag__subtitle Заказчик
 
       .site-header__dropdown-body
 

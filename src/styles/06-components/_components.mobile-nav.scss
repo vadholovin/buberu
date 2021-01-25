@@ -136,24 +136,15 @@
   line-height: 1.2;
 }
 
-.mobile-user {
+.mobile-nav__user-flag {
   margin-bottom: 15px;
   border-bottom: 1px solid $color-border-light;
 
   > * {
     padding-bottom: 20px;
   }
-}
 
-.mobile-user__body {
-  line-height: 1.3;
-}
-
-.mobile-user__name {
-  font-size: 15px;
-}
-
-.mobile-user__role {
-  font-size: 14px;
-  color: $color-light;
+  .user-flag__title {
+    font-size: 15px;
+  }
 }

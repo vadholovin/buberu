@@ -236,21 +236,19 @@
   color: $color-light;
 }
 
-.site-header__dropdown-flag {
+.site-header__user-flag {
 
-  .flag__body {
+  .user-flag__body {
     font-size: 14px;
-line-height: 100%;
+
+    > *+* {
+      margin-top: 5px;
+    }
   }
-}
 
-.site-header__dropdown-flag-name {
-  margin-bottom: 5px;
-  font-weight: 500;
-
-}
-.site-header__dropdown-flag-role {
-  color: $color-light;
+  .user-flag__subtitle {
+    font-weight: normal;
+  }
 }
 
 // .site-header__dropdown-body {

@@ -5,10 +5,30 @@
 .inputbox {
   display: block;
   position: relative;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--editable {
+    min-height: 20px;
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: $global-radius;
+
+    &.focused {
+      border-color: $color-border-light;
+    }
+  }
 }
 
 .inputbox__wrapper {
   position: relative;
+
+  .inputbox--editable & {
+    overflow: hidden;
+    cursor: text;
+  }
 }
 
 .inputbox__label {
@@ -20,5 +40,18 @@
       vertical-align: top;
       color: $color-primary;
     }
+  }
+
+  .inputbox--editable & {
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: $color-light;
+  }
+
+  .inputbox--editable.filled & {
+    visibility: hidden;
   }
 }

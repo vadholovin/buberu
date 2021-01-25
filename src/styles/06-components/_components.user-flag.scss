@@ -1,0 +1,40 @@
+/* ==========================================================================
+   #USER-FLAG
+   ========================================================================== */
+
+.user-flag {
+  display: flex;
+  align-items: center;
+
+  &--top {
+    align-items: flex-start;
+  }
+}
+
+.user-flag__img {
+  flex-shrink: 0;
+  padding-right: 15px;
+}
+
+.user-flag__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: auto;
+  min-width: 0;
+  font-weight: 500;
+  line-height: 1.12;
+
+  > *+* {
+    margin-top: 10px;
+  }
+}
+
+// .user-flag__title {
+
+// }
+
+.user-flag__subtitle {
+  font-size: 14px;
+  color: $color-light;
+}

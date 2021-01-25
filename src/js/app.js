@@ -1,5 +1,86 @@
 /* eslint-disable */
 
+/*!
+ * classie - class helper functions
+ * from bonzo https://github.com/ded/bonzo
+ *
+ * classie.has( elem, 'my-class' ) -> true/false
+ * classie.add( elem, 'my-new-class' )
+ * classie.remove( elem, 'my-unwanted-class' )
+ * classie.toggle( elem, 'my-class' )
+ */
+
+/*jshint browser: true, strict: true, undef: true */
+/*global define: false */
+
+( function( window ) {
+
+  'use strict';
+
+  // class helper functions from bonzo https://github.com/ded/bonzo
+
+  function classReg( className ) {
+    return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
+  }
+
+  // classList support for class management
+  // altho to be fair, the api sucks because it won't accept multiple classes at once
+  var hasClass, addClass, removeClass;
+
+  if ( 'classList' in document.documentElement ) {
+    hasClass = function( elem, c ) {
+      return elem.classList.contains( c );
+    };
+    addClass = function( elem, c ) {
+      elem.classList.add( c );
+    };
+    removeClass = function( elem, c ) {
+      elem.classList.remove( c );
+    };
+  }
+  else {
+    hasClass = function( elem, c ) {
+      return classReg( c ).test( elem.className );
+    };
+    addClass = function( elem, c ) {
+      if ( !hasClass( elem, c ) ) {
+        elem.className = elem.className + ' ' + c;
+      }
+    };
+    removeClass = function( elem, c ) {
+      elem.className = elem.className.replace( classReg( c ), ' ' );
+    };
+  }
+
+  function toggleClass( elem, c ) {
+    var fn = hasClass( elem, c ) ? removeClass : addClass;
+    fn( elem, c );
+  }
+
+  var classie = {
+    // full names
+    hasClass: hasClass,
+    addClass: addClass,
+    removeClass: removeClass,
+    toggleClass: toggleClass,
+    // short names
+    has: hasClass,
+    add: addClass,
+    remove: removeClass,
+    toggle: toggleClass
+  };
+
+  // transport
+  if ( typeof define === 'function' && define.amd ) {
+    // AMD
+    define( classie );
+  } else {
+    // browser global
+    window.classie = classie;
+  }
+
+  })( window );
+
 /**
  * SVG4EVERYBODY
  */
@@ -279,6 +360,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
+      function toggle() {
+        if (content.hasAttribute('data-popper-show')) {
+          show()
+        } else {
+          show()
+        }
+      }
+
       function show() {
         content.setAttribute('data-popper-show', '');
         create();
@@ -286,7 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       function hide() {
         content.removeAttribute('data-popper-show');
-          destroy();
+        destroy();
       }
 
       let showEvents, hideEvents;
@@ -296,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hideEvents = ['mouseleave', 'blur'];
       } else {
         showEvents = ['click', 'focus'];
-        hideEvents = ['click', 'blur'];
+        hideEvents = ['blur'];
       }
 
       showEvents.forEach(event => {
@@ -304,6 +393,12 @@ document.addEventListener('DOMContentLoaded', () => {
           popper.addEventListener(event, function() {
             this.setAttribute('data-popper-active', '');
           });
+        }
+
+        if (event === 'click') {
+          trigger.addEventListener(event, toggle);
+
+          return;
         }
 
         trigger.addEventListener(event, show);
@@ -508,5 +603,70 @@ jQuery(function ($) {
 });
 
 
+/**
+ * Contenteditable fields
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  if (!String.prototype.trim) {
+    (function() {
+      // Make sure we trim BOM and NBSP
+      var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+      String.prototype.trim = function() {
+        return this.replace(rtrim, '');
+      };
+    })();
+  }
+
+  const fields = document.querySelectorAll('.field-editable');
+
+  fields.forEach(function(item) {
+    const wrapper = item.closest('.inputbox--editable');
+
+    if (item.textContent.trim() !== '') {
+      classie.add(wrapper, 'filled');
+    }
+
+    wrapper.addEventListener('click', setFocus, false);
+    item.addEventListener('focus', onInputFocus, false);
+    item.addEventListener('blur', onInputBlur, false);
+    item.addEventListener('keyup', onInputChange, false);
+  });
+
+  function setFocus(event) {
+    const wrapper = event.currentTarget;
+    const input = wrapper.querySelector('.field-editable');
+
+    classie.add(wrapper, 'focused');
+    input.focus();
+  }
+
+  function onInputChange(event) {
+    const input = event.target;
+    const wrapper = input.closest('.inputbox--editable');
+
+    if (input.textContent.trim() === '') {
+      classie.remove(wrapper, 'filled');
+    } else {
+      classie.add(wrapper, 'filled');
+    }
+  }
+
+  function onInputFocus(event) {
+    const wrapper = event.target.closest('.inputbox--editable');
+
+    classie.add(wrapper, 'focused');
+  }
+
+  function onInputBlur(event) {
+    const input = event.target;
+    const wrapper = event.target.closest('.inputbox--editable');
+
+    classie.remove(wrapper, 'focused');
+
+    if (input.textContent.trim() === '') {
+      classie.remove(wrapper, 'filled');
+    }
+  }
+});
 
 

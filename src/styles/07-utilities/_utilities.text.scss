@@ -174,3 +174,7 @@ a.underline {
   transition-property: color, box-shadow;
   transition-timing-function: ease-in-out;
 }
+
+.selectable-text {
+  user-select: text;
+}

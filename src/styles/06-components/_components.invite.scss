@@ -1,0 +1,59 @@
+/* ==========================================================================
+   #INVITE
+   ========================================================================== */
+
+.invite {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+}
+
+.invite__title {
+  margin-bottom: 10px;
+  font-weight: normal;
+  font-size: rem(18px);
+  line-height: 1.3;
+
+  @include mq($from: md) {
+    font-size: rem(22px);
+  }
+}
+
+.invite__info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  @include mq($from: xs) {
+    flex-direction: row;
+  }
+}
+
+.invite__info-item {
+  font-weight: 500;
+  font-size: rem(14px);
+  line-height: 1.3;
+  color: $color-light;
+
+  &:not(:last-child) {
+
+
+    @include mq($from: xs) {
+      margin-right: 10px;
+      padding-right: 10px;
+      border-right: 1px solid $color-border-light;
+    }
+  }
+}
+
+.invite__actions {
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}

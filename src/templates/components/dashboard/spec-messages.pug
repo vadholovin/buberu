@@ -1,7 +1,7 @@
 
-.messages__wrapper
-  .messages__grid
-    .messages__aside
+.messages-wrapper
+  .messages-grid
+    .messages-aside
       +form().search-form
         +inputbox()
           +input-wrapper
@@ -106,4 +106,110 @@
                   span.notif-card__text Lorem Ipsum является текст - заполнитель обычный
 
 
-    .messages__main
+    .messages-main
+      .messages-main__header
+        .user-flag.messages-user-flag
+          .user-flag__img
+            .user-photo
+              .user-photo__inner
+                img.user-photo__img(src="assets/img/content/avatars/ava-1.jpg", alt="")
+          .user-flag__body
+            span.user-flag__title Михаил Стариков
+            span.user-flag__subtitle был(-а) 3 часа назад
+
+        ul.messages-main__actions
+          li.messages-main__actions-item.js-popper-wrapper
+            button.button-icon.button-search.js-popper-trigger(type="button" aria-label="Показать поле поиска")
+              +icon('search-o')
+            .dropdown.dropdown--bottom-right.dropdown--arrow-right.js-popper-content
+              +form().search-form
+                +inputbox()
+                  +input-wrapper
+                    +input()(
+                      type="text"
+                      name="s"
+                      aria-label="Поиск"
+                      placeholder="Поиск"
+                    )
+
+          li.messages-main__actions-item.js-popper-wrapper
+            button.button-icon.button-opts.js-popper-trigger(type="button" aria-label="Показать дополнительные опции")
+              +icon('dots')
+
+            .dropdown.dropdown--bottom-right.dropdown--arrow-right.js-popper-content
+              ul.icon-list.icon-list--dropdown
+                li.icon-list__item
+                  a.icon-list__link(href="")
+                    +icon('info-rounded-o')
+                    | Пожаловаться
+
+                li.icon-list__item
+                  a.icon-list__link(href="")
+                    +icon('trash-o')
+                    | Архивировать
+
+      .messages-main__content
+        .messages-list
+          .messages-list__item.messages-list__date.focusable-list-item(tabindex="-1")
+            span.messages-list__date-text
+              | 15 Августа, 2020
+
+          .messages-list__item.message-out.focusable-list-item(tabindex="-1")
+            span(aria-label="Вы:")
+            .user-photo.messages-list__photo
+              .user-photo__inner
+                img.user-photo__img(src="assets/img/content/avatars/ava-1.jpg", alt="")
+            .messages-list__item-content
+              .messages-list__msg
+                span.messages-list__msg-text
+                  | Добрый день! Чем я могу вам помочь?
+              .messages-list__msg
+                span.messages-list__msg-text
+                  | Чем я могу вам помочь? Чем я могу вам помочь?
+
+          .messages-list__item.message-in.focusable-list-item(tabindex="-1")
+            span(aria-label="Михаил Стариков:")
+            .user-photo.messages-list__photo
+              .user-photo__inner
+                img.user-photo__img(src="assets/img/content/avatars/ava-1.jpg", alt="")
+            .messages-list__item-content
+              .messages-list__msg
+                span.messages-list__msg-text
+                  | Мне нужно найти хорошего специалиста для подбора iPhone XR
+              .messages-list__msg
+                span.messages-list__msg-text
+                  | Мне нужно найти хорошего специалиста для подбора iPhone XR Мне нужно найти хорошего специалиста для подбора iPhone XR Мне нужно найти хорошего специалиста для подбора iPhone XR Мне нужно найти хорошего специалиста для подбора iPhone XR
+              .messages-list__msg
+                span.messages-list__msg-text
+                  | Пользователь <a href="" class="text-primary">Михаил Стариков</a> отправил вам приглашение в задание.
+                .invite
+                  .invite__title Подобрать iPhone XR 512 GB
+                  .invite__info
+                    span.invite__info-item Номер заказа #139
+                    span.invite__info-item Сумма заказа 1 500 ₽
+                  .invite__actions
+                    button.button.button--primary.button--sm(type="button")
+                      | Принять заказ
+                    button.button.button--light.button--sm(type="button")
+                      | Отклонить
+
+      .messages-main__footer
+        +form().messages-form
+          .form__row
+            //- +inputbox()
+            //-   +input-wrapper
+            //-     +input()(
+            //-       type="text"
+            //-       name="message"
+            //-       aria-label="Ваше сообщение"
+            //-       placeholder="Ваше сообщение"
+            //-     )
+            +inputbox().inputbox--editable(tabindex="-1")
+              +input-wrapper
+                span.inputbox__label Ваше сообщение
+                .field-editable.custom-scrollbar(tabindex="-1" contenteditable="true")
+            .messages-form__actions
+              button.button-icon.button-smiley.js-smiley-toggler(type="button" aria-label="Открыть панель смайлов")
+                +icon('smiley-o')
+              button.button.button--primary(type="submit")
+                | Отправить

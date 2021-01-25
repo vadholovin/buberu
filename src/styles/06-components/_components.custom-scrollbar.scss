@@ -1,0 +1,19 @@
+/* ==========================================================================
+   #CUSTOM-SCROLLBAR
+   ========================================================================== */
+
+.custom-scrollbar {
+
+  &::-webkit-scrollbar {
+    width: 6px!important;
+    height: 6px!important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($color-primary,.2);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: hsla(0,0%,100%,.1);
+  }
+}

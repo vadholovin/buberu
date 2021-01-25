@@ -12,14 +12,14 @@ include menus.data.pug
           +icon("close-o")
       .mobile-nav__body
         .mobile-user-section
-          .flag.mobile-user
-            .flag__img.mobile-user__img
+          .user-flag.mobile-nav__user-flag
+            .user-flag__img
               .user-photo
                 .user-photo__inner
                   img.user-photo__img(src="assets/img/content/avatars/ava-1.jpg", alt="")
-            .flag__body.mobile-user__body
-              .mobile-user__name Владимир Тихонов
-              .mobile-user__role Заказчик
+            .user-flag__body
+              span.user-flag__title Владимир Тихонов
+              span.user-flag__subtitle Заказчик
 
           ul.user-menu.user-menu--mobile
             each item in userMenu

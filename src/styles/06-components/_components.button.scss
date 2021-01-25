@@ -6,10 +6,11 @@
 // $btn-min-height: 50px;
 $btn-padding: 15px 30px;
 $btn-padding-lg: 0.25rem 2rem;
-$btn-padding-sm: 0.25rem 2rem;
+$btn-padding-sm: 10px 20px;
 $btn-border-radius: $global-radius;
 $btn-font-weight: 600;
 $btn-font-size: rem(16px);
+$btn-font-size-sm: rem(14px);
 $btn-line-height: 1.15;
 
 .button {
@@ -45,6 +46,11 @@ $btn-line-height: 1.15;
 .button:disabled,
 .button.disabled {
   cursor: not-allowed;
+}
+
+.button--sm {
+  padding: $btn-padding-sm;
+  font-size: $btn-font-size-sm;
 }
 
 .button--primary {
