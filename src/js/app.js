@@ -340,6 +340,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const mainEvent = trigger.dataset.popperEvent || 'click';
       let popperInstance = null;
 
+      if (mainEvent === 'hover') {
+        popper.addEventListener('mouseenter', (event) => {
+          event.currentTarget.setAttribute('data-popper-active', '');
+        });
+        trigger.addEventListener('mouseenter', show, false);
+
+        popper.addEventListener('mouseleave', (event) => {
+          event.currentTarget.removeAttribute('data-popper-active');
+          hide();
+        });
+        trigger.addEventListener('mouseleave', hide, false);
+      } else {
+        trigger.addEventListener('click', toggle, false);
+      }
+
       function create() {
         popperInstance = Popper.createPopper(trigger, content, {
           modifiers: [
@@ -362,59 +377,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
       function toggle() {
         if (content.hasAttribute('data-popper-show')) {
-          show()
+          hide();
         } else {
-          show()
+          show();
         }
       }
 
       function show() {
         content.setAttribute('data-popper-show', '');
         create();
+        focusInput();
       }
 
       function hide() {
-        content.removeAttribute('data-popper-show');
-        destroy();
+        if (!popper.hasAttribute('data-popper-active')) {
+          content.removeAttribute('data-popper-show');
+          destroy();
+          blurInput();
+        }
       }
 
-      let showEvents, hideEvents;
+      function focusInput() {
+        const input = content.querySelector('input');
 
-      if (mainEvent === 'hover') {
-        showEvents = ['mouseenter', 'focus'];
-        hideEvents = ['mouseleave', 'blur'];
-      } else {
-        showEvents = ['click', 'focus'];
-        hideEvents = ['blur'];
+        if (input !== null) {
+          content.querySelector('input').focus();
+        }
       }
 
-      showEvents.forEach(event => {
-        if (mainEvent === 'hover') {
-          popper.addEventListener(event, function() {
-            this.setAttribute('data-popper-active', '');
-          });
+      function blurInput() {
+        const input = content.querySelector('input');
+
+        if (input !== null && input.hasFocus()) {
+          input.blur();
         }
-
-        if (event === 'click') {
-          trigger.addEventListener(event, toggle);
-
-          return;
-        }
-
-        trigger.addEventListener(event, show);
-      });
-
-      hideEvents.forEach(event => {
-        if (mainEvent === 'hover') {
-          popper.addEventListener(event, function() {
-            this.removeAttribute('data-popper-active');
-            hide();
-          });
-        } else {
-          trigger.addEventListener(event, hide);
-        }
-
-      });
+      }
     });
   }
 });
@@ -428,8 +425,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // tippy.setDefaults({
   //   allowHTML: true,
   // });
-
-
 
   tippy('.js-tippy', {
     maxWidth: 200,
@@ -670,3 +665,28 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+/**
+ * Circle progress
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  const progresses = document.querySelectorAll('.js-circle-progress');
+
+  if (progresses !== null) {
+    progresses.forEach((item) => {
+      const progressElement = item.querySelector('.circle-progress__current');
+      const radius = item.querySelector('.circle-progress__back').getAttribute('r');
+      const circumference = 2 * Math.PI * radius;
+      const value = item.getAttribute('data-progress-value');
+
+      function progress(value) {
+        const progress = value / 100;
+        const dashoffset = circumference * (1 - progress);
+
+        progressElement.setAttribute('stroke-dasharray', circumference);
+        progressElement.setAttribute('stroke-dashoffset', dashoffset);
+      }
+
+      progress(value);
+    });
+  }
+});

@@ -14,6 +14,29 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #EDF4F9;
+
+  .ibox--sm & {
+
+    @include mq($from: xs) {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+
+  .ibox--md & {
+
+    @include mq($from: xs) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  .ibox--lg & {
+    @include mq($from: xs) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
 }
 
 .ibox-header__title {
@@ -59,10 +82,33 @@
 
 .ibox-body {
 
-  .notif-list__item {
-    padding-left: 20px;
-    padding-right: 20px;
-    border-color: #EDF4F9;
+  .ibox--sm &,
+  .ibox--md &,
+  .ibox--lg & {
+    padding: 24px 20px;
+  }
+
+  .ibox--md & {
+
+    @include mq($from: xs) {
+      padding: 30px;
+    }
+  }
+
+  .ibox--lg & {
+
+    @include mq($from: xs) {
+      padding: 40px;
+    }
+  }
+
+  hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .button--block + .button--block {
+    margin-top: 15px;
   }
 }
 

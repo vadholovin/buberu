@@ -121,7 +121,7 @@
           li.messages-main__actions-item.js-popper-wrapper
             button.button-icon.button-search.js-popper-trigger(type="button" aria-label="Показать поле поиска")
               +icon('search-o')
-            .dropdown.dropdown--bottom-right.dropdown--arrow-right.js-popper-content
+            .dropdown.dropdown--bottom-right.dropdown--arrow-right.messages-search-dropdown.js-popper-content
               +form().search-form
                 +inputbox()
                   +input-wrapper
@@ -136,7 +136,7 @@
             button.button-icon.button-opts.js-popper-trigger(type="button" aria-label="Показать дополнительные опции")
               +icon('dots')
 
-            .dropdown.dropdown--bottom-right.dropdown--arrow-right.js-popper-content
+            .dropdown.dropdown--bottom-right.dropdown--arrow-right.messages-opts-dropdown.js-popper-content
               ul.icon-list.icon-list--dropdown
                 li.icon-list__item
                   a.icon-list__link(href="")

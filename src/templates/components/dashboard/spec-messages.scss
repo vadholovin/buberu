@@ -372,3 +372,21 @@
     font-size: 20px;
   }
 }
+
+.messages-search-dropdown,
+.messages-opts-dropdown {
+  padding: 20px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.messages-search-dropdown {
+  width: 280px;
+
+  @include mq($from: sm) {
+    width: 400px;
+  }
+}
+
+.messages-opts-dropdown {
+  width: 180px;
+}

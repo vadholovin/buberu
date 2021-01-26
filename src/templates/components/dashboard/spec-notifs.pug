@@ -1,0 +1,74 @@
+
+.profile__grid
+  .profile__main
+    .ibox.ibox--md
+      .ibox-header
+        .ibox-header__title
+          +icon( 'bell-o' ).ibox-header__title-icon
+          span.ibox-header__title-text Уведомления
+        a.ibox-header__action(href="") Настройки
+      .ibox-body.p-0
+        ul.notif-list.notif-list--full
+          li.notif-list__item
+            .notif-card.notif-card--notif.is-active
+              .notif-card__img
+                .notif-card__icon
+                  +icon('suitcase-o')
+              .notif-card__body
+                .notif-card__msg
+                  span.notif-card__msg-name Добрыня Никитич
+                  span.notif-card__msg-text выбрал вас в качестве специалиста в задание
+                  a.notif-card__msg-link(href="") Подобрать iPhone XR
+                span.notif-card__date 15 Августа, 2020
+
+          li.notif-list__item
+            .notif-card.notif-card--notif.is-active
+              .notif-card__img
+                .notif-card__icon
+                  +icon('comment-o')
+              .notif-card__body
+                .notif-card__msg
+                  span.notif-card__msg-name Алёша Попович
+                  span.notif-card__msg-text оставил о вас комментарий.
+                  a.notif-card__msg-link(href="") Прочитать комментарий в личном профиле
+                span.notif-card__date 15 Августа, 2020
+
+          li.notif-list__item
+            .notif-card.notif-card--notif
+              .notif-card__img
+                .notif-card__icon
+                  +icon('suitcase-o')
+              .notif-card__body
+                .notif-card__msg
+                  span.notif-card__msg-name Добрыня Никитич
+                  span.notif-card__msg-text выбрал вас в качестве специалиста в задание
+                  a.notif-card__msg-link(href="") Подобрать авто Lada
+                span.notif-card__date 15 Августа, 2020
+
+          li.notif-list__item
+            .notif-card.notif-card--notif
+              .notif-card__img
+                .notif-card__icon
+                  +icon('suitcase-o')
+              .notif-card__body
+                .notif-card__msg
+                  span.notif-card__msg-name Добрыня Никитич
+                  span.notif-card__msg-text выбрал вас в качестве специалиста в задание
+                  a.notif-card__msg-link(href="") Подобрать авто Lada
+                span.notif-card__date 15 Августа, 2020
+        button.button.button--light.button--block(type="button") Загрузить еще
+
+  .profile__aside
+    .ibox.ibox--md
+      .ibox-header
+        .ibox-header__title
+          +icon( 'bell-o' ).ibox-header__title-icon
+          span.ibox-header__title-text Уведомления
+      .ibox-body
+        button.button.button--primary.button--block(type="button") Отметить все почитанными
+        button.button.button--light.button--block(type="button") Очистить весь список
+
+        hr
+
+        p
+          | Вы можете настроить показ уведомлений индивидуально под себя в #[a(class="text-primary" href="") настройках уведомлений].

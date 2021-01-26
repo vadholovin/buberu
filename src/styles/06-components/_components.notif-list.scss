@@ -12,16 +12,54 @@
 // .notif-list__item {
 
 
+
 // }
 
 .notif-card {
   display: flex;
   align-items: flex-start;
   width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 
-  > * {
-    padding-top: 20px;
-    padding-bottom: 20px;
+  .ibox & {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .ibox--md & {
+
+    @include mq($from: xs) {
+      padding: 30px;
+    }
+  }
+
+  // > * {
+  //   padding-top: 20px;
+  //   padding-bottom: 20px;
+  // }
+
+  .notif-list--full & {
+    position: relative;
+    @include basic-transition((background-color));
+    @include on-event {
+      background-color: #F8F9FA;
+
+      &::before {
+        border-color: $color-border-primary;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      border-left: 3px solid transparent;
+      @include basic-transition((border-color));
+    }
   }
 }
 
@@ -29,27 +67,15 @@
   flex-shrink: 0;
   padding-right: 15px;
 
+  .notif-list--full & {
+
+    @include mq($from: md) {
+      padding-right: 20px;
+    }
+  }
+
   > img {
     max-width: none;
-  }
-}
-
-.notif-card__body {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  flex-basis: auto;
-  min-width: 0;
-  font-size: 14px;
-  line-height: 1.3;
-
-  &,
-  > :last-child {
-    margin-bottom: 0;
-  }
-
-  .notif-card--sm & {
-    font-size: 12px;
   }
 }
 
@@ -83,6 +109,38 @@
     background-color: $color-bg-primary;
   }
 
+  .notif-list--full & {
+
+    @include mq($from: md) {
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+    }
+  }
+
+}
+
+.notif-card__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: auto;
+  min-width: 0;
+  font-size: 14px;
+  line-height: 1.3;
+
+  .notif-list--full & {
+    font-size: rem(16px);
+  }
+
+  &,
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  .notif-card--sm & {
+    font-size: 12px;
+  }
 }
 
 .notif-card__top-row {
@@ -159,8 +217,12 @@
 
 // }
 
-.notif-card__msg-accent {
+.notif-card__msg-link {
   color: $color-primary;
+
+  .notif-list--full & {
+    display: block;
+  }
 }
 
 .notif-card__name {
@@ -184,4 +246,9 @@
   line-height: 1;
   // color: $color-primary;
   color: $color-light;
+
+  .notif-list--full & {
+    font-size: 12px;
+    margin-top: 4px;
+  }
 }

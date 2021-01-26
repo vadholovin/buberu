@@ -11,6 +11,7 @@ $popper-offset-top: 10px;
   right: 0;
   background-color: #fff;
   border-radius: $global-radius-sm;
+  z-index: 100;
 
   &--bottom-right {
     top: 100% !important;
