@@ -408,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
       function blurInput() {
         const input = content.querySelector('input');
 
-        if (input !== null && input.hasFocus()) {
+        if (input !== null && input === document.activeElement) {
           input.blur();
         }
       }
