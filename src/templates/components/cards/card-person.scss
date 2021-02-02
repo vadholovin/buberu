@@ -1,0 +1,152 @@
+/* ==========================================================================
+   #CARD-PERSON
+   ========================================================================== */
+
+.card-person {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px;
+  border-radius: $global-radius-lg;
+  background: #fff;
+  box-shadow: $global-shadow-sm;
+
+  @include mq($from: md) {
+    padding: 30px;
+  }
+}
+
+
+.card-person__fav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #F8F9FA;
+  font-size: 19px;
+  color: $grey-2;
+  opacity: 0;
+  cursor: pointer;
+
+  @include basic-transition((opacity));
+
+  &.is-active {
+    opacity: 1;
+    color: $orange-2;
+  }
+
+  .icon {
+    position: relative;
+    top: -2px;
+  }
+}
+
+.card-person__img {
+  margin-bottom: 16px;
+
+  @include mq($from: md) {
+    margin-bottom: 20px;
+  }
+
+  .user-photo {
+    width: 96px;
+    height: 96px;
+
+    &::after {
+      width: 18px;
+      height: 18px;
+    }
+
+    @include mq($from: md) {
+      width: 120px;
+      height: 120px;
+
+      &::after {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+}
+
+.user-photo__heading {
+  margin-bottom: 20px;
+  font-weight: 500;
+  line-height: 1.12;
+  text-align: center;
+
+  @include mq($from: md) {
+    margin-bottom: 25px;
+  }
+
+  > * {
+    max-height: calc(18px * 1.12);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+
+  > *+* {
+    margin-top: 6px;
+
+    @include mq($from: md) {
+      margin-top: 10px;
+    }
+  }
+}
+
+.card-person__title {
+  font-size: 18px;
+}
+
+.card-person__subtitle {
+  opacity: 0.5;
+}
+
+.card-person__stars {
+  margin-bottom: 36px;
+
+  @include mq($from: md) {
+    margin-bottom: 45px;
+  }
+}
+
+.card-person__info {
+  display: flex;
+  // width: 100%;
+  margin-top: auto;
+  margin-bottom: 30px;
+}
+
+.card-person__info-item {
+  min-width: 0;
+  font-weight: 600;
+  line-height: 1;
+
+  @include mq($until: xs) {
+    font-size: 15px;
+  }
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  > *+* {
+    display: block;
+    margin-top: 8px;
+  }
+}
+
+.card-person__info-item-label {
+  color: $color-light;
+  white-space: nowrap;
+}
+
+
