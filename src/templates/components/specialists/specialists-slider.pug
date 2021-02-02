@@ -1,0 +1,21 @@
+include specialists.data.pug
+
+section.section.section--lg.section--top.specialists
+  .container
+    .section__header.section__header--row
+      h2.section__title Выбрать специалиста
+      a.link.underline.underline--dashed.text-primary(href="") Посмотреть всех специалистов
+
+    .swiper-block.specialists-slider-wrapper#specialists-slider-wrapper
+      .swiper-container.specialists-slider
+        .swiper-wrapper
+          each person in persons
+            .swiper-slide.specialists-slide
+              +card-person(person)
+
+      .swiper-pagination.specialists-slider-pagination
+      .swiper-buttons.specialists-slider-buttons
+        .swiper-button-prev
+          +icon('chevron-left-o')
+        .swiper-button-next
+          +icon('chevron-right-o')
