@@ -690,3 +690,51 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+
+/**
+ * Sliders
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  const specialists = new Swiper('#specialists-slider-wrapper .swiper-container', {
+    slidesPerView: 1,
+    speed: 600,
+    keyboard: {
+      enabled: true,
+    },
+    preloadImages: false,
+    lazy: {
+      loadedClass: 'is-loaded',
+      loadPrevNext: true,
+    },
+    observer: true,
+    observeParents: true,
+    pagination: {
+      el: '#specialists-slider-wrapper .swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '#specialists-slider-wrapper .swiper-button-next',
+      prevEl: '#specialists-slider-wrapper .swiper-button-prev',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 8,
+      },
+      992: {
+        slidesPerView: 2,
+        spaceBetween: 16,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 16,
+      },
+      1300: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
+});
