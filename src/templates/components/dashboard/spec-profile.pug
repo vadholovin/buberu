@@ -58,30 +58,7 @@ ul.profile-stat
         ul.tasks-list.tasks-list--profile
           each item, index in tasks
             li.tasks-list__item
-              .task-card.task-card--simple
-                .task-card__content
-                  .task-card__info
-                    .task-card__heading
-                      a(href="")
-                        h5.task-card__title(title="#1421 " + item.title)
-                          span.task-card__title-num #1421
-                          span.task-card__title-text= item.title
-                      span.task-card__label Подбор под ключ
-                    ul.task-card__meta
-                      li.task-card__meta-item
-                        a(href="")
-                          +icon('user-thin-o').task-card__meta-icon
-                          span.task-card__meta-text= item.name
-                      li.task-card__meta-item
-                        +icon('calendar-o').task-card__meta-icon
-                        span.task-card__meta-text.underline.underline--dashed осталось 2 дня
-                      li.task-card__meta-item
-                        +icon('placeholder-o').task-card__meta-icon
-                        span.task-card__meta-text= item.address
-
-                  a.button-icon.task-card__link.task-card__link--icon(href="")
-                    +icon('arrow-rounded-o')
-                    span.hidden-visually Подробнее
+              +task-card-simple(item, index)
 
             if index > 3
               - break

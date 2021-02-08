@@ -1,0 +1,26 @@
+mixin history-card(data, index)
+  .history-card(class=(data.active) ? "is-active" : "")&attributes(attributes)
+    a.history-card__icon(href="" title= data.title)
+      +icon('search-o')
+
+    .history-card__content
+      .history-card__info
+        a(href="")
+          h5.history-card__title(title= data.title)= data.title
+        ul.history-card__meta
+          li.history-card__meta-item
+            span.history-card__label Подбор под ключ
+          li.history-card__meta-item
+            +icon('suitcase-o')
+            span.history-card__num= `Заказ #${data.num}`
+          li.history-card__meta-item
+            a(href="")
+              +icon('user-thin-o').history-card__meta-icon
+              span.history-card__meta-text= data.name
+          li.history-card__meta-item
+            +icon('calendar-o')
+            span.history-card__date Дата: 12.08.2020
+
+      a.button-icon.history-card__link(href="")
+        +icon('arrow-rounded-o')
+        span.hidden-visually Подробнее
