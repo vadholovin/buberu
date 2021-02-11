@@ -12,12 +12,20 @@
 
 .history-card {
   display: flex;
-  padding: 24px 80px 24px 30px;
+  padding: 20px;
 
   &:hover {
     .history-card__link {
       color: $color-primary;
     }
+  }
+
+  @include mq($from: sm) {
+    padding: 24px 30px;
+  }
+
+  @include mq($from: md) {
+    padding-right: 80px;
   }
 }
 
@@ -28,14 +36,19 @@
   align-items: center;
   width: 2.5em;
   height: 2.5em;
-  margin-right: 30px;
+  margin-right: 15px;
   border-radius: 50%;
-  font-size: 24px;
+  font-size: 16px;
   color: #fff;
   background-color: $color-bg-light;
 
   .history-card.is-active & {
     background-color: $color-bg-primary;
+  }
+
+  @include mq($from: sm) {
+    margin-right: 30px;
+    font-size: 24px;
   }
 }
 
@@ -48,7 +61,10 @@
 }
 
 .history-card__info {
-  padding-right: 24px;
+
+  @include mq($from: md) {
+    padding-right: 24px;
+  }
 }
 
 .history-card__title {
@@ -56,31 +72,56 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 1.15;
+  max-width: 600px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
-  @include mq($from: sm) {
-    max-width: 600px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  @include basic-transition((color));
+
+  @include mq($until: sm) {
+    max-height: calc(17px * 1.3 * 3);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    white-space: normal;
+    font-size: 17px;
+    line-height: 1.3;
+  }
+}
+
+a {
+  @include on-event {
+
+    .history-card__title {
+      color: $color-primary;
+    }
   }
 }
 
 .history-card__meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 
+  @include mq($until: xs) {
+    font-size: 15px;
+  }
+
   > * {
+    margin-top: 2px;
+    margin-bottom: 2px;
 
     &:not(:last-child) {
       margin-right: 20px;
     }
   }
+
+
 }
 
 .history-card__meta-item {
   color: #A9A9A9;
-  white-space: nowrap;
-  line-height: 1;
 
   a {
     color: $color-primary;
@@ -126,7 +167,7 @@
   font-size: 22px;
   color: $color-light;
 
-  @include mq($until: sm) {
+  @include mq($until: md) {
     display: none;
   }
 }

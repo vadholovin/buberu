@@ -273,11 +273,21 @@
 }
 
 .order-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mq($until: xs) {
+    flex-direction: column;
+  }
 
   > * {
     margin: 4px 15px 4px 0;
 
     &:last-child {
+      margin-right: 0;
+    }
+
+    @include mq($until: xs) {
       margin-right: 0;
     }
   }

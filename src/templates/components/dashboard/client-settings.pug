@@ -1,0 +1,145 @@
+
+h2.dashboard-main__title Настройки
+
+.settings-form
+  .ibox
+    .ibox-header
+      h3.ibox-header__title
+        +icon( 'user-o' ).ibox-header__title-icon
+        span.ibox-header__title-text Общая информация
+    .ibox-body
+      .settings-form__grid
+        .settings-form__main-col
+          .d-flex.d-flex--2-cols.flex-wrap.flex-justify-between
+            +inputbox
+              +label.inputbox__label--required(for="settings-name") Ваше имя
+              +input-wrapper
+                +input(
+                  type="text"
+                  id="settings-name"
+                  name="settings-name"
+                  placeholder="Ваше имя"
+                )
+
+            +inputbox
+              +label.inputbox__label--required(for="settings-surname") Фамилия
+              +input-wrapper
+                +input(
+                  type="text"
+                  id="settings-surname"
+                  name="settings-surname"
+                  placeholder="Фамилия"
+                )
+            +inputbox
+              +label.inputbox__label--required(for="settings-city") Ваш город
+                span.tooltipped.js-tippy(
+                  tabindex="0"
+                  data-tippy-content="На данный момент наш сервис предусматривает работу только с <b>гражданами Российской Федерации</b>!"
+                )
+                  +icon('question-circle-o')
+              +input-wrapper
+                +input(
+                  type="text"
+                  id="settings-city"
+                  name="settings-city"
+                  placeholder="Ваш город"
+                )
+
+            +inputbox
+              +label.inputbox__label--required(for="settings-phone") Телефон
+              +input-wrapper
+                +input.js-phone-mask(
+                  type="tel"
+                  id="settings-phone"
+                  name="settings-phone"
+                  placeholder="+7 (999) 999-99-99"
+                )
+            +inputbox
+              +label.inputbox__label--required(for="settings-birthday") Дата рождения
+              +input-wrapper
+                +input.input--date.js-date-mask(
+                  type="text"
+                  id="settings-birthday"
+                  name="settings-birthday"
+                  placeholder="дд.мм.гггг"
+                )
+
+            +inputbox
+              +label.inputbox__label--required(for="settings-email") Ваш e-mail
+              +input-wrapper
+                +input(
+                  type="email"
+                  id="settings-email"
+                  name="settings-email"
+                  placeholder="E-mail"
+                )
+
+          +inputbox
+            +label.inputbox__label--required(for="settings-area") Сфера деятельности
+            +input-wrapper
+              +textarea(
+                type="text"
+                id="settings-area"
+                name="settings-area"
+                placeholder="Опишите сферу деятельности"
+              )
+
+        .settings-form__aside-col
+          .settings-avatar
+            label.settings-avatar__photo.user-photo.user-photo--no-photo
+              input.hidden-visually(type="file", name="settings-avatar", id="settings-avatar")
+              .user-photo__inner
+                .user-photo__img
+
+            label.settings-avatar__label(for="settings-avatar") Загрузить аватар
+
+  .ibox
+    .ibox-header
+      h3.ibox-header__title
+        +icon( 'info-rounded-o' ).ibox-header__title-icon
+        span.ibox-header__title-text Пароль / Безопасность
+    .ibox-body
+      ul.pass-list
+        li.pass-list__item
+          +inputbox
+            +label(for="settings-current-pass") Ваш старый пароль
+            +input-wrapper
+              +input(
+                type="password"
+                id="settings-current-pass"
+                name="settings-current-pass"
+                autocomplete="current-password"
+              )
+              span.show-pass.js-show-pass(tabindex="0" role="button" aria-label="Показать пароль" title="Показать пароль")
+                +icon('eye-o')
+        li.pass-list__item
+          +inputbox
+            +label(for="settings-new-pass") Ваш новый пароль
+            +input-wrapper
+              +input(
+                type="password"
+                id="settings-new-pass"
+                name="settings-new-pass"
+                autocomplete="new-password"
+              )
+              span.show-pass.js-show-pass(tabindex="0" role="button" aria-label="Показать пароль" title="Показать пароль")
+                +icon('eye-o')
+        li.pass-list__item
+          +inputbox
+            +label(for="settings-new-pass-2") Новый пароль еще раз
+            +input-wrapper
+              +input(
+                type="password"
+                id="settings-new-pass-2"
+                name="settings-new-pass-2"
+                autocomplete="new-password"
+              )
+              span.show-pass.js-show-pass(tabindex="0" role="button" aria-label="Показать пароль" title="Показать пароль")
+                +icon('eye-o')
+
+      p
+        +checkradio(false, 'pass-verification', 'null', false)
+          | Включить подтверждение по E-mail.
+
+
+  button.button.button--primary(type="submit") Сохранить изменения

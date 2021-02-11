@@ -14,7 +14,7 @@ mixin history-card(data, index)
             +icon('suitcase-o')
             span.history-card__num= `Заказ #${data.num}`
           li.history-card__meta-item
-            a(href="")
+            a.js-tippy(href="" data-tippy-content="Исполнитель")
               +icon('user-thin-o').history-card__meta-icon
               span.history-card__meta-text= data.name
           li.history-card__meta-item
