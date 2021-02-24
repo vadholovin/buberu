@@ -422,7 +422,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 document.addEventListener('DOMContentLoaded', function() {
   // Default options
-  // tippy.setDefaults({
+  // tippy.setDefaultProps({
   //   allowHTML: true,
   // });
 
