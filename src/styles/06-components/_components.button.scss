@@ -153,6 +153,14 @@ $btn-line-height: 1.15;
   }
 }
 
+.button-opts {
+
+  @include basic-transition((color));
+  @include on-event {
+    color: $color-primary;
+  }
+}
+
 .button--block {
   width: 100%;
 }

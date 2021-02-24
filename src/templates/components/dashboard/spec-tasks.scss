@@ -81,7 +81,7 @@
 .order-card__header {
   display: flex;
   flex-direction: column;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   padding-right: 50px;
 
   @include mq($from: sm) {
@@ -152,7 +152,7 @@
   line-height: 1.15;
 
   @include mq($until: xs) {
-    font-size: 15px;
+    font-size: 14px;
   }
   @include mq($from: md) {
     margin-bottom: 28px;
@@ -238,7 +238,7 @@
 
   @include mq($until: xs) {
     flex-direction: column;
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 
@@ -246,7 +246,6 @@
   display: flex;
   flex-direction: column;
   margin: 6px 0;
-
   font-weight: 500;
   line-height: 1.15;
 
@@ -264,7 +263,11 @@
   }
 
   > *+* {
-    margin-top: 8px;
+    margin-top: 4px;
+
+    @include mq($from: xs) {
+      margin-top: 8px;
+    }
   }
 }
 
@@ -289,6 +292,61 @@
 
     @include mq($until: xs) {
       margin-right: 0;
+    }
+  }
+}
+
+.order-card--with-opts {
+
+  @include mq($from: sm) {
+    padding-right: 70px;
+  }
+
+  .order-card__action {
+    position: absolute;
+    top: 45px;
+    right: 0;
+
+    @include mq($from: sm) {
+      top: 15px;
+      right: 20px;
+    }
+  }
+
+  .button-opts {
+    font-size: 22px;
+    color: $color-light;
+
+    @include on-event {
+      color: $color-primary;
+    }
+  }
+
+  .order-card__dropdown {
+    width: 145px;
+    padding: 15px;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
+  }
+
+  .order-card__opts {
+
+    > *+* {
+      margin-top: 5px;
+    }
+
+    a,
+    button {
+      padding: 5px;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 1;
+      text-align: left;
+      cursor: pointer;
+
+      @include basic-transition((color));
+      @include on-event {
+        color: $color-primary;
+      }
     }
   }
 }

@@ -121,7 +121,7 @@
           li.messages-main__actions-item.js-popper-wrapper
             button.button-icon.button-search.js-popper-trigger(type="button" aria-label="Показать поле поиска")
               +icon('search-o')
-            .dropdown.dropdown--bottom-right.dropdown--arrow-right.messages-search-dropdown.js-popper-content
+            .dropdown.dropdown--b-r.dropdown--arrow-r.messages-search-dropdown.js-popper-content
               +form().search-form
                 +inputbox()
                   +input-wrapper
@@ -135,8 +135,7 @@
           li.messages-main__actions-item.js-popper-wrapper
             button.button-icon.button-opts.js-popper-trigger(type="button" aria-label="Показать дополнительные опции")
               +icon('dots')
-
-            .dropdown.dropdown--bottom-right.dropdown--arrow-right.messages-opts-dropdown.js-popper-content
+            .dropdown.dropdown--b-r.dropdown--arrow-r.messages-opts-dropdown.js-popper-content
               ul.icon-list.icon-list--dropdown
                 li.icon-list__item
                   a.icon-list__link(href="")
@@ -196,14 +195,6 @@
       .messages-main__footer
         +form().messages-form
           .form__row
-            //- +inputbox()
-            //-   +input-wrapper
-            //-     +input()(
-            //-       type="text"
-            //-       name="message"
-            //-       aria-label="Ваше сообщение"
-            //-       placeholder="Ваше сообщение"
-            //-     )
             +inputbox().inputbox--editable(tabindex="-1")
               +input-wrapper
                 span.inputbox__label Ваше сообщение

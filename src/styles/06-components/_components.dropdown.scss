@@ -13,7 +13,7 @@ $popper-offset-top: 10px;
   border-radius: $global-radius-sm;
   z-index: 100;
 
-  &--bottom-right {
+  &--b-r {
     top: 100% !important;
     right: -5px !important;
     left: auto !important;
@@ -42,7 +42,7 @@ $popper-offset-top: 10px;
     border-right: 6px solid transparent;
   }
 
-  &--arrow-right {
+  &--arrow-r {
 
     &::after {
       left: auto;
