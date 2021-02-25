@@ -1,57 +1,80 @@
+.checkradio-row {
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    margin-top: 3px;
+    margin-bottom: 3px;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+
 .checkradio {
   position: relative;
   padding-left: 32px;
   display: inline-block;
   cursor: pointer;
+}
 
-  &__input {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 0;
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
+.checkradio__input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 
-    &:checked {
+  &:checked {
 
-      & + .checkradio__box {
-        border-color: $color-border-primary;
-        background-color: $color-bg-primary;
+    & + .checkradio__box {
+      border-color: $color-border-primary;
+      background-color: $color-bg-primary;
 
-        &::before { transform: scale(1); }
-      }
+      &::before { transform: scale(1); }
     }
   }
+}
 
-  &__box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: $global-radius-sm;
-    border: 1px solid $color-border-light;
-    left: 0;
-    top: 0;
+.checkradio__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: $global-radius-sm;
+  border: 1px solid $color-border-light;
+  left: 0;
+  top: 0;
 
-    @include basic-transition((border-color, background-color));
+  @include basic-transition((border-color, background-color));
 
-    &::before {
-      content: '';
-      width: 12px;
-      height: 12px;
-      display: block;
-      transform: scale(0);
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.625 1L4.00781 8L1 4.81818' stroke='%23FFFFFE' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-      background-position: 50%;
-      background-repeat: no-repeat;
-      background-size: 12px auto;
+  &::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    display: block;
+    transform: scale(0);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.625 1L4.00781 8L1 4.81818' stroke='%23FFFFFE' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 12px auto;
 
-      @include basic-transition((transform));
-    }
+    @include basic-transition((transform));
   }
+}
 
+[type="radio"] ~ .checkradio__box {
+  border-radius: 50%;
+  background-color: #fff !important;
+
+  &::before {
+    border-radius: 50%;
+    background: $color-bg-primary;
+  }
 }
