@@ -4,7 +4,11 @@
 
 .login {
   padding-top: 60px;
-  padding-bottom: 150px;
+  padding-bottom: 80px;
+
+  @include mq($from: md) {
+    padding-bottom: 150px;
+  }
 }
 
 .login__title {
@@ -20,56 +24,4 @@
 
 .login .info-box {
   margin-bottom: 50px;
-}
-
-.login-form {
-
-  > *+* {
-    margin-top: 50px;
-  }
-}
-
-.login-box {
-  width: 100%;
-  max-width: 800px;
-
-  &--full-width {
-    max-width: none;
-  }
-}
-
-.login-box__title {
-  margin-bottom: 45px;
-  font-weight: normal;
-  font-size: rem(28px);
-  line-height: 1.15;
-}
-
-.login-box__title-step {
-  position: relative;
-  top: -3px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 16px;
-  padding: 7px 10px;
-  border-radius: $global-radius;
-  font-weight: bold;
-  font-size: rem(13px);
-  line-height: 1.12;
-  color: #fff;
-  white-space: nowrap;
-  text-transform: uppercase;
-  background-color: $color-bg-primary;
-}
-
-.experience-box {
-  display: none;
-
-  &.is-active {
-    display: block;
-  }
-
-  > *:not(:last-child) {
-    margin-bottom: 30px;
-  }
 }

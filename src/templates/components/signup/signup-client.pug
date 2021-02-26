@@ -1,0 +1,138 @@
+.section.login
+  .container
+    h1.login__title Регистрация клиент
+
+    .info-box
+      h5.info-box__title
+        +icon('info-rounded-o')
+        | Прочтите это перед регистрацией!
+      .info-box__text
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    .settings-form.login-form
+      .settings-box.settings-box--full-width
+        h3.settings-title
+          span.settings-title__step Шаг 1/3
+          | Общая информация
+
+        .settings-box__body
+          .settings-form__grid
+            .settings-form__main-col
+              .d-flex.d-flex--2-cols.flex-wrap.flex-justify-between
+                +inputbox
+                  +label.inputbox__label--required(for="login-name") Ваше имя
+                  +input-wrapper
+                    +input(
+                      type="text"
+                      id="login-name"
+                      name="login-name"
+                      placeholder="Ваше имя"
+                    )
+
+                +inputbox
+                  +label.inputbox__label--required(for="login-surname") Фамилия
+                  +input-wrapper
+                    +input(
+                      type="text"
+                      id="login-surname"
+                      name="login-surname"
+                      placeholder="Фамилия"
+                    )
+                +inputbox
+                  +label.inputbox__label--required(for="login-city") Ваш город
+                    span.tooltipped.js-tippy(
+                      tabindex="0"
+                      data-tippy-content="На данный момент наш сервис предусматривает работу только с <b>гражданами Российской Федерации</b>!"
+                    )
+                      +icon('question-circle-o')
+                  +input-wrapper
+                    +input(
+                      type="text"
+                      id="login-city"
+                      name="login-city"
+                      placeholder="Ваш город"
+                    )
+
+                +inputbox
+                  +label.inputbox__label--required(for="login-phone") Телефон
+                  +input-wrapper
+                    +input.js-phone-mask(
+                      type="tel"
+                      id="login-phone"
+                      name="login-phone"
+                      placeholder="+7 (999) 999-99-99"
+                    )
+                +inputbox
+                  +label.inputbox__label--required(for="login-birthday") Дата рождения
+                  +input-wrapper
+                    +input.input--date.js-date-mask(
+                      type="text"
+                      id="login-birthday"
+                      name="login-birthday"
+                      placeholder="дд.мм.гггг"
+                    )
+
+                +inputbox
+                  +label.inputbox__label--required(for="login-email") Ваш e-mail
+                  +input-wrapper
+                    +input(
+                      type="email"
+                      id="login-email"
+                      name="login-email"
+                      placeholder="E-mail"
+                    )
+
+            .settings-form__aside-col
+              .settings-avatar
+                label.settings-avatar__photo.user-photo.user-photo--no-photo
+                  input.hidden-visually(type="file", name="login-avatar", id="login-avatar")
+                  .user-photo__inner
+                    .user-photo__img
+                label.settings-avatar__label(for="login-avatar") Загрузить аватар
+
+      .settings-box
+        h3.settings-title
+          span.settings-title__step Шаг 2/3
+          | Как вам удобнее получать уведомления?
+
+        .settings-box__body
+          .checkradio-row
+            +checkradio(true, 'login-notification', 'sms', true)
+              | SMS-уведомления
+            +checkradio(true, 'login-notification', 'email', false)
+              | E-mail рассылка
+            +checkradio(true, 'login-notification', 'site', false)
+              | На сайте
+
+      .settings-box
+        h3.settings-title
+          span.settings-title__step Шаг 3/3
+          | Привязка платёжной системы
+
+        .settings-box__body
+          .payment-methods.payment-methods--full.mb-3
+            .payment-method
+              input.payment-method__input.hidden-visually(type="radio" name="payment-method" id="credit-card" value="credit-card" checked)
+              label.payment-method__label.js-tippy(for="credit-card" data-tippy-content="Оплата Банковской картой")
+                +icon('credit-card')
+                span.payment-method__label-text Банковская карта
+            .payment-method
+              input.payment-method__input.hidden-visually(type="radio" name="payment-method" id="apple-pay" value="apple-pay")
+              label.payment-method__label.js-tippy(for="apple-pay" data-tippy-content="Оплата Apple Pay")
+                +icon('apple-pay')
+                span.payment-method__label-text Apple pay
+            .payment-method
+              input.payment-method__input.hidden-visually(type="radio" name="payment-method" id="google-pay" value="google-pay")
+              label.payment-method__label.js-tippy(for="google-pay" data-tippy-content="Оплата Google Pay")
+                +icon('google-pay')
+                span.payment-method__label-text Google pay
+
+          P.text-light
+            | *Депозит-минимальная сумма, которая необходима вам для обработки входящей заявки. Сумма меняется в зависимости от частоты заказов в данной категории, сложности исполнения, уровня спроса на данную нишу и др. При желании можно сделать автоматическое пополнение баланса. Каждая транзакция будет проходить только после вашего согласия.
+
+      p
+        +checkradio(false, 'login-acceptance', 'null', false)
+          | Принимаю <a class="text-primary" href="">публичную оферту</a>, <a class="text-primary" href="">условия пользования</a>
+
+      button.button.button--primary(type="submit") Зарегистрироваться

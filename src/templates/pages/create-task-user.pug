@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block variables
+  - var pageTitle = 'Детали заказа | Пользователь'
+  - var bodyClass = 'create-task-page'
+
+block content
+  include ../components/layout/header-logged
+  main.content-wrapper
+    include ../components/create-task/create-task-user
+  include ../components/layout/footer

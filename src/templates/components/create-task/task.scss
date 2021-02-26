@@ -1,0 +1,128 @@
+.task-wrapper {
+  padding-top: 60px;
+  padding-bottom: 80px;
+
+  @include mq($from: md) {
+    padding-bottom: 150px;
+  }
+}
+
+.task-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-column-gap: 40px;
+  column-gap: 40px;
+  grid-row-gap: 24px;
+  row-gap: 24px;
+  margin-bottom: 40px;
+}
+
+.task-steps__item {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translate(25%, -50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid $grey-3;
+    border-right: 1px solid $grey-3;
+  }
+
+  &:last-child::after {
+    content: none;
+  }
+}
+
+.task-step-card {
+  display: flex;
+  padding: 20px 26px;
+  border-radius: $global-radius;
+  background: #fff;
+  box-shadow: $global-shadow-sm;
+}
+
+.task-step-card__img {
+  flex: none;
+  display: block;
+  width: 39px;
+  height: 39px;
+  margin-right: 20px;
+}
+
+.task-step-card__body {
+
+  > *+* {
+    margin-top: 5px;
+  }
+}
+
+.task-step-card__title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.task-step-card__text {
+  font-size: 14px;
+  line-height: 1.4;
+  color: $color-light;
+}
+
+// .task-progress {
+
+// }
+
+.task-progress__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.task-progress__text {
+  margin-right: 32px;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.task-progress__percentage {
+  color: $color-primary;
+  white-space: nowrap;
+
+  &::after {
+    content: '%';
+  }
+}
+
+.task-progress__steps {
+  flex: none;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  color: $color-light;
+  white-space: nowrap;
+}
+
+.task-progress__bar {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  border-radius: $global-radius-sm;
+  background-color: $color-bg-light;
+  overflow: hidden;
+}
+
+.task-progress__bar-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: inherit;
+  background-color: $color-bg-primary;
+}
+
+

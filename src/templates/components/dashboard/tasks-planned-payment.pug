@@ -66,19 +66,22 @@
       .payment-box__col
         +inputbox
           .inputbox__label Выберите способ оплаты:
-          .payment-methods
+          .payment-methods.payment-methods--simple
             .payment-method
               input.payment-method__input.hidden-visually(type="radio" name="payment-method" id="credit-card" value="credit-card" checked)
               label.payment-method__label.js-tippy(for="credit-card" data-tippy-content="Оплата Банковской картой")
                 +icon('credit-card')
+                span.payment-method__label-text Банковская карта
             .payment-method
               input.payment-method__input.hidden-visually(type="radio" name="payment-method" id="apple-pay" value="apple-pay")
               label.payment-method__label.js-tippy(for="apple-pay" data-tippy-content="Оплата Apple Pay")
                 +icon('apple-pay')
+                span.payment-method__label-text Apple pay
             .payment-method
               input.payment-method__input.hidden-visually(type="radio" name="payment-method" id="google-pay" value="google-pay")
               label.payment-method__label.js-tippy(for="google-pay" data-tippy-content="Оплата Google Pay")
                 +icon('google-pay')
+                span.payment-method__label-text Google pay
 
     .payment-box__info
       h3.payment-box__info-title Условия офёрты

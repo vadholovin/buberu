@@ -1,11 +1,11 @@
 extends ../layouts/default
 
 block variables
-  - var pageTitle = 'Регистрация | Специалист'
-  - var bodyClass = 'login-page'
+  - var pageTitle = 'Детали заказа | Гость'
+  - var bodyClass = 'create-task-page'
 
 block content
   include ../components/layout/header-logged
   main.content-wrapper
-    include ../components/signup/signup-spec
+    include ../components/create-task/create-task-guest
   include ../components/layout/footer

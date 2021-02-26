@@ -10,13 +10,13 @@
         p
           | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-    .settings-form.login-form
-      .login-box.login-box--full-width
-        h2.login-box__title
-          span.login-box__title-step Шаг 1/7
+    .settings-form.settings-form--login
+      .settings-box.settings-box--full-width
+        h3.settings-title
+          span.settings-title__step Шаг 1/7
           | Общая информация
 
-        .login-box__body
+        .settings-box__body
           .settings-form__grid
             .settings-form__main-col
               .d-flex.d-flex--2-cols.flex-wrap.flex-justify-between
@@ -92,12 +92,12 @@
                 label.settings-avatar__label(for="login-avatar") Загрузить аватар
 
 
-      .login-box
-        h2.login-box__title
-          span.login-box__title-step Шаг 2/7
+      .settings-box
+        h3.settings-title
+          span.settings-title__step Шаг 2/7
           | Сфера деятельности
 
-        .login-box__body
+        .settings-box__body
           .d-flex.d-flex--2-cols.flex-wrap.flex-justify-between.mb-6
             +inputbox
               +label.inputbox__label--required(for="settings-name") Выберите сферу деятельности
@@ -137,12 +137,12 @@
             | Для выбора нескольких направлений требуется выполнить более 3 заданий в данной сфере деятельности. После выполнения, вам откроется вкладка в разделе “Настройка профиля”.
 
 
-      .login-box
-        h2.login-box__title
-          span.login-box__title-step Шаг 3/7
+      .settings-box
+        h3.settings-title
+          span.settings-title__step Шаг 3/7
           | Опыт работы
 
-        .login-box__body
+        .settings-box__body
           .checkradio-row.mb-6
             +checkradio(true, 'login-experience', 0, false)
               | Без опыта
@@ -212,12 +212,12 @@
             button.text-button.text-button--primary(type="button") + Добавить опыт работы
 
 
-      .login-box
-        h2.login-box__title
-          span.login-box__title-step Шаг 4/7
+      .settings-box
+        h3.settings-title
+          span.settings-title__step Шаг 4/7
           | Паспортные данные
 
-        .login-box__body
+        .settings-box__body
           .d-flex.d-flex--2-cols.flex-wrap.flex-justify-between
             +inputbox
               +label.inputbox__label--required(for="login-passport-number") Серия, номер
@@ -260,12 +260,12 @@
                 )
 
 
-      .login-box
-        h2.login-box__title
-          span.login-box__title-step Шаг 5/7
+      .settings-box
+        h3.settings-title
+          span.settings-title__step Шаг 5/7
           | График работы
 
-        .login-box__body
+        .settings-box__body
           .d-flex.d-flex--2-cols.flex-wrap.flex-justify-between
             +inputbox
               .inputbox__label.inputbox__label--required Выберите дни
@@ -317,12 +317,12 @@
               p.text-light
                 | В данный промежуток времени, вам будут приходить уведомления
 
-      .login-box
-        h2.login-box__title
-          span.login-box__title-step Шаг 6/7
+      .settings-box
+        h3.settings-title
+          span.settings-title__step Шаг 6/7
           | Как вам удобнее получать уведомления?
 
-        .login-box__body
+        .settings-box__body
           .checkradio-row
             +checkradio(true, 'login-notification', 'sms', true)
               | SMS-уведомления
@@ -331,12 +331,28 @@
             +checkradio(true, 'login-notification', 'site', false)
               | На сайте
 
-      .login-box
-        h2.login-box__title
-          span.login-box__title-step Шаг 7/7
+      .settings-box
+        h3.settings-title
+          span.settings-title__step Шаг 7/7
           | Привязка платёжной системы
 
-        .login-box__body
+        .settings-box__body
+          .payment-methods.payment-methods--full.mb-3
+            .payment-method
+              input.payment-method__input.hidden-visually(type="radio" name="payment-method" id="credit-card" value="credit-card" checked)
+              label.payment-method__label.js-tippy(for="credit-card" data-tippy-content="Оплата Банковской картой")
+                +icon('credit-card')
+                span.payment-method__label-text Банковская карта
+            .payment-method
+              input.payment-method__input.hidden-visually(type="radio" name="payment-method" id="apple-pay" value="apple-pay")
+              label.payment-method__label.js-tippy(for="apple-pay" data-tippy-content="Оплата Apple Pay")
+                +icon('apple-pay')
+                span.payment-method__label-text Apple pay
+            .payment-method
+              input.payment-method__input.hidden-visually(type="radio" name="payment-method" id="google-pay" value="google-pay")
+              label.payment-method__label.js-tippy(for="google-pay" data-tippy-content="Оплата Google Pay")
+                +icon('google-pay')
+                span.payment-method__label-text Google pay
 
           P.text-light
             | *Депозит-минимальная сумма, которая необходима вам для обработки входящей заявки. Сумма меняется в зависимости от частоты заказов в данной категории, сложности исполнения, уровня спроса на данную нишу и др. При желании можно сделать автоматическое пополнение баланса. Каждая транзакция будет проходить только после вашего согласия.
