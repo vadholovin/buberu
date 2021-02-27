@@ -10,7 +10,7 @@
   padding: 24px 16px;
   border-radius: $global-radius-lg;
   background: #fff;
-  box-shadow: $global-shadow-sm;
+  // box-shadow: $global-shadow-sm;
 
   @include mq($from: md) {
     padding: 30px;

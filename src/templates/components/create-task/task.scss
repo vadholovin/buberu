@@ -21,15 +21,18 @@
   position: relative;
 
   &::after {
-    content: '';
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    transform: translate(25%, -50%) rotate(45deg);
-    width: 10px;
-    height: 10px;
-    border-top: 1px solid $grey-3;
-    border-right: 1px solid $grey-3;
+
+    @include mq($from: md) {
+      content: '';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translate(25%, -50%) rotate(45deg);
+      width: 10px;
+      height: 10px;
+      border-top: 1px solid $grey-3;
+      border-right: 1px solid $grey-3;
+    }
   }
 
   &:last-child::after {
@@ -42,7 +45,7 @@
   padding: 20px 26px;
   border-radius: $global-radius;
   background: #fff;
-  box-shadow: $global-shadow-sm;
+  // box-shadow: $global-shadow-sm;
 }
 
 .task-step-card__img {
@@ -125,4 +128,101 @@
   background-color: $color-bg-primary;
 }
 
+.search-methods {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 17px;
+  gap: 17px;
+}
 
+.search-method {
+  position: relative;
+}
+
+.search-method__label {
+  display: block;
+  padding: 18px 12px;
+  border: 1px solid $color-border-light;
+  border-radius: $global-radius;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+  background: #fff;
+  cursor: pointer;
+
+  @include basic-transition((color, border-color));
+  @include on-event {
+    color: $color-primary;
+    border-color: currentColor;
+  }
+}
+
+.search-method__input:checked ~ .search-method__label {
+  color: $color-primary;
+  border-color: currentColor;
+}
+
+.task-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-gap: 15px;
+  gap: 15px;
+}
+
+// .task-info__item {
+
+// }
+
+.task-info-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  background: #fff;
+  // box-shadow: $global-shadow-sm;
+  border-radius: $global-radius;
+
+  @include basic-transition((transform));
+  &:hover {
+    transform: translateY(-6px);
+  }
+}
+
+.task-info-card__title {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: rem(12px);
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color-light;
+}
+
+.task-info-card__text {
+  margin-bottom: 30px;
+  font-size: rem(18px);
+  line-height: 1.3;
+}
+
+.task-info-card__link {
+  margin-top: auto;
+  font-size: rem(14px);
+  line-height: 1;
+  color: $color-primary;
+
+  @include on-event {
+    text-decoration: underline;
+  }
+}
+
+.task-actions {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 15px;
+  gap: 15px;
+  justify-content: space-between;
+
+  @include mq($from: xs) {
+    grid-template-columns: auto auto;
+  }
+}

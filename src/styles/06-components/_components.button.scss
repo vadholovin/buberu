@@ -172,11 +172,11 @@ $btn-line-height: 1.15;
 }
 
 .button-group {
-  margin-left: -rem(6px);
-  margin-right: -rem(6px);
+  margin-left: -6px;
+  margin-right: -6px;
 
   > * {
-    margin: rem(6px);
+    margin: 6px;
   }
 }
 

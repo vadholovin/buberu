@@ -1,0 +1,119 @@
+.section.task-wrapper
+  .container
+    .task-steps
+      .task-steps__item
+        .task-step-card.box-shadow-medium
+          .task-step-card__img
+            img(src="assets/img/content/thumbs-up.png", alt="")
+          .task-step-card__body
+            .task-step-card__title
+              | Создайте уникальное<br>
+              | задание
+            .task-step-card__text
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+
+      .task-steps__item
+        .task-step-card.box-shadow-medium
+          .task-step-card__img
+            img(src="assets/img/content/pencil.png", alt="")
+          .task-step-card__body
+            .task-step-card__title
+              | Пройдите быструю<br>
+              | регистрацию
+            .task-step-card__text
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+
+      .task-steps__item
+        .task-step-card.box-shadow-medium
+          .task-step-card__img
+            img(src="assets/img/content/handshake.png", alt="")
+          .task-step-card__body
+            .task-step-card__title
+              | Выберите<br>
+              | исполнителя
+            .task-step-card__text
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+
+    .task
+      .settings-form.settings-form--task
+        .task-progress
+          .task-progress__top
+            .task-progress__text
+              | Задача готова на <span class="task-progress__percentage">90</span>
+            .task-progress__steps
+              | 1/4
+          .task-progress__bar
+            .task-progress__bar-inner(style="width: 90%;")
+
+        .settings-box
+          h3.settings-title Информация о заказе
+          .task-info
+            .task-info__item
+              .task-info-card.box-shadow-medium
+                h5.task-info-card__title Что найти?
+                .task-info-card__text iPhone XS Max Space gray 512 GB
+                a.task-info-card__link(href="") Править
+            .task-info__item
+              .task-info-card.box-shadow-medium
+                h5.task-info-card__title Как найти?
+                .task-info-card__text Подбор под ключ
+                a.task-info-card__link(href="") Править
+            .task-info__item
+              .task-info-card.box-shadow-medium
+                h5.task-info-card__title Где найти?
+                .task-info-card__text 10 Авеню, дом 7
+                a.task-info-card__link(href="") Править
+            .task-info__item
+              .task-info-card.box-shadow-medium
+                h5.task-info-card__title Когда найти?
+                .task-info-card__text До 05.10.2020
+                a.task-info-card__link(href="") Править
+
+        .task-actions
+          button.button.button--light(type="button")
+            | Вернуться назад
+          button.button.button--primary(type="button")
+            | Опубликовать задание
+
+        .settings-box.quick-registration.box-shadow-medium
+          .settings-box__head.settings-box__head--row
+            h3.settings-title Быстрая регистрация
+            .settings-box__head-text Есть аккаунт? <a class="text-primary" href="">Войти и продолжить</a>
+
+          .settings-box__content.settings-box__content--full-width
+            .quick-registration__settings
+              +inputbox
+                +label.inputbox__label--required(for="login-name") Ваше имя
+                +input-wrapper
+                  +input(
+                    type="text"
+                    id="login-name"
+                    name="login-name"
+                    placeholder="Ваше имя"
+                  )
+
+              +inputbox
+                +label.inputbox__label--required(for="login-phone") Телефон
+                +input-wrapper
+                  +input.js-phone-mask(
+                    type="tel"
+                    id="login-phone"
+                    name="login-phone"
+                    placeholder="+7 (999) 999-99-99"
+                  )
+
+              +inputbox
+                +label.inputbox__label--required(for="login-email") Ваш e-mail
+                +input-wrapper
+                  +input(
+                    type="email"
+                    id="login-email"
+                    name="login-email"
+                    placeholder="E-mail"
+                  )
+
+              button.button.button--primary(type="button")
+                | Опубликовать задание
+
+            p.text-light
+              | Нажимая кнопку вы принимаете <a class="text-primary" href="">пользовательское соглашение</a> и <a class="text-primary" href="">политику конфиденциальности</a>

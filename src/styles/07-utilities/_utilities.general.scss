@@ -83,3 +83,6 @@
 .z8 { z-index: 800; }
 .z9 { z-index: 900; }
 .z10 { z-index: 1000; }
+
+.box-shadow-medium { box-shadow: $global-shadow-sm; }
+.box-shadow-extra-large { box-shadow: $global-shadow; }

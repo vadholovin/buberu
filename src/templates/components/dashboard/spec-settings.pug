@@ -2,418 +2,412 @@
 h2.dashboard-main__title Настройки
 
 .settings-form.settings-form--profile
-  .ibox
+  .ibox.settings-box
     .ibox-header
       h3.ibox-header__title
         +icon( 'user-o' ).ibox-header__title-icon
         span.ibox-header__title-text Общая информация
     .ibox-body
-      .settings-form__grid
-        .settings-form__main-col
-          .d-flex.d-flex--2-cols.flex-wrap.flex-justify-between
+      .settings-box__content.settings-box__content--full-width
+        .general-info__grid
+          .general-info__main
+            .d-flex.d-flex--2-cols.flex-wrap.flex-justify-between
+              +inputbox
+                +label.inputbox__label--required(for="settings-name") Ваше имя
+                +input-wrapper
+                  +input(
+                    type="text"
+                    id="settings-name"
+                    name="settings-name"
+                    placeholder="Ваше имя"
+                  )
+
+              +inputbox
+                +label.inputbox__label--required(for="settings-surname") Фамилия
+                +input-wrapper
+                  +input(
+                    type="text"
+                    id="settings-surname"
+                    name="settings-surname"
+                    placeholder="Фамилия"
+                  )
+              +inputbox
+                +label.inputbox__label--required(for="settings-city") Ваш город
+                  span.tooltipped.js-tippy(
+                    tabindex="0"
+                    data-tippy-content="На данный момент наш сервис предусматривает работу только с <b>гражданами Российской Федерации</b>!"
+                  )
+                    +icon('question-circle-o')
+                +input-wrapper
+                  +input(
+                    type="text"
+                    id="settings-city"
+                    name="settings-city"
+                    placeholder="Ваш город"
+                  )
+
+              +inputbox
+                +label.inputbox__label--required(for="settings-phone") Телефон
+                +input-wrapper
+                  +input.js-phone-mask(
+                    type="tel"
+                    id="settings-phone"
+                    name="settings-phone"
+                    placeholder="+7 (999) 999-99-99"
+                  )
+              +inputbox
+                +label.inputbox__label--required(for="settings-birthday") Дата рождения
+                +input-wrapper
+                  +input.input--date.js-date-mask(
+                    type="text"
+                    id="settings-birthday"
+                    name="settings-birthday"
+                    placeholder="дд.мм.гггг"
+                  )
+
+              +inputbox
+                +label.inputbox__label--required(for="settings-email") Ваш e-mail
+                +input-wrapper
+                  +input(
+                    type="email"
+                    id="settings-email"
+                    name="settings-email"
+                    placeholder="E-mail"
+                  )
+
             +inputbox
-              +label.inputbox__label--required(for="settings-name") Ваше имя
+              +label.inputbox__label--required(for="settings-area") Сфера деятельности
               +input-wrapper
-                +input(
+                +textarea(
                   type="text"
-                  id="settings-name"
-                  name="settings-name"
-                  placeholder="Ваше имя"
+                  id="settings-area"
+                  name="settings-area"
+                  placeholder="Опишите сферу деятельности"
                 )
 
-            +inputbox
-              +label.inputbox__label--required(for="settings-surname") Фамилия
-              +input-wrapper
-                +input(
-                  type="text"
-                  id="settings-surname"
-                  name="settings-surname"
-                  placeholder="Фамилия"
-                )
-            +inputbox
-              +label.inputbox__label--required(for="settings-city") Ваш город
-                span.tooltipped.js-tippy(
-                  tabindex="0"
-                  data-tippy-content="На данный момент наш сервис предусматривает работу только с <b>гражданами Российской Федерации</b>!"
-                )
-                  +icon('question-circle-o')
-              +input-wrapper
-                +input(
-                  type="text"
-                  id="settings-city"
-                  name="settings-city"
-                  placeholder="Ваш город"
-                )
+          .general-info__aside
+            .settings-avatar
+              label.settings-avatar__photo.user-photo.user-photo--no-photo
+                input.hidden-visually(type="file", name="settings-avatar", id="settings-avatar")
+                .user-photo__inner
+                  .user-photo__img
+              label.settings-avatar__label(for="settings-avatar") Загрузить аватар
 
-            +inputbox
-              +label.inputbox__label--required(for="settings-phone") Телефон
-              +input-wrapper
-                +input.js-phone-mask(
-                  type="tel"
-                  id="settings-phone"
-                  name="settings-phone"
-                  placeholder="+7 (999) 999-99-99"
-                )
-            +inputbox
-              +label.inputbox__label--required(for="settings-birthday") Дата рождения
-              +input-wrapper
-                +input.input--date.js-date-mask(
-                  type="text"
-                  id="settings-birthday"
-                  name="settings-birthday"
-                  placeholder="дд.мм.гггг"
-                )
-
-            +inputbox
-              +label.inputbox__label--required(for="settings-email") Ваш e-mail
-              +input-wrapper
-                +input(
-                  type="email"
-                  id="settings-email"
-                  name="settings-email"
-                  placeholder="E-mail"
-                )
-
-          +inputbox
-            +label.inputbox__label--required(for="settings-area") Сфера деятельности
-            +input-wrapper
-              +textarea(
-                type="text"
-                id="settings-area"
-                name="settings-area"
-                placeholder="Опишите сферу деятельности"
-              )
-
-        .settings-form__aside-col
-          .settings-avatar
-            label.settings-avatar__photo.user-photo.user-photo--no-photo
-              input.hidden-visually(type="file", name="settings-avatar", id="settings-avatar")
-              .user-photo__inner
-                .user-photo__img
-
-            label.settings-avatar__label(for="settings-avatar") Загрузить аватар
-
-  .ibox
+  .ibox.settings-box
     .ibox-header
       h3.ibox-header__title
         +icon( 'info-rounded-o' ).ibox-header__title-icon
         span.ibox-header__title-text Специализация и опыт
+
     .ibox-body
-      .settings-form__grid
-        .settings-form__main-col
-          h4.settings-form__title Сфера деятельности
-          .d-flex.d-flex--2-cols.flex-wrap.flex-justify-between
-            +inputbox
-              +label.inputbox__label--required(for="settings-name") Выберите сферу деятельности
-              +input-wrapper
-                .custom-select
-                  select.js-filters-select(data-placeholder="Сфера деятельности")
-                    option
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-
-            +inputbox
-              +label.inputbox__label--required(for="settings-name") Выберите ваше направление
-              +input-wrapper
-                .custom-select
-                  select.js-filters-select(data-placeholder="Ваше направление")
-                    option
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-                    option(value="Автомеханик") Автомеханик
-
-          p Направление можно выбрать 1 раз при регистрации аккаунта. Если вы хотите сменить текущую сферу деятельности пожалуйста <span class="text-primary">обратитесь к нашим модераторам для проверки ваших данных</span>.
-
-          h4.settings-form__title Опыт работы
-          .experience-list
-            .experience-card.js-draggable(draggable="true")
-              .experience-card__hand(tabindex="0")
-                +icon('bars')
-              .experience-card__body
-                .experience-card__content
-                  h5.experience-card__title Университет «Синергия»
-                  span.experience-card__subtitle Март 2016 - Июнь 2020
-                  .experience-card__text
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-                .experience-card__actions
-                  button.button-icon.button-edit(type="button" aria-label="Редактировать")
-                    +icon('pen')
-                  button.button-icon.button-delete(type="button" aria-label="Удалить")
-                    +icon('trash-o')
-
-            .experience-card.js-draggable(draggable="true")
-              .experience-card__hand(tabindex="0")
-                +icon('bars')
-              .experience-card__body
-                .experience-card__content
-                  h5.experience-card__title МФТИ
-                  span.experience-card__subtitle Март 2016 - Июнь 2020
-                  .experience-card__text
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                .experience-card__actions
-                  button.button-icon.button-edit(type="button" aria-label="Редактировать")
-                    +icon('pen')
-                  button.button-icon.button-delete(type="button" aria-label="Удалить")
-                    +icon('trash-o')
-
-
-          .d-flex.d-flex--2-cols.flex-wrap.flex-justify-between
-            +inputbox
-              +label.inputbox__label--required(for="settings-company") Наименование компании
-              +input-wrapper
-                +input(
-                  type="text"
-                  id="settings-company"
-                  name="settings-company"
-                  placeholder="Укажите название компании"
-                )
-
-            .inputbox-group
-              label.inputbox__label.inputbox__label--required(for="settings-experience-from") Стаж на месте
-              .inputbox-group__row
-                .inputbox__wrapper
-                  +input.input--date.js-date-mask(
-                    type="text"
-                    id="settings-experience-from"
-                    name="settings-experience-from"
-                    placeholder="дд.мм.гггг"
-                  )
-
-                span по
-
-                .inputbox__wrapper
-                  +input.input--date.js-date-mask(
-                    type="text"
-                    id="settings-experience-until"
-                    name="settings-experience-until"
-                    placeholder="дд.мм.гггг"
-                  )
+      .settings-box__content
+        h4.settings-form__title Сфера деятельности
+        .d-flex.d-flex--2-cols.flex-wrap.flex-justify-between
+          +inputbox
+            +label.inputbox__label--required(for="settings-name") Выберите сферу деятельности
+            +input-wrapper
+              .custom-select
+                select.js-filters-select(data-placeholder="Сфера деятельности")
+                  option
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
 
           +inputbox
-            +label.inputbox__label--required(for="settings-experience") Стаж работы
+            +label.inputbox__label--required(for="settings-name") Выберите ваше направление
             +input-wrapper
-              +textarea(
+              .custom-select
+                select.js-filters-select(data-placeholder="Ваше направление")
+                  option
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+                  option(value="Автомеханик") Автомеханик
+
+        p Направление можно выбрать 1 раз при регистрации аккаунта. Если вы хотите сменить текущую сферу деятельности пожалуйста <span class="text-primary">обратитесь к нашим модераторам для проверки ваших данных</span>.
+
+        h4.settings-form__title Опыт работы
+        .experience-list
+          .experience-card.js-draggable(draggable="true")
+            .experience-card__hand(tabindex="0")
+              +icon('bars')
+            .experience-card__body
+              .experience-card__content
+                h5.experience-card__title Университет «Синергия»
+                span.experience-card__subtitle Март 2016 - Июнь 2020
+                .experience-card__text
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+              .experience-card__actions
+                button.button-icon.button-edit(type="button" aria-label="Редактировать")
+                  +icon('pen')
+                button.button-icon.button-delete(type="button" aria-label="Удалить")
+                  +icon('trash-o')
+
+          .experience-card.js-draggable(draggable="true")
+            .experience-card__hand(tabindex="0")
+              +icon('bars')
+            .experience-card__body
+              .experience-card__content
+                h5.experience-card__title МФТИ
+                span.experience-card__subtitle Март 2016 - Июнь 2020
+                .experience-card__text
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              .experience-card__actions
+                button.button-icon.button-edit(type="button" aria-label="Редактировать")
+                  +icon('pen')
+                button.button-icon.button-delete(type="button" aria-label="Удалить")
+                  +icon('trash-o')
+
+        .d-flex.d-flex--2-cols.flex-wrap.flex-justify-between
+          +inputbox
+            +label.inputbox__label--required(for="settings-company") Наименование компании
+            +input-wrapper
+              +input(
                 type="text"
-                id="settings-experience"
-                name="settings-experience"
-                placeholder="Опишите более подробно, на какой позиции вы работали, какой промежуток времени и другая информация о себе и месте работы"
+                id="settings-company"
+                name="settings-company"
+                placeholder="Укажите название компании"
               )
 
-          button.text-button.text-button--primary(type="button") + Добавить опыт работы
+          .inputbox-group
+            label.inputbox__label.inputbox__label--required(for="settings-experience-from") Стаж на месте
+            .inputbox-group__row
+              .inputbox__wrapper
+                +input.input--date.js-date-mask(
+                  type="text"
+                  id="settings-experience-from"
+                  name="settings-experience-from"
+                  placeholder="дд.мм.гггг"
+                )
 
-  .ibox
+              span по
+
+              .inputbox__wrapper
+                +input.input--date.js-date-mask(
+                  type="text"
+                  id="settings-experience-until"
+                  name="settings-experience-until"
+                  placeholder="дд.мм.гггг"
+                )
+
+        +inputbox
+          +label.inputbox__label--required(for="settings-experience") Стаж работы
+          +input-wrapper
+            +textarea(
+              type="text"
+              id="settings-experience"
+              name="settings-experience"
+              placeholder="Опишите более подробно, на какой позиции вы работали, какой промежуток времени и другая информация о себе и месте работы"
+            )
+
+        button.text-button.text-button--primary(type="button") + Добавить опыт работы
+
+  .ibox.settings-box
     .ibox-header
       h3.ibox-header__title
         +icon( 'info-rounded-o' ).ibox-header__title-icon
         span.ibox-header__title-text Образование
     .ibox-body
-      .settings-form__grid
-        .settings-form__main-col
-          .experience-list
-            .experience-card.js-draggable(draggable="true")
-              .experience-card__hand(tabindex="0")
-                +icon('bars')
-              .experience-card__body
-                .experience-card__content
-                  h5.experience-card__title Университет «Синергия»
-                  span.experience-card__subtitle Март 2016 - Июнь 2020
-                  .experience-card__text
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      .settings-box__content
+        .experience-list
+          .experience-card.js-draggable(draggable="true")
+            .experience-card__hand(tabindex="0")
+              +icon('bars')
+            .experience-card__body
+              .experience-card__content
+                h5.experience-card__title Университет «Синергия»
+                span.experience-card__subtitle Март 2016 - Июнь 2020
+                .experience-card__text
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-                .experience-card__actions
-                  button.button-icon.button-edit(type="button" aria-label="Редактировать")
-                    +icon('pen')
-                  button.button-icon.button-delete(type="button" aria-label="Удалить")
-                    +icon('trash-o')
+              .experience-card__actions
+                button.button-icon.button-edit(type="button" aria-label="Редактировать")
+                  +icon('pen')
+                button.button-icon.button-delete(type="button" aria-label="Удалить")
+                  +icon('trash-o')
 
-            .experience-card.js-draggable(draggable="true")
-              .experience-card__hand(tabindex="0")
-                +icon('bars')
-              .experience-card__body
-                .experience-card__content
-                  h5.experience-card__title МФТИ
-                  span.experience-card__subtitle Март 2016 - Июнь 2020
-                  .experience-card__text
-                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                .experience-card__actions
-                  button.button-icon.button-edit(type="button" aria-label="Редактировать")
-                    +icon('pen')
-                  button.button-icon.button-delete(type="button" aria-label="Удалить")
-                    +icon('trash-o')
+          .experience-card.js-draggable(draggable="true")
+            .experience-card__hand(tabindex="0")
+              +icon('bars')
+            .experience-card__body
+              .experience-card__content
+                h5.experience-card__title МФТИ
+                span.experience-card__subtitle Март 2016 - Июнь 2020
+                .experience-card__text
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              .experience-card__actions
+                button.button-icon.button-edit(type="button" aria-label="Редактировать")
+                  +icon('pen')
+                button.button-icon.button-delete(type="button" aria-label="Удалить")
+                  +icon('trash-o')
 
+        .d-flex.d-flex--2-cols.flex-wrap.flex-justify-between
+          +inputbox
+            +label.inputbox__label--required(for="settings-study") Наименование учебного заведения
+            +input-wrapper
+              +input(
+                type="text"
+                id="settings-study"
+                name="settings-study"
+                placeholder="Укажите учебное заведение"
+              )
 
-          .d-flex.d-flex--2-cols.flex-wrap.flex-justify-between
-            +inputbox
-              +label.inputbox__label--required(for="settings-study") Наименование учебного заведения
-              +input-wrapper
-                +input(
+          .inputbox-group
+            label.inputbox__label.inputbox__label--required(for="settings-study-from") Срок обучения
+            .inputbox-group__row
+              .inputbox__wrapper
+                +input.input--date.js-date-mask(
                   type="text"
-                  id="settings-study"
-                  name="settings-study"
-                  placeholder="Укажите учебное заведение"
+                  id="settings-study-from"
+                  name="settings-study-from"
+                  placeholder="дд.мм.гггг"
                 )
 
-            .inputbox-group
-              label.inputbox__label.inputbox__label--required(for="settings-study-from") Срок обучения
-              .inputbox-group__row
-                .inputbox__wrapper
-                  +input.input--date.js-date-mask(
-                    type="text"
-                    id="settings-study-from"
-                    name="settings-study-from"
-                    placeholder="дд.мм.гггг"
-                  )
+              span по
 
-                span по
+              .inputbox__wrapper
+                +input.input--date.js-date-mask(
+                  type="text"
+                  id="settings-study-until"
+                  name="settings-study-until"
+                  placeholder="дд.мм.гггг"
+                )
 
-                .inputbox__wrapper
-                  +input.input--date.js-date-mask(
-                    type="text"
-                    id="settings-study-until"
-                    name="settings-study-until"
-                    placeholder="дд.мм.гггг"
-                  )
+        button.text-button.text-button--primary(type="button") + Добавить образование
 
-
-          button.text-button.text-button--primary(type="button") + Добавить образование
-
-
-  .ibox
+  .ibox.settings-box
     .ibox-header
       h3.ibox-header__title
         +icon( 'info-rounded-o' ).ibox-header__title-icon
         span.ibox-header__title-text График и стоимость услуг
+
     .ibox-body
-      .settings-form__grid
-        .settings-form__main-col
-          h4.settings-form__title График работы
-          .d-flex.d-flex--2-cols.flex-wrap.flex-justify-between
+      .settings-box__content
+        h4.settings-form__title График работы
+        .d-flex.d-flex--2-cols.flex-wrap.flex-justify-between
+          +inputbox
+            .inputbox__label.inputbox__label--required Выберите дни
+            .days-list
+              label.days-list__item
+                input.hidden-visually(type="checkbox", name="day-1", id="day-1")
+                span.days-list__item-text Пн
+              label.days-list__item
+                input.hidden-visually(type="checkbox", name="day-2", id="day-2")
+                span.days-list__item-text Вт
+              label.days-list__item
+                input.hidden-visually(type="checkbox", name="day-3", id="day-3")
+                span.days-list__item-text Ср
+              label.days-list__item
+                input.hidden-visually(type="checkbox", name="day-4", id="day-4")
+                span.days-list__item-text Чт
+              label.days-list__item
+                input.hidden-visually(type="checkbox", name="day-5", id="day-5")
+                span.days-list__item-text Пт
+              label.days-list__item
+                input.hidden-visually(type="checkbox", name="day-6", id="day-6")
+                span.days-list__item-text Сб
+              label.days-list__item
+                input.hidden-visually(type="checkbox", name="day-7", id="day-7")
+                span.days-list__item-text Вс
+
+
+          .inputbox-group
+            label.inputbox__label.inputbox__label--required(for="settings-time-from") Удобное время
+            .inputbox-group__row
+              .inputbox__wrapper
+                +input.input--time.js-time-mask(
+                  type="text"
+                  id="settings-time-from"
+                  name="settings-time-from"
+                  placeholder="чч:мм"
+                )
+
+              span по
+
+              .inputbox__wrapper
+                +input.input--time.js-time-mask(
+                  type="text"
+                  id="settings-time-until"
+                  name="settings-time-until"
+                  placeholder="чч:мм"
+                )
+
+        h4.settings-form__title Стоимость услуг
+        .cost-settings
+          .cost-settings__item
             +inputbox
-              .inputbox__label.inputbox__label--required Выберите дни
-              .days-list
-                label.days-list__item
-                  input.hidden-visually(type="checkbox", name="day-1", id="day-1")
-                  span.days-list__item-text Пн
-                label.days-list__item
-                  input.hidden-visually(type="checkbox", name="day-2", id="day-2")
-                  span.days-list__item-text Вт
-                label.days-list__item
-                  input.hidden-visually(type="checkbox", name="day-3", id="day-3")
-                  span.days-list__item-text Ср
-                label.days-list__item
-                  input.hidden-visually(type="checkbox", name="day-4", id="day-4")
-                  span.days-list__item-text Чт
-                label.days-list__item
-                  input.hidden-visually(type="checkbox", name="day-5", id="day-5")
-                  span.days-list__item-text Пт
-                label.days-list__item
-                  input.hidden-visually(type="checkbox", name="day-6", id="day-6")
-                  span.days-list__item-text Сб
-                label.days-list__item
-                  input.hidden-visually(type="checkbox", name="day-7", id="day-7")
-                  span.days-list__item-text Вс
-
-
-            .inputbox-group
-              label.inputbox__label.inputbox__label--required(for="settings-time-from") Удобное время
-              .inputbox-group__row
-                .inputbox__wrapper
-                  +input.input--time.js-time-mask(
-                    type="text"
-                    id="settings-time-from"
-                    name="settings-time-from"
-                    placeholder="чч:мм"
-                  )
-
-                span по
-
-                .inputbox__wrapper
-                  +input.input--time.js-time-mask(
-                    type="text"
-                    id="settings-time-until"
-                    name="settings-time-until"
-                    placeholder="чч:мм"
-                  )
-
-          h4.settings-form__title Стоимость услуг
-          .cost-settings
-            .cost-settings__item
-              +inputbox
-                +input-wrapper
-                  +input(
-                    type="text"
-                    name="settings-service-name-1"
-                    aria-label="Укажите услугу"
-                    placeholder="Укажите услугу"
+              +input-wrapper
+                +input(
+                  type="text"
+                  name="settings-service-name-1"
+                  aria-label="Укажите услугу"
+                  placeholder="Укажите услугу"
+              )
+            +inputbox
+              +input-wrapper
+                +input(
+                  type="text"
+                  name="settings-service-cost-1"
+                  aria-label="Укажите стоимость услуги"
+                  placeholder="₽"
                 )
-              +inputbox
-                +input-wrapper
-                  +input(
-                    type="text"
-                    name="settings-service-cost-1"
-                    aria-label="Укажите стоимость услуги"
-                    placeholder="₽"
-                  )
-            .cost-settings__item
-              +inputbox
-                +input-wrapper
-                  +input(
-                    type="text"
-                    name="settings-service-name-2"
-                    aria-label="Укажите услугу"
-                    placeholder="Укажите услугу"
+          .cost-settings__item
+            +inputbox
+              +input-wrapper
+                +input(
+                  type="text"
+                  name="settings-service-name-2"
+                  aria-label="Укажите услугу"
+                  placeholder="Укажите услугу"
+              )
+            +inputbox
+              +input-wrapper
+                +input(
+                  type="text"
+                  name="settings-service-cost-2"
+                  aria-label="Укажите стоимость услуги"
+                  placeholder="₽"
                 )
-              +inputbox
-                +input-wrapper
-                  +input(
-                    type="text"
-                    name="settings-service-cost-2"
-                    aria-label="Укажите стоимость услуги"
-                    placeholder="₽"
-                  )
-            .cost-settings__item
-              +inputbox
-                +input-wrapper
-                  +input(
-                    type="text"
-                    name="settings-service-name-3"
-                    aria-label="Укажите услугу"
-                    placeholder="Укажите услугу"
+          .cost-settings__item
+            +inputbox
+              +input-wrapper
+                +input(
+                  type="text"
+                  name="settings-service-name-3"
+                  aria-label="Укажите услугу"
+                  placeholder="Укажите услугу"
+              )
+            +inputbox
+              +input-wrapper
+                +input(
+                  type="text"
+                  name="settings-service-cost-3"
+                  aria-label="Укажите стоимость услуги"
+                  placeholder="₽"
                 )
-              +inputbox
-                +input-wrapper
-                  +input(
-                    type="text"
-                    name="settings-service-cost-3"
-                    aria-label="Укажите стоимость услуги"
-                    placeholder="₽"
-                  )
-            .cost-settings__item
-              button.button.button--primary.button--block(type="button") Открыть дополнительную ячейку
+          .cost-settings__item
+            button.button.button--primary.button--block(type="button") Открыть дополнительную ячейку
 
-
-  .ibox
+  .ibox.settings-box
     .ibox-header
       h3.ibox-header__title
         +icon( 'info-rounded-o' ).ibox-header__title-icon
         span.ibox-header__title-text Пароль / Безопасность
-    .ibox-body
+    .ibox-body.settings-box__content.settings-box__content--full-width
       ul.pass-list
         li.pass-list__item
           +inputbox
@@ -455,6 +449,5 @@ h2.dashboard-main__title Настройки
       p
         +checkradio(false, 'pass-verification', 'null', false)
           | Включить подтверждение по E-mail.
-
 
   button.button.button--primary(type="submit") Сохранить изменения

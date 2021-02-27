@@ -12,6 +12,10 @@
     left: 0;
     width: 100%;
   }
+
+  &.is-scrolled {
+    padding-bottom: 62px;
+  }
 }
 
 .site-header__main {

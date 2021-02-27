@@ -67,7 +67,7 @@
   padding: 20px 16px 20px 16px;
   border-radius: $global-radius;
   background: #fff;
-  box-shadow: $global-shadow-sm;
+  // box-shadow: $global-shadow-sm;
 
   @include mq($from: sm) {
     flex-direction: row;
