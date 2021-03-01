@@ -1,0 +1,257 @@
+/* ==========================================================================
+   #MODAL
+   ========================================================================== */
+
+.fancybox-is-open .fancybox-bg {
+  background-color: rgba(#351703, 0.5);
+  opacity: 1;
+}
+
+.fancybox-slide--html .fancybox-close-small {
+  top: 15px;
+  right: 15px;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  color: #495057;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.modal-wrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 570px;
+  padding: 0;
+  background-color: transparent;
+
+  &--registration {
+    max-width: 830px;
+  }
+
+  &--login {
+    max-width: 450px;
+  }
+}
+
+// .modal-inner {
+
+
+// }
+
+.modal-content {
+  padding: 50px 24px 30px 24px;
+  border-radius: $global-radius-lg;
+  background: #fff;
+  overflow: hidden;
+
+  @include mq($from: sm) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .modal-wrapper--registration &,
+  .modal-wrapper--response &,
+  .modal-wrapper--login & {
+
+    @include mq($from: sm) {
+      padding: 50px;
+    }
+  }
+}
+
+.modal-head {
+  margin-bottom: 30px;
+
+  > *+* {
+    margin-top: 12px;
+  }
+}
+
+.modal-title {
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 1.12;
+
+  @include mq($from: xs) {
+    font-size: 32px;
+  }
+
+  &--small {
+
+    @include mq($from: xs) {
+      font-size: 28px;
+    }
+  }
+}
+
+.modal-subtitle {
+  color: $color-light;
+  line-height: 1.4;
+}
+
+.registration-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > *+* {
+    margin-top: 20px;
+
+    @include mq($from: sm) {
+      margin-top: 30px;
+    }
+  }
+}
+
+.registration-opts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 12px;
+  gap: 12px;
+  width: 100%;
+
+  @include mq($from: sm) {
+    grid-gap: 20px;
+    gap: 20px;
+  }
+}
+
+.registration-opt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #E4E4E4;
+  border-radius: $global-radius;
+
+  @include mq($from: sm) {
+    padding: 25px;
+  }
+
+  @include basic-transition((border-color));
+  @include on-event {
+    border-color: $color-border-primary;
+
+    .registration-opt__img-fill {
+      fill: $color-primary;
+    }
+
+    .registration-opt__title {
+      color: $color-primary;
+    }
+
+    .registration-opt__text {
+      color: $color-body;
+    }
+  }
+}
+
+.registration-opt__img {
+  display: block;
+  margin-bottom: 12px;
+  max-width: 147px;
+
+  // &--client {
+
+  // }
+
+  // &--specialist {
+
+  // }
+
+  &-fill {
+    @include basic-transition((fill));
+  }
+}
+
+.registration-opt__title {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+
+  @include basic-transition((color));
+}
+
+.registration-opt__text {
+  max-width: 260px;
+  font-size: 14px;
+  line-height: 1.3;
+  color: $color-light;
+
+  @include basic-transition((color));
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+
+  > *+* {
+    margin-top: 20px;
+  }
+
+  .inputbox__label {
+    margin-bottom: 12px;
+    font-weight: normal;
+    color: $color-light;
+  }
+
+  .form__note {
+
+    &:last-child {
+
+      @include mq($from: xs) {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+.task-response {
+
+  > *+* {
+    margin-top: 20px;
+  }
+
+  hr {
+    margin-bottom: 30px;
+  }
+
+  .user-photo {
+    width: 51px;
+    height: 51px;
+  }
+
+  .user-flag__body {
+
+    > *+* {
+      margin-top: 5px;
+    }
+  }
+
+  .user-flag__title {
+    font-weight: 500;
+    font-size: 22px;
+  }
+
+  .user-flag__subtitle {
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+.task-response__title {
+  max-width: 340px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.12;
+}
+
+
+

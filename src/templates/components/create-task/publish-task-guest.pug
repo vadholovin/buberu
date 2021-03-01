@@ -1,0 +1,113 @@
+include ../specialists/specialists.data.pug
+
+.section.task-wrapper
+  .container
+    .task-steps
+      .task-steps__item
+        .task-step-card.box-shadow-medium
+          .task-step-card__img
+            img(src="assets/img/content/thumbs-up.png", alt="")
+          .task-step-card__body
+            .task-step-card__title
+              | Создайте уникальное<br>
+              | задание
+            .task-step-card__text
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+
+      .task-steps__item
+        .task-step-card.box-shadow-medium
+          .task-step-card__img
+            img(src="assets/img/content/pencil.png", alt="")
+          .task-step-card__body
+            .task-step-card__title
+              | Пройдите быструю<br>
+              | регистрацию
+            .task-step-card__text
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+
+      .task-steps__item
+        .task-step-card.box-shadow-medium
+          .task-step-card__img
+            img(src="assets/img/content/handshake.png", alt="")
+          .task-step-card__body
+            .task-step-card__title
+              | Выберите<br>
+              | исполнителя
+            .task-step-card__text
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+
+    .task
+      .settings-form.settings-form--task
+        .task-progress
+          .task-progress__top
+            .task-progress__text
+              | Ваше задание <span class="text-primary">опубликовано</span>
+            .task-progress__steps.text-primary
+              | 4/4
+          .task-progress__bar
+            .task-progress__bar-inner(style="width: 100%;")
+
+        .settings-box
+          .settings-title Ваше задание под номером <span class="text-primary">1424</span>
+          .order-card.box-shadow-medium
+            .order-card__header
+              .order-card__user
+                .order-card__user-img
+                  .user-photo.user-photo--no-photo
+                    .user-photo__inner
+                      .user-photo__img
+                .order-card__user-text
+                  span.order-card__user-name Не выбран
+                  span.order-card__user-role Исполнитель
+
+              .order-card__timing
+                span.order-card__timing-label До конца:
+                span.order-card__timing-amount.underline.underline--dashed.js-tippy-with-tpl(data-template="tippy-tpl-1") осталось 2 дня
+              template#tippy-tpl-1
+                .tooltips-template.tooltips-template--dates
+                  ul.timing-list
+                    li.timing-item
+                      span.timing-item__date 18 Октября, 2020
+                      span.timing-item__text Публикация задания
+                    li.timing-item
+                      span.timing-item__date 20 Октября, 2020
+                      span.timing-item__text Срок исполнения
+
+              .order-card__status.expected.js-tippy(data-tippy-content="Поиск специалиста") Поиск специалиста
+
+            .order-card__body
+              h5.order-card__title <span class="text-light">#1412</span> Подбор iPhone XS Max Space gray 512 GB
+              ul.order-card__details
+                li.order-card__details-item
+                  span.order-card__details-label Модель
+                  span.order-card__details-text Iphone XS max Space gray 512 GB
+                li.order-card__details-item
+                  span.order-card__details-label Услуга
+                  span.order-card__details-text Подбор под ключ
+                li.order-card__details-item
+                  span.order-card__details-label Место
+                  span.order-card__details-text 10 Авеню, дом 7
+
+              .order-card__actions
+                button.button.button--light(type="button") Редактировать задачу
+                button.button.button--light(type="button") Удалить
+
+        .settings-box
+          .settings-box__head.settings-box__head--row
+            h3.settings-title Подходящие специалисты
+            .settings-box__head-text
+              a.text-primary.underline.underline--dashed(href="") Посмотреть всех специалистов
+
+          .swiper-block.specialists-slider-wrapper#task-specialists-wrapper
+            .swiper-container.specialists-slider
+              .swiper-wrapper
+                each person in persons
+                  .swiper-slide.specialists-slide
+                    +card-person(person, false)
+
+            .swiper-pagination.specialists-slider-pagination
+            .swiper-buttons.specialists-slider-buttons
+              .swiper-button-prev
+                +icon('chevron-left-o')
+              .swiper-button-next
+                +icon('chevron-right-o')

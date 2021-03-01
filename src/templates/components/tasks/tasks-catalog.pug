@@ -18,20 +18,17 @@ include tasks.data.pug
               span.filters-inline__item(tabindex="-1" aria-selected="false" role="button") Подбор под ключ
               span.filters-inline__item(tabindex="-1" aria-selected="false" role="button") Консультация
 
-          ul.tasks-list.tasks-list--catalog
+          .tasks-list.tasks-list--catalog
             each item in tasks
-              li.tasks-list__item
+              .tasks-list__item
                 .task-card.task-card--catalog
                   .task-card__icon
                     +icon( item.icon )
                   .task-card__content
                     .task-card__info
                       .task-card__heading
-                        a(href="")
-                          h5.task-card__title(title="#1421 " + item.title)
-                            span.task-card__title-num #1421
-                            span.task-card__title-text= item.title
-                        span.task-card__label Подбор под ключ
+                        a(data-fancybox-notouch href='#modal-task-response')
+                          h5.task-card__title(title="#1421 " + item.title)= item.title
                       ul.task-card__meta
                         li.task-card__meta-item
                           a(href="")
@@ -44,26 +41,24 @@ include tasks.data.pug
                           +icon('placeholder-o').task-card__meta-icon
                           span.task-card__meta-text= item.address
 
-                    a.button-icon.task-card__link.task-card__link--icon(href="")
-                      +icon('arrow-rounded-o')
+                    a.button-icon.task-card__link.task-card__link--icon(data-fancybox-notouch href='#modal-task-response')
+                      +icon('paper-plane')
                       span.hidden-visually Подробнее
 
-            li.tasks-list__item
+            .tasks-list__item
               .promo.promo--lg
                 img(src="assets/img/content/promo/promo-lg.png", alt="")
 
             each item in tasks
-              li.tasks-list__item
+              .tasks-list__item
                 .task-card.task-card--catalog
                   .task-card__icon
                     +icon( item.icon )
                   .task-card__content
                     .task-card__info
                       .task-card__heading
-                        a(href="")
-                          h5.task-card__title(title="#1421 " + item.title)
-                            span.task-card__title-num #1421
-                            span.task-card__title-text= item.title
+                        a(data-fancybox-notouch href='#modal-task-response')
+                          h5.task-card__title(title="#1421 " + item.title)= item.title
                         span.task-card__label Подбор под ключ
                       ul.task-card__meta
                         li.task-card__meta-item
@@ -77,8 +72,8 @@ include tasks.data.pug
                           +icon('placeholder-o').task-card__meta-icon
                           span.task-card__meta-text= item.address
 
-                    a.button-icon.task-card__link.task-card__link--icon(href="")
-                      +icon('arrow-rounded-o')
+                    a.button-icon.task-card__link.task-card__link--icon(data-fancybox-notouch href='#modal-task-response')
+                      +icon('paper-plane')
                       span.hidden-visually Подробнее
 
           .tasks-catalog__footer

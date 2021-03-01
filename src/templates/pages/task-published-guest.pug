@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block variables
+  - var pageTitle = 'Публикация задания | Гость'
+  - var bodyClass = 'confirm-task-page'
+
+block content
+  include ../components/layout/header-logged
+  main.content-wrapper
+    include ../components/create-task/publish-task-guest
+  include ../components/layout/footer

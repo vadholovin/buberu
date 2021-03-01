@@ -737,4 +737,91 @@ document.addEventListener('DOMContentLoaded', function() {
       },
     },
   });
+
+  const specialists2 = new Swiper('#task-specialists-wrapper .swiper-container', {
+    slidesPerView: 1,
+    speed: 600,
+    keyboard: {
+      enabled: true,
+    },
+    preloadImages: false,
+    lazy: {
+      loadedClass: 'is-loaded',
+      loadPrevNext: true,
+    },
+    observer: true,
+    observeParents: true,
+    pagination: {
+      el: '#task-specialists-wrapper .swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '#task-specialists-wrapper .swiper-button-next',
+      prevEl: '#task-specialists-wrapper .swiper-button-prev',
+    },
+    breakpoints: {
+      500: {
+        slidesPerView: 2,
+        spaceBetween: 8,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 12,
+      },
+      // 1024: {
+      //   slidesPerView: 3,
+      //   spaceBetween: 18,
+      // },
+      1300: {
+        slidesPerView: 4,
+        spaceBetween: 18,
+      },
+    },
+  });
+});
+
+
+/**
+ * Fancybox
+ */
+jQuery(function ($) {
+  $.fancybox.defaults.buttons = [
+    "close"
+  ];
+  $.fancybox.defaults.hash = false;
+  $.fancybox.defaults.backFocus = false;
+  $.fancybox.defaults.clickSlide = 'close';
+  // $.fancybox.defaults.animationEffect = 'zoom-in-out';
+  $.fancybox.defaults.animationDuration = 400;
+  $.fancybox.defaults.btnTpl.smallBtn = '<button type="button" data-fancybox-close class="fancybox-button fancybox-close-small" title="{{CLOSE}}">' +
+  '<svg fill="none" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><path d="m1.35 0.646-0.707 0.707 9.65 9.65-9.65 9.65 0.707 0.707 9.65-9.65 9.65 9.65 0.707-0.707-9.65-9.65 9.65-9.65-0.707-0.707-9.65 9.65-9.65-9.65z" fill="currentColor"/></svg>' +
+  '</button>';
+
+  $('[data-fancybox]').fancybox();
+
+  $('[data-fancybox-notouch]').fancybox({
+    touch: false,
+  });
+
+  function showResponse(e) {
+    $.fancybox.close();
+    $.fancybox.open({
+      src: '#modal-response',
+      type: 'inline',
+      touch: false,
+    });
+  }
+});
+
+
+/**
+ * Show
+ */
+jQuery(function ($) {
+  $('.js-show-quick-registration').on('click',function (e) {
+    e.preventDefault();
+
+    $('.quick-registration').addClass('is-active');
+  });
 });

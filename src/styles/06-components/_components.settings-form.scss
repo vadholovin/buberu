@@ -401,13 +401,17 @@
 
   &--row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+    grid-template-columns: auto;
     grid-column-gap: 30px;
     column-gap: 30px;
     grid-row-gap: 12px;
     row-gap: 12px;
     justify-content: space-between;
     align-items: end;
+
+    @include mq($from: sm) {
+      grid-template-columns: minmax(280px, auto) auto;
+    }
 
     .settings-title {
       margin-bottom: 0;
@@ -473,6 +477,7 @@
 }
 
 .quick-registration {
+  display: none;
   margin-top: 50px;
   padding: 30px 20px;
   border-radius: $global-radius;
@@ -484,6 +489,10 @@
 
   @include mq($from: md) {
     margin-top: 100px;
+  }
+
+  &.is-active {
+    display: block;
   }
 }
 

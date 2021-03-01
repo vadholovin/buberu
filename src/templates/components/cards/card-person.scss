@@ -10,7 +10,7 @@
   padding: 24px 16px;
   border-radius: $global-radius-lg;
   background: #fff;
-  // box-shadow: $global-shadow-sm;
+  box-shadow: $global-shadow-sm;
 
   @include mq($from: md) {
     padding: 30px;
@@ -47,7 +47,15 @@
   }
 }
 
+.card-person:hover {
+
+  .card-person__fav {
+    opacity: 1;
+  }
+}
+
 .card-person__img {
+  display: block;
   margin-bottom: 16px;
 
   @include mq($from: md) {
@@ -103,7 +111,17 @@
 }
 
 .card-person__title {
+  display: block;
   font-size: 18px;
+
+  @include basic-transition((color));
+}
+
+.card-person:hover {
+
+  .card-person__title {
+    color: $color-primary;
+  }
 }
 
 .card-person__subtitle {
@@ -111,10 +129,13 @@
 }
 
 .card-person__stars {
-  margin-bottom: 36px;
 
-  @include mq($from: md) {
-    margin-bottom: 45px;
+  &:not(:last-child) {
+    margin-bottom: 36px;
+
+    @include mq($from: md) {
+      margin-bottom: 45px;
+    }
   }
 }
 
