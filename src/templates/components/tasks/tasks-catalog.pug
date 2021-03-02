@@ -1,11 +1,11 @@
 include tasks.data.pug
 
 
-.section.section--bottom
+.section.section--bottom.catalog
   .container
     h1.hidden-visually Каталог заданий
-    .tasks__grid
-      .tasks__col-main
+    .catalog__grid
+      .catalog__col-main
         h2.section__title Найдено <span class="text-primary">1 795</span> заданий
 
         include ../filters/filters
@@ -29,17 +29,17 @@ include tasks.data.pug
                       .task-card__heading
                         a(data-fancybox-notouch href='#modal-task-response')
                           h5.task-card__title(title="#1421 " + item.title)= item.title
-                      ul.task-card__meta
-                        li.task-card__meta-item
+                      .meta.meta--inline.task-card__meta
+                        .meta-item
                           a(href="")
-                            +icon('user-thin-o').task-card__meta-icon
-                            span.task-card__meta-text= item.name
-                        li.task-card__meta-item
-                          +icon('calendar-o').task-card__meta-icon
-                          span.task-card__meta-text.underline.underline--dashed осталось 2 дня
-                        li.task-card__meta-item
-                          +icon('placeholder-o').task-card__meta-icon
-                          span.task-card__meta-text= item.address
+                            +icon('user-thin-o')
+                            = item.name
+                        .meta-item
+                          +icon('calendar-o')
+                          span.underline.underline--dashed осталось 2 дня
+                        .meta-item
+                          +icon('placeholder-o')
+                          = item.address
 
                     a.button-icon.task-card__link.task-card__link--icon(data-fancybox-notouch href='#modal-task-response')
                       +icon('paper-plane')
@@ -60,17 +60,17 @@ include tasks.data.pug
                         a(data-fancybox-notouch href='#modal-task-response')
                           h5.task-card__title(title="#1421 " + item.title)= item.title
                         span.task-card__label Подбор под ключ
-                      ul.task-card__meta
-                        li.task-card__meta-item
+                      .meta.meta--inline.task-card__meta
+                        .meta-item
                           a(href="")
-                            +icon('user-thin-o').task-card__meta-icon
-                            span.task-card__meta-text= item.name
-                        li.task-card__meta-item
-                          +icon('calendar-o').task-card__meta-icon
-                          span.task-card__meta-text.underline.underline--dashed осталось 2 дня
-                        li.task-card__meta-item
-                          +icon('placeholder-o').task-card__meta-icon
-                          span.task-card__meta-text= item.address
+                            +icon('user-thin-o')
+                            = item.name
+                        .meta-item
+                          +icon('calendar-o')
+                          span.underline.underline--dashed осталось 2 дня
+                        .meta-item
+                          +icon('placeholder-o')
+                          = item.address
 
                     a.button-icon.task-card__link.task-card__link--icon(data-fancybox-notouch href='#modal-task-response')
                       +icon('paper-plane')
@@ -80,12 +80,8 @@ include tasks.data.pug
             span.tasks-catalog__footer-text Еще 1 230 непросмотренных заданий
             button.button.button--outline-secondary Показать еще
 
-      .tasks__col-aside
-        .tasks-aside
-          include ../iboxes/ibox-notif
+      .catalog__col-aside
+        include ../iboxes/ibox-notif
 
-          .promo.promo--sm
-            img(src="assets/img/content/promo/promo-sm.png", alt="")
-
-
-
+        .promo.promo--sm
+          img(src="assets/img/content/promo/promo-sm.png", alt="")

@@ -816,7 +816,7 @@ jQuery(function ($) {
 
 
 /**
- * Show
+ * Show quick registration box
  */
 jQuery(function ($) {
   $('.js-show-quick-registration').on('click',function (e) {
@@ -824,4 +824,35 @@ jQuery(function ($) {
 
     $('.quick-registration').addClass('is-active');
   });
+});
+
+
+/**
+ * File attachment
+ */
+jQuery(function ($) {
+  $('.inputfile').each(function () {
+		var $wrapper = $(this);
+    var $input = $wrapper.find('.inputfile__input');
+		var $fileCaption = $wrapper.find('.inputfile__content');
+		var fileTextInitial = $fileCaption.html();
+
+		$input.on('change', function () {
+			var fileName = $(this).val();
+			var fileNameClean = fileName.replace(/^.*\\/, "");
+			var fileNameShort = fileNameClean.slice(0, 19);
+
+			if (fileNameClean.length > 20) {
+				$fileCaption.html(fileNameShort + '...');
+			}
+			else {
+				$fileCaption.html(fileNameShort);
+			}
+
+			if( !$(this).val() ) {
+				$fileCaption.html(fileTextInitial);
+			}
+
+		});
+	});
 });

@@ -6,7 +6,7 @@
   position: relative;
   width: 46px;
   height: 46px;
-  overflow: hidden;
+  // overflow: hidden;
 
   &.offline::after,
   &.online::after {
@@ -25,6 +25,23 @@
   &.online::after {
     background-color: $color-success;
   }
+
+  &.offline--circle::after,
+  &.online--circle::after {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.128);
+    border-width: 1px;
+    background: none;
+    box-shadow: none;
+  }
+
+  &.offline--circle::after { border-color: $color-border-light; }
+  &.online--circle::after { border-color: $green-1; }
 }
 
 .user-photo__inner {

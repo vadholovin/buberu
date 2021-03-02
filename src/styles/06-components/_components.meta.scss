@@ -1,0 +1,46 @@
+/* ==========================================================================
+   #META
+   ========================================================================== */
+
+.meta {
+  font-weight: 500;
+
+  > *+* {
+    margin-top: 16px;
+  }
+
+  &--inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    > * {
+      margin-top: 2px;
+      margin-bottom: 2px;
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  a {
+    color: $color-primary;
+  }
+}
+
+.meta-item {
+  color: $color-light;
+  line-height: 1.2;
+
+  @include mq($until: xs) {
+    font-size: 15px;
+  }
+
+  .icon {
+    position: relative;
+    top: -2px;
+    margin-right: 6px;
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,42 @@
+include specialists.data.pug
+
+
+.section.section--bottom.catalog
+  .container
+    h1.hidden-visually Специалисты
+    .catalog__grid
+      .catalog__col-main
+        h2.section__title Найдено <span class="text-primary">1 795</span> специалистов
+
+        include ../filters/filters-specialists
+
+        .specialists-catalog
+          .filters-inline
+            span.filters-inline__label Популярные категории:
+            .filters-inline__row
+              span.filters-inline__item.is-selected(tabindex="0" aria-selected="true" role="button") Автомеханик
+              span.filters-inline__item(tabindex="-1" aria-selected="false" role="button") Ремонт бытовой техники
+              span.filters-inline__item(tabindex="-1" aria-selected="false" role="button") Подбор авто
+
+          .specialists-list
+            each item in [1,2,3]
+              .specialists-list__item
+                +specialist-card((item % 2 === 0), (item % 2 === 0 ? 70 : 50))
+
+            .specialists-list__item
+              .promo.promo--lg
+                img(src="assets/img/content/promo/promo-lg.png", alt="")
+
+            each item in [1,2,3]
+              .specialists-list__item
+                +specialist-card((item % 2 === 0), (item % 2 === 0 ? 70 : 50))
+
+          .catalog__footer
+            .catalog__footer-text Еще 1 230 непросмотренных заданий
+            button.button.button--outline-secondary Показать еще
+
+      .catalog__col-aside
+        include ../iboxes/ibox-notif
+
+        .promo.promo--sm
+          img(src="assets/img/content/promo/promo-sm.png", alt="")

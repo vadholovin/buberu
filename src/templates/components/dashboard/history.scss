@@ -99,41 +99,9 @@ a {
   }
 }
 
-.history-card__meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+// .history-card__meta {
 
-  @include mq($until: xs) {
-    font-size: 15px;
-  }
-
-  > * {
-    margin-top: 2px;
-    margin-bottom: 2px;
-
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
-  }
-
-
-}
-
-.history-card__meta-item {
-  color: #A9A9A9;
-
-  a {
-    color: $color-primary;
-  }
-
-  .icon {
-    position: relative;
-    top: 2px;
-    vertical-align: baseline;
-    margin-right: 6px;
-  }
-}
+// }
 
 .history-card__label {
   padding: 6.5px 10px;
@@ -151,14 +119,6 @@ a {
     background: #F1FAF5;
   }
 }
-
-// .history-card__num {
-
-// }
-
-// .history-card__date {
-
-// }
 
 .history-card__link {
   flex: none;

@@ -108,44 +108,48 @@
 
     .messages-main
       .messages-main__header
-        .user-flag.messages-user-flag
-          .user-flag__img
-            .user-photo
-              .user-photo__inner
-                img.user-photo__img(src="assets/img/content/avatars/ava-1.jpg", alt="")
-          .user-flag__body
-            span.user-flag__title Михаил Стариков
-            span.user-flag__subtitle был(-а) 3 часа назад
+        .messages-main__header-group.d-flex
+          .user-flag.messages-user-flag
+            .user-flag__img
+              .user-photo
+                .user-photo__inner
+                  img.user-photo__img(src="assets/img/content/avatars/ava-1.jpg", alt="")
+            .user-flag__body
+              span.user-flag__title Михаил Стариков
+              span.user-flag__subtitle был(-а) 3 часа назад
 
-        ul.messages-main__actions
-          li.messages-main__actions-item.js-popper-wrapper
-            button.button-icon.button-search.js-popper-trigger(type="button" aria-label="Показать поле поиска")
-              +icon('search-o')
-            .dropdown.dropdown--b-r.dropdown--arrow-r.messages-search-dropdown.js-popper-content
-              +form().search-form
-                +inputbox()
-                  +input-wrapper
-                    +input()(
-                      type="text"
-                      name="s"
-                      aria-label="Поиск"
-                      placeholder="Поиск"
-                    )
+          button.button.button--primary(data-fancybox-notouch data-src="#modal-invite" type="button")
+            | Пригласить в задание
+        .messages-main__header-group.d-flex
+          ul.messages-main__actions
+            li.messages-main__actions-item.js-popper-wrapper
+              button.button-icon.button-search.js-popper-trigger(type="button" aria-label="Показать поле поиска")
+                +icon('search-o')
+              .dropdown.dropdown--b-r.dropdown--arrow-r.messages-search-dropdown.js-popper-content
+                +form().search-form
+                  +inputbox()
+                    +input-wrapper
+                      +input()(
+                        type="text"
+                        name="s"
+                        aria-label="Поиск"
+                        placeholder="Поиск"
+                      )
 
-          li.messages-main__actions-item.js-popper-wrapper
-            button.button-icon.button-opts.js-popper-trigger(type="button" aria-label="Показать дополнительные опции")
-              +icon('dots')
-            .dropdown.dropdown--b-r.dropdown--arrow-r.messages-opts-dropdown.js-popper-content
-              ul.icon-list.icon-list--dropdown
-                li.icon-list__item
-                  a.icon-list__link(href="")
-                    +icon('info-rounded-o')
-                    | Пожаловаться
-
-                li.icon-list__item
-                  a.icon-list__link(href="")
-                    +icon('trash-o')
-                    | Архивировать
+            li.messages-main__actions-item.js-popper-wrapper
+              button.button-icon.button-opts.js-popper-trigger(type="button" aria-label="Показать дополнительные опции")
+                +icon('dots')
+              .dropdown.dropdown--b-r.dropdown--arrow-r.messages-opts-dropdown.js-popper-content
+                ul.dropdown-list
+                  li.dropdown-list__item
+                    a.dropdown-list__link(data-fancybox-notouch href="#modal-invite")
+                      | Предложить услуги
+                  li.dropdown-list__item
+                    a.dropdown-list__link(data-fancybox-notouch href="#modal-complaint")
+                      | Пожаловаться
+                  li.dropdown-list__item
+                    a.dropdown-list__link(href="")
+                      | Архивировать
 
       .messages-main__content
         .messages-list

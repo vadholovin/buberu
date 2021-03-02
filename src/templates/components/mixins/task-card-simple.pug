@@ -7,23 +7,19 @@ mixin task-card-simple(data, index)
             h5.task-card__title(title= `#${data.num} ${data.title}`)
               span.task-card__title-num= `#${data.num}`
               span.task-card__title-text= data.title
-          span.task-card__label Подбор под ключ
 
-        ul.task-card__meta
-          li.task-card__meta-item
+        .meta.meta--inline.task-card__meta
+          .meta-item
             a(href="")
-              +icon('user-thin-o').task-card__meta-icon
-              span.task-card__meta-text= data.name
-
-          li.task-card__meta-item
-            +icon('calendar-o').task-card__meta-icon
-            span.task-card__meta-text.underline.underline--dashed.js-tippy-with-tpl(data-template="tippy-tpl-10" + index) осталось 2 дня
+              +icon('user-thin-o')
+              = data.name
+          .meta-item
+            +icon('calendar-o')
+            span.underline.underline--dashed.js-tippy-with-tpl(data-template="tippy-tpl-10" + index) осталось 2 дня
             +dates-tooltip(index)
+          .meta-item
+            +icon('placeholder-o')
+            = data.address
 
-          li.task-card__meta-item
-            +icon('placeholder-o').task-card__meta-icon
-            span.task-card__meta-text= data.address
-
-      a.button-icon.task-card__link.task-card__link--icon(href="")
-        +icon('arrow-rounded-o')
-        span.hidden-visually Подробнее
+      a.button-icon.task-card__link.task-card__link--icon(href="" aria-label="Подробнее")
+        +icon('paper-plane')

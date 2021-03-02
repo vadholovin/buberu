@@ -2,7 +2,7 @@
    #TASKS
    ========================================================================== */
 
-.tasks__grid {
+.catalog__grid {
   display: flex;
   flex-wrap: wrap;
   margin-top: -3.5rem;
@@ -18,7 +18,7 @@
   }
 }
 
-.tasks__col-main {
+.catalog__col-main {
   flex-grow: 1;
   flex-basis: 0;
 
@@ -27,11 +27,15 @@
   }
 }
 
-.tasks__col-aside {
+.catalog__col-aside {
 
   @include mq($from: md) {
     flex-shrink: 0;
     width: 340px;
+  }
+
+  > *+* {
+    margin-top: 40px;
   }
 }
 
@@ -46,7 +50,7 @@
   }
 }
 
-.tasks-catalog__footer {
+.catalog__footer {
   text-align: center;
   margin-top: 3rem;
 
@@ -56,28 +60,6 @@
 
   > * + * {
     margin-top: 20px;
-  }
-}
-
-.tasks-catalog__footer-text {
-  display: block;
-}
-
-.tasks-aside {
-
-  > * + * {
-    margin-top: 20px;
-  }
-
-  .promo {
-
-    &:not(:first-child) {
-      margin-top: 40px;
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 40px;
-    }
   }
 }
 
@@ -270,39 +252,7 @@
 }
 
 .task-card__meta {
-  display: flex;
-  flex-wrap: wrap;
-
-  a {
-    color: $color-primary;
-  }
-}
-
-.task-card__meta-item {
   font-weight: 500;
-  line-height: 1.3;
-  color: $color-light;
-  font-size: 0;
-
-  &:not(:last-child) {
-    margin-right: 15px;
-  }
-}
-
-.task-card__meta-icon {
-  position: relative;
-  top: 1px;
-  margin-right: 7px;
-  font-size: 15px;
-  vertical-align: baseline;
-}
-
-.task-card__meta-text {
-  font-size: 14px;
-
-  @include mq($from: xs) {
-    font-size: 16px;
-  }
 }
 
 .task-card__link {

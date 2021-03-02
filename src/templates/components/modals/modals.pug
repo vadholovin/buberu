@@ -110,27 +110,154 @@
           button.button.button--block.button--primary(type="submit") Откликнуться на задание
 
 //- COMPLAINT
-//- .modal-wrapper.modal-wrapper--complaint#modal-complaint
-//-   .modal-inner
-//-     .modal-content
-//-       .modal-head
-//-         .modal-title.modal-title--small Причина жалобы
+.modal-wrapper.modal-wrapper--complaint#modal-complaint
+  .modal-inner
+    .modal-content
+      .modal-head
+        .modal-title.modal-title--small Причина жалобы
 
-//-       .complaint
-//-         .complaint__title Подбор под ключ iPhone XS Max Space gray 512 GB
+      .complaint
+        +form().modal-form.modal-form--complaint
+          fieldset.checkradio-group
+            +checkradio(false, 'complaint-reason', 'Пропаганда', false)
+              | Пропаганда
+            +checkradio(false, 'complaint-reason', 'Спам или введение в заблуждение', false)
+              | Спам или введение в заблуждение
+            +checkradio(false, 'complaint-reason', 'Оскорбление', false)
+              | Оскорбление
+            +checkradio(false, 'complaint-reason', 'Нативная реклама', false)
+              | Нативная реклама
+            +checkradio(false, 'complaint-reason', 'Нарушение авторских прав', false)
+              | Нарушение авторских прав
+            +checkradio(false, 'complaint-reason', 'Другое', false)
+              | Другое
 
-//-         +form().modal-form.modal-form--complaint
-//-           +inputbox
-//-             +label.inputbox__label--required(for="complaint-message") Подробности инцидента
-//-             +input-wrapper
-//-               +textarea(
-//-                 id="complaint-message"
-//-                 name="complaint-message"
-//-                 placeholder="Введите ваш текст"
-//-               )
-//-           button.button.button--block.button--primary(type="submit") Отправить
+          +inputbox
+            +label.inputbox__label--required(for="complaint-message") Подробности инцидента
+            +input-wrapper
+              +textarea(
+                id="complaint-message"
+                name="complaint-message"
+                placeholder="Введите ваш текст"
+              )
 
+          +inputfile('complaint-file', '', '+ Прикрепить файл')
+            | не более 50 МБ
 
+          button.button.button--block.button--primary(type="submit") Отправить
+
+//- REVIEW
+.modal-wrapper.modal-wrapper--review#modal-review
+  .modal-inner
+    .modal-content
+      .modal-head.align-c
+        .modal-title Оставьте отзыв
+
+      .review-box
+        .review-person
+          .review-person__img.user-photo.online.online--circle
+            .user-photo__inner
+              img.user-photo__img(src="assets/img/content/avatars/ava-1-lg.jpg", alt="")
+          .review-person__title Аня Фролова
+          .review-person__subtitle Исполнитель
+          .review-person__stars.stars
+            <svg class="stars__svg" viewBox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H2H118H120V20H118H2H0V0ZM111.09 6.81775L118 7.82776L113 12.6978L114.18 19.5778L108 16.3278L101.82 19.5778L103 12.6978L98 7.82776L104.91 6.81775L108 0.557739L111.09 6.81775ZM7 12.6978L2 7.82776L8.91016 6.81775L12 0.557739L15.0898 6.81775L22 7.82776L17 12.6978L18.1797 19.5778L12 16.3278L5.82031 19.5778L7 12.6978ZM60 0.557739L63.0898 6.81775L70 7.82776L65 12.6978L66.1797 19.5778L60 16.3278L53.8203 19.5778L55 12.6978L50 7.82776L56.9102 6.81775L60 0.557739ZM39.0898 6.81775L36 0.557739L32.9102 6.81775L26 7.82776L31 12.6978L29.8203 19.5778L36 16.3278L42.1797 19.5778L41 12.6978L46 7.82776L39.0898 6.81775ZM84 0.557739L87.0898 6.81775L94 7.82776L89 12.6978L90.1797 19.5778L84 16.3278L77.8203 19.5778L79 12.6978L74 7.82776L80.9102 6.81775L84 0.557739Z" fill="white"></path></svg>
+            .stars__back
+            .stars__progress(style="width: 50%")
+
+        +form().modal-form.modal-form--review
+          +inputbox
+            +label(for="review-message") Оставьте свой отзыв
+            +input-wrapper
+              +textarea(
+                id="review-message"
+                name="review-message"
+                placeholder="Введите ваш текст"
+              )
+          button.button.button--block.button--primary(type="submit") Отправить
+
+//- INVITE
+.modal-wrapper.modal-wrapper--invite#modal-invite
+  .modal-inner
+    .modal-content
+      .modal-head.align-c
+        .modal-title Выберите задание
+
+      .invite-box
+        +form().modal-form.modal-form--invite
+          .invite-task__list
+            .invite-task__item
+              .invite-task__title.is-active(tabindex="0" aria-selected="true" role="button") #1412 Подбор под ключ iPhone XS Max Space gray 512 GB
+              .meta.meta--inline.invite-task__meta
+                .meta-item
+                  +icon('calendar-o')
+                  | осталось 2 дня
+                .meta-item
+                  +icon('placeholder-o')
+                  | 10 Авеню, дом 7
+            .invite-task__item
+              .invite-task__title(tabindex="-1" aria-selected="false" role="button") #1412 Подбор под ключ iPhone XS Max Space gray 512 GB iPhone XS Max Space gray 512 GB
+              .meta.meta--inline.invite-task__meta
+                .meta-item
+                  +icon('calendar-o')
+                  | осталось 2 дня
+                .meta-item
+                  +icon('placeholder-o')
+                  | 10 Авеню, дом 7
+            .invite-task__item
+              .invite-task__title(tabindex="-1" aria-selected="false" role="button") #1412 Подбор под ключ iPhone XS Max Space gray 512 GB
+              .meta.meta--inline.invite-task__meta
+                .meta-item
+                  +icon('calendar-o')
+                  | осталось 2 дня
+                .meta-item
+                  +icon('placeholder-o')
+                  | 10 Авеню, дом 7
+
+          button.button.button--block.button--primary(type="submit") Создать задание
+
+//- INVITE
+.modal-wrapper.modal-wrapper--specialist#modal-specialist
+  .modal-inner
+    .modal-content
+      .specialist-box
+        .specialist-box-card
+          .user-flag.specialist-box-card__head
+            .user-flag__img
+              .user-photo.online.online--circle
+                .user-photo__inner
+                  img.user-photo__img(src="assets/img/content/avatars/ava-1-lg.jpg", alt="")
+            .user-flag__body
+              .d-flex.flex-wrap.flex-items-center
+                h5.user-flag__title Ксенья Фролова
+                +stars('80')
+              .user-flag__subtitle Электроника и бытовая техника
+
+          .meta.specialist-box-card__meta
+            .meta-item.text-primary
+              +icon('check-rounded-o')
+              | 210 заданий
+            .meta-item
+              +icon('comment-o')
+              | 124 отзыва
+            .meta-item
+              +icon('clock-o')
+              | 233 дня на Buberu
+
+          .specialist-box-card__text
+            | Работаю с электроникой на протяжении 20 лет. Имею большой опыт в данной области. Выполняю свои обязанности в срок и по доступным ценам. Имею профессиональное оборудование.
+          a.underline.text-primary(href="")  Смотреть профиль специалиста
+
+        +form().modal-form.modal-form--specialist
+          +inputbox
+            +label(for="specialist-message") Оставить сообщение специалисту
+            +input-wrapper
+              +textarea(
+                id="specialist-message"
+                name="specialist-message"
+                placeholder="Введите ваш текст"
+              )
+          button.button.button--block.button--primary(type="submit") Откликнуться на задание
 
 //- FORM RESPONSE
 .modal-wrapper.modal-wrapper--response#modal-response

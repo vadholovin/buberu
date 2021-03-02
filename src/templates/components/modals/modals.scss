@@ -253,5 +253,181 @@
   line-height: 1.12;
 }
 
+// .review-box {
 
+// }
+
+.review-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 36px;
+  font-weight: 500;
+  line-height: 1.12;
+
+  @include mq($from: xs) {
+    margin-bottom: 40px;
+  }
+}
+
+.review-person__img {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 10px;
+
+  @include mq($from: xs) {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+.review-person__title {
+  margin-bottom: 5px;
+  font-size: 20px;
+
+  @include mq($from: xs) {
+    font-size: 24px;
+  }
+}
+
+.review-person__subtitle {
+  margin-bottom: 28px;
+  color: $color-light;
+
+  @include mq($until: xs) {
+    margin-bottom: 24px;
+    font-size: 15px;
+  }
+}
+
+.review-person__stars {
+  width: 200px;
+
+  @include mq($from: xs) {
+    width: 234px;
+  }
+}
+
+.modal-form--review {
+
+  .inputbox__label {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.2;
+    color: $color-body;
+  }
+}
+
+.modal-form--invite {
+
+  > *+* {
+    margin-top: 30px;
+
+    @include mq($from: sm) {
+      margin-top: 40px;
+    }
+  }
+}
+
+.invite-task__list {
+
+  > *+* {
+    margin-top: 24px;
+
+    @include mq($from: xs) {
+      margin-top: 30px;
+    }
+  }
+}
+
+.invite-task__item {
+  padding-bottom: 20px;
+  border-bottom: 1px solid $color-border-light;
+}
+
+.invite-task__title {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.12;
+  max-height: calc(18px * 1.12 * 2);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  cursor: pointer;
+
+  @include basic-transition((color));
+  @include on-event {
+    outline: none;
+    color: $color-primary;
+  }
+
+  &.is-active {
+    color: $color-primary;
+  }
+}
+
+.invite-task__meta {
+  font-weight: 500;
+
+  > *:not(:last-child) {
+    margin-right: 12px;
+  }
+}
+
+// .specialist-box {
+
+// }
+
+.specialist-box-card {
+  margin-bottom: 35px;
+}
+
+.specialist-box-card__head {
+  margin-bottom: 25px;
+
+  .user-flag__img {
+    padding-right: 20px;
+  }
+
+  .user-photo {
+    width: 67px;
+    height: 67px;
+  }
+
+  .user-flag__body {
+    line-height: 1.12;
+
+    > *+* {
+      margin-top: 8px;
+    }
+  }
+
+  .user-flag__title {
+    font-weight: 500;
+    margin-right: 10px;
+    font-size: 20px;
+  }
+
+  .user-flag__subtitle {
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .stars {
+    width: 95px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+}
+
+.specialist-box-card__meta {
+  margin-bottom: 24px;
+}
+
+.specialist-box-card__text {
+  margin-bottom: 10px;
+}
 

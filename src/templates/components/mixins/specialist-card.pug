@@ -1,0 +1,33 @@
+mixin specialist-card(online, stars)
+  .specialist-card&attributes(attributes)
+    .specialist-card__content
+      .specialist-card__head
+        a.specialist-card__img.user-photo(
+          class=(online) ? "online online--circle" : "offline offline--circle"
+          data-fancybox-notouch href="#modal-specialist"
+        )
+          .user-photo__inner
+            img.user-photo__img(src="assets/img/content/avatars/ava-1-lg.jpg", alt="")
+        .specialist-card__info
+          .specialist-card__heading.d-flex.flex-wrap.flex-items-center
+            a(data-fancybox-notouch href="#modal-specialist")
+              h5.specialist-card__title Ксенья Фролова
+            +stars( stars ).specialist-card__stars
+
+          .meta.meta--inline.specialist-card__meta
+            .meta-item.text-primary
+              +icon('check-rounded-o')
+              | 210 заданий
+            .meta-item
+              +icon('comment-o')
+              | 124 отзыва
+            .meta-item
+              +icon('clock-o')
+              | 233 дня на Buberu
+
+      .specialist-card__body
+        p
+          | Работаю с электроникой на протяжении 20 лет. Имею большой опыт в данной области. Выполняю свои обязанности в срок и по доступным ценам. Имею профессиональное оборудование.
+
+    a.button-icon.specialist-card__link(data-fancybox-notouch href="#modal-specialist" aria-label="Подробнее")
+      +icon('paper-plane')
