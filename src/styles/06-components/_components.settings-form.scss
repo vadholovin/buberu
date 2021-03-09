@@ -198,11 +198,6 @@
 }
 
 .experience-box {
-  display: none;
-
-  &.is-active {
-    display: block;
-  }
 
   > *:not(:last-child) {
     margin-bottom: 30px;

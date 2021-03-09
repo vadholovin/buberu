@@ -856,3 +856,17 @@ jQuery(function ($) {
 		});
 	});
 });
+
+
+/**
+ * Settings Form
+ */
+jQuery(function ($) {
+  $(document).on('change', '[name=login-experience-presence]', function () {
+    if ($(this).val() === '1') {
+      $('.experience-box-experience').removeClass('hidden');
+    } else {
+      $('.experience-box-experience').addClass('hidden');
+    }
+  })
+});

@@ -54,7 +54,7 @@ exports.paths = {
       // 'node_modules/jarallax/dist/jarallax-video.min.js',
       // 'node_modules/nouislider/distribute/nouislider.min.js',
       // 'node_modules/rellax/rellax.min.js',
-      'node_modules/lozad/dist/lozad.min.js',
+      // 'node_modules/lozad/dist/lozad.min.js',
       // 'node_modules/aos/dist/aos.js',
       // 'node_modules/masonry-layout/dist/masonry.pkgd.min.js',
       // 'node_modules/accordion-js/dist/accordion.min.js',

@@ -34,9 +34,15 @@ mixin select()
   +b.SELECT.select&attributes(attributes).js-select
     block
 
-mixin checkradio(isRadio, name, value, checked, required)
-  +b.LABEL.checkradio&attributes(attributes)
-    +e.INPUT.input(name=name, value=value, checked=checked, type=(isRadio ? "radio" : "checkbox"), required=(required || false))
+mixin checkradio(isRadio, name, value, checked, required, labelClass)
+  +b.LABEL.checkradio(class=labelClass)
+    +e.INPUT.input(
+      name=name
+      value=value
+      checked=checked
+      type=(isRadio ? "radio" : "checkbox")
+      required=(required || false)
+    )&attributes(attributes)
     +e.SPAN.box
     +e.SPAN.content
       block
