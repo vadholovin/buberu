@@ -171,6 +171,14 @@
   }
 }
 
+.profile__aside--first-on-small {
+
+  @include mq($until: md) {
+    order: -1;
+    margin-bottom: 40px;
+  }
+}
+
 .profile-wrapper {
 
   .ibox:not(:last-child) {
