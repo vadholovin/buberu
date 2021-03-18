@@ -5,6 +5,10 @@
 .list-styled {
   list-style: none;
 
+  > *+* {
+    margin-top: 20px;
+  }
+
   li {
     position: relative;
     padding-left: 30px;

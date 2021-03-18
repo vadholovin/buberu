@@ -345,9 +345,35 @@
   }
 }
 
-// .info-widget__text {
+.info-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
-// }
+.info-person__img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 28px;
+}
+
+.info-person__title {
+  margin-bottom: 10px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.info-person__subtitle {
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: #495057;
+}
+
+.info-person__stars {
+
+}
+
 
 .accounts-list {
 

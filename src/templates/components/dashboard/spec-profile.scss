@@ -170,3 +170,10 @@
     }
   }
 }
+
+.profile-wrapper {
+
+  .ibox:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
