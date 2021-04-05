@@ -38,7 +38,7 @@
   padding-top: 12px;
   padding-bottom: 12px;
 
-  &:not(:first-child):not(:last-child) {
+  &:not(:first-child) {
 
     @include mq($from: sm) {
       padding-left: 32px;
@@ -46,16 +46,15 @@
     }
   }
 
-  &:last-child {
+  // &:last-child {
 
 
-    @include mq($from: lg) {
-      margin-left: auto;
-    }
-  }
+  //   @include mq($from: lg) {
+  //     margin-left: auto;
+  //   }
+  // }
 
-  &:nth-child(2),
-  &:nth-child(3) {
+  &:not(:first-child):not(:last-child) {
 
     &::after {
       display: none;

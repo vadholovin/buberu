@@ -130,9 +130,13 @@
 
 .search-methods {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: auto;
   grid-gap: 17px;
   gap: 17px;
+
+  @include mq($from: sm) {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
 }
 
 .search-method {
